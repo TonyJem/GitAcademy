@@ -7,9 +7,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loginButton.backgroundColor = .blue
-        loginButton.layer.cornerRadius = 30
-        loginButton.setTitleColor(.white, for: .normal)
+        loginButton.layer.cornerRadius = loginButton.frame.height/2
     }
     
     @IBAction func loginButtonTap(_ sender: UIButton) {
