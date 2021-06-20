@@ -4,11 +4,8 @@ import WebKit
 class LoginViewController: UIViewController {
     @IBOutlet private weak var loginButton: UIButton!
     
+    var webView = WKWebView()
     var githubId = 0
-    var githubDisplayName = ""
-    var githubEmail = ""
-    var githubAvatarURL = ""
-    var githubAccessToken = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +18,6 @@ class LoginViewController: UIViewController {
         githubAuthVC()
     }
     
-    var webView = WKWebView()
     func githubAuthVC() {
         // Create github Auth ViewController
         let githubVC = UIViewController()
@@ -55,7 +51,7 @@ class LoginViewController: UIViewController {
         githubVC.navigationItem.title = "github.com"
         navController.navigationBar.isTranslucent = false
         navController.navigationBar.tintColor = UIColor.white
-//        navController.navigationBar.barTintColor = UIColor.colorFromHex("#333333")
+//        navController.navigationBar.barTintColor = UIColor.blue
         navController.modalPresentationStyle = UIModalPresentationStyle.overFullScreen
         navController.modalTransitionStyle = .coverVertical
         
@@ -69,17 +65,6 @@ class LoginViewController: UIViewController {
     @objc func refreshAction() {
         self.webView.reload()
     }
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "detailseg" {
-//            let DestView = segue.destination as! DetailsViewController
-//            DestView.githubId = self.githubId
-//            DestView.githubDisplayName = self.githubDisplayName
-//            DestView.githubEmail = self.githubEmail
-//            DestView.githubAvatarURL = self.githubAvatarURL
-//            DestView.githubAccessToken = self.githubAccessToken
-//        }
-//    }
 }
 
 extension LoginViewController: WKNavigationDelegate {
@@ -124,30 +109,26 @@ extension LoginViewController: WKNavigationDelegate {
             if statusCode == 200 {
                 let results = try! JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [AnyHashable: Any]
                 let accessToken = results?["access_token"] as! String
-                // Get user's id, display name, email, profile pic url
-                self.fetchGitHubUserProfile(accessToken: accessToken)
+                print("🟢🟢 GitHub Access Token: \(accessToken)")
+//                self.fetchGitHubUserProfile(accessToken: accessToken)
             }
         }
         task.resume()
     }
     
-    func fetchGitHubUserProfile(accessToken: String) {
-        let tokenURLFull = "https://api.github.com/user"
-        let verify: NSURL = NSURL(string: tokenURLFull)!
-        let request: NSMutableURLRequest = NSMutableURLRequest(url: verify as URL)
-        request.addValue("Bearer " + accessToken, forHTTPHeaderField: "Authorization")
-        let task = URLSession.shared.dataTask(with: request as URLRequest) { data, _, error in
-            if error == nil {
-                let result = try! JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [AnyHashable: Any]
-                // AccessToken
-                print("🟢🟢 GitHub Access Token: \(accessToken)")
-                self.githubAccessToken = accessToken
-                // GitHub Id
-                let githubId: Int! = (result?["id"] as! Int)
-                print("🟢🟢🟢GitHub Id: \(githubId ?? 0)")
-
-            }
-        }
-        task.resume()
-    }
+//    func fetchGitHubUserProfile(accessToken: String) {
+//        let tokenURLFull = "https://api.github.com/user"
+//        let verify: NSURL = NSURL(string: tokenURLFull)!
+//        let request: NSMutableURLRequest = NSMutableURLRequest(url: verify as URL)
+//        request.addValue("Bearer " + accessToken, forHTTPHeaderField: "Authorization")
+//        let task = URLSession.shared.dataTask(with: request as URLRequest) { data, _, error in
+//            if error == nil {
+//                let result = try! JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [AnyHashable: Any]
+//                // GitHub Id
+//                let githubId: Int! = (result?["id"] as! Int)
+//                print("🟢🟢🟢GitHub Id: \(githubId ?? 0)")
+//            }
+//        }
+//        task.resume()
+//    }
 }
