@@ -1,13 +1,13 @@
 import AuthenticationServices
 
-class SignInViewModel: NSObject {
+class LoginViewModel: NSObject {
     private var isShowingRepositoriesView = false
     private var isLoading = false
     
 // TODO: Remove repositories, while start using RepositoriesViewModel
     var repositories: [Repository] = []
     
-    func signInDidTap() {
+    func login() {
         guard let signInURL = NetworkRequest.RequestType.signIn.networkRequest()?.url else {
             print("🔴 Could not create the sign in URL .")
             return
@@ -59,7 +59,7 @@ class SignInViewModel: NSObject {
 }
 
 //MARK: - Private
-private extension SignInViewModel {
+private extension LoginViewModel {
     func getUser() {
         isLoading = true
         
@@ -121,7 +121,7 @@ private extension SignInViewModel {
 }
 
 //MARK: - AuthenticationServices
-extension SignInViewModel: ASWebAuthenticationPresentationContextProviding {
+extension LoginViewModel: ASWebAuthenticationPresentationContextProviding {
     func presentationAnchor(for session: ASWebAuthenticationSession)
     -> ASPresentationAnchor {
         let window = UIApplication.shared.windows.first { $0.isKeyWindow }

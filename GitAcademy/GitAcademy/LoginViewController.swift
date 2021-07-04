@@ -5,7 +5,7 @@ class LoginViewController: UIViewController {
     
     private let profileViewController = ProfileViewController(nibName: "ProfileViewController", bundle: nil)
     
-    private var viewModel = SignInViewModel()
+    private var viewModel = LoginViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +19,6 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginButtonAction(_ sender: UIButton) {
         print("🟢 LoginButton Did Tap")
-        viewModel.signInDidTap()
+        viewModel.login()
     }
 }
