@@ -50,15 +50,11 @@ extension ProfileViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let profileCell = profileTableView.dequeueReusableCell(withIdentifier: String(describing: ProfileCell.self), for: indexPath) as? ProfileCell else { return UITableViewCell() }
-        
-        guard let repositoryCell = profileTableView.dequeueReusableCell(withIdentifier: String(describing: RepositoryCell.self), for: indexPath) as? RepositoryCell else { return UITableViewCell() }
-        
         switch indexPath.section {
         case 0:
-            return profileCell
+            return profileCell(for: indexPath)
         case 1:
-            return repositoryCell
+            return repositoryCell(for: indexPath)
         default:
             return UITableViewCell()
         }
@@ -66,4 +62,22 @@ extension ProfileViewController: UITableViewDataSource {
 }
 
 extension ProfileViewController: UITableViewDelegate {
+}
+
+private extension ProfileViewController {
+    // TODO: Refactor to have one method for different cells
+    private func profileCell(for indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = profileTableView.dequeueReusableCell(withIdentifier: String(describing: ProfileCell.self), for: indexPath) as? ProfileCell else { return UITableViewCell() }
+        // TODO: Fill cell with data
+        //        cell.fill()
+        return cell
+    }
+    
+    // TODO: Refactor to have one method for different cells
+    private func repositoryCell(for indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = profileTableView.dequeueReusableCell(withIdentifier: String(describing: RepositoryCell.self), for: indexPath) as? RepositoryCell else { return UITableViewCell() }
+        // TODO: Fill cell with data
+        //        cell.fill()
+        return cell
+    }
 }
