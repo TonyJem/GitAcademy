@@ -1,14 +1,12 @@
 import AuthenticationServices
 
-class SignInViewModel: NSObject, ObservableObject {
-    @Published var isShowingRepositoriesView = false
-    @Published private(set) var isLoading = false
+class SignInViewModel: NSObject {
+    private var isShowingRepositoriesView = false
+    private var isLoading = false
     
-    func signInTapped() {
-        guard let signInURL =
-                NetworkRequest.RequestType.signIn.networkRequest()?.url
-        else {
-            print("Could not create the sign in URL .")
+    func signInDidTap() {
+        guard let signInURL = NetworkRequest.RequestType.signIn.networkRequest()?.url else {
+            print("🔴 Could not create the sign in URL .")
             return
         }
         
@@ -16,31 +14,26 @@ class SignInViewModel: NSObject, ObservableObject {
         let authenticationSession = ASWebAuthenticationSession(
             url: signInURL,
             callbackURLScheme: callbackURLScheme) { [weak self] callbackURL, error in
-            // 1
-            guard
-                error == nil,
-                let callbackURL = callbackURL,
-                // 2
-                let queryItems = URLComponents(string: callbackURL.absoluteString)?.queryItems,
-                // 3
-                let code = queryItems.first(where: { $0.name == "code" })?.value,
-                // 4
-                let networkRequest =
-                    NetworkRequest.RequestType.codeExchange(code: code).networkRequest()
+            guard error == nil,
+                  let self = self,
+                  let callbackURL = callbackURL,
+                  let queryItems = URLComponents(string: callbackURL.absoluteString)?.queryItems,
+                  let code = queryItems.first(where: { $0.name == "code" })?.value,
+                  let networkRequest = NetworkRequest.RequestType.codeExchange(code: code).networkRequest()
             else {
-                // 5
-                print("An error occurred when attempting to sign in.")
+                print("🔴 An error occurred when attempting to sign in.")
                 return
             }
             
-            self?.isLoading = true
+            self.isLoading = true
             networkRequest.start(responseType: String.self) { result in
                 switch result {
                 case .success:
-                    self?.getUser()
+                    self.getUser()
+                    print("🟢 getUser success!")
                 case .failure(let error):
-                    print("Failed to exchange access code for tokens: \(error)")
-                    self?.isLoading = false
+                    print("🔴 Failed to exchange access code for tokens: \(error)")
+                    self.isLoading = false
                 }
             }
         }
@@ -49,16 +42,22 @@ class SignInViewModel: NSObject, ObservableObject {
         authenticationSession.prefersEphemeralWebBrowserSession = true
         
         if !authenticationSession.start() {
-            print("Failed to start ASWebAuthenticationSession")
+            print("🔴 Failed to start ASWebAuthenticationSession")
         }
     }
-    
+   
+    /* TODO: Find out if need it: in case yes - use it; no - delete this block
     func appeared() {
         // Try to get the user in case the tokens are already stored on this device
         getUser()
     }
-    
-    private func getUser() {
+    */
+
+}
+
+//MARK: - Private
+private extension SignInViewModel {
+    func getUser() {
         isLoading = true
         
         NetworkRequest
@@ -69,14 +68,16 @@ class SignInViewModel: NSObject, ObservableObject {
                 switch result {
                 case .success:
                     self?.isShowingRepositoriesView = true
+                    print("🟢 isShowingRepositoriesView = true")
                 case .failure(let error):
-                    print("Failed to get user, or there is no valid/active session: \(error.localizedDescription)")
+                    print("🔴 Failed to get user, or there is no valid/active session: \(error.localizedDescription)")
                 }
                 self?.isLoading = false
             }
     }
 }
 
+//MARK: - AuthenticationServices
 extension SignInViewModel: ASWebAuthenticationPresentationContextProviding {
     func presentationAnchor(for session: ASWebAuthenticationSession)
     -> ASPresentationAnchor {
