@@ -3,6 +3,8 @@ import UIKit
 class LoginViewController: UIViewController {
     @IBOutlet private weak var loginButton: UIButton!
     
+    private var viewModel = SignInViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -11,5 +13,6 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginButtonAction(_ sender: UIButton) {
         print("🟢 LoginButton Did Tap")
+        viewModel.signInDidTap()
     }
 }
