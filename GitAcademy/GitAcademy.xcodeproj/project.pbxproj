@@ -22,6 +22,7 @@
 		3ADA376E269180990009D500 /* NetworkRequest+User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADA376D269180990009D500 /* NetworkRequest+User.swift */; };
 		3ADA3773269180AD0009D500 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADA3772269180AD0009D500 /* Repository.swift */; };
 		3ADA3778269180BD0009D500 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADA3777269180BD0009D500 /* User.swift */; };
+		3AE8BB4C2691B4AA005801AD /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE8BB4B2691B4AA005801AD /* DetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		3ADA376D269180990009D500 /* NetworkRequest+User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkRequest+User.swift"; sourceTree = "<group>"; };
 		3ADA3772269180AD0009D500 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		3ADA3777269180BD0009D500 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		3AE8BB4B2691B4AA005801AD /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				3AC7F9232678D63100561DBB /* LoginViewController.swift */,
+				3AE8BB4B2691B4AA005801AD /* DetailsViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 				3ADA3773269180AD0009D500 /* Repository.swift in Sources */,
 				3AC7F9242678D63100561DBB /* LoginViewController.swift in Sources */,
 				3AC7F9202678D63100561DBB /* AppDelegate.swift in Sources */,
+				3AE8BB4C2691B4AA005801AD /* DetailsViewController.swift in Sources */,
 				3AC7F9222678D63100561DBB /* SceneDelegate.swift in Sources */,
 				3A13DD4D269187DC001ACB49 /* SignInViewModel.swift in Sources */,
 				3A13DD48269187C2001ACB49 /* RepositoriesViewModel.swift in Sources */,
