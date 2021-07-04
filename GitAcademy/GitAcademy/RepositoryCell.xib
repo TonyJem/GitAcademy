@@ -69,6 +69,11 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Ty1-Wx-9Kz" secondAttribute="trailing" id="jE0-rz-ubY"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="countLabel" destination="ZI3-W4-dwN" id="nUo-c7-8iT"/>
+                <outlet property="iconImageView" destination="nA1-vc-yXP" id="U13-6E-LdI"/>
+                <outlet property="titleLabel" destination="zAQ-Qf-Iqf" id="PW1-KR-QaT"/>
+            </connections>
             <point key="canvasLocation" x="139" y="153"/>
         </view>
     </objects>
