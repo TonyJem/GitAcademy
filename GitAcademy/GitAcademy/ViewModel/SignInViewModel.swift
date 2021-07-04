@@ -4,6 +4,8 @@ class SignInViewModel: NSObject {
     private var isShowingRepositoriesView = false
     private var isLoading = false
     
+    var repositories: [Repository] = []
+    
     func signInDidTap() {
         guard let signInURL = NetworkRequest.RequestType.signIn.networkRequest()?.url else {
             print("🔴 Could not create the sign in URL .")
@@ -68,13 +70,45 @@ private extension SignInViewModel {
                 switch result {
                 case .success:
                     self?.isShowingRepositoriesView = true
-                    print("🟢 isShowingRepositoriesView = true")
+                    print("🟢 Start Loading repositorias...")
+                    
+                    self?.loadRepositories()
+                    
+                    
                 case .failure(let error):
                     print("🔴 Failed to get user, or there is no valid/active session: \(error.localizedDescription)")
                 }
                 self?.isLoading = false
             }
     }
+    
+    func loadRepositories() {
+        NetworkRequest
+            .RequestType
+            .getRepos
+            .networkRequest()?
+            .start(responseType: [Repository].self) { [weak self] result in
+                switch result {
+                case .success(let networkResponse):
+                    DispatchQueue.main.async {
+                        self?.repositories = networkResponse.object
+                        print("🟢🟢 Repositorias loaded with Success!")
+                        self?.printRepositoriasNames()
+                    }
+                case .failure(let error):
+                    print("🔴 Failed to get the user's repositories: \(error)")
+                }
+            }
+    }
+    
+    func printRepositoriasNames() {
+        print("🟢🟢🟢 Start Printing repositorias...")
+        
+        for (index, repositoria) in repositories.enumerated() {
+            print("🟣 \(index) 👍 \(repositoria.id) Repositoria \(repositoria.name)")
+        }
+    }
+    
 }
 
 //MARK: - AuthenticationServices
