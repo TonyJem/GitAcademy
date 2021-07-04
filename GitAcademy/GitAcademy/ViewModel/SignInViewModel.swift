@@ -96,7 +96,7 @@ private extension SignInViewModel {
                         self?.repositories = networkResponse.object
                         print("🟢🟢 Repositorias loaded with Success!")
                         self?.printRepositoriasNames()
-                        self?.perfomSegue()
+                        self?.presentProfileViewController()
                     }
                 case .failure(let error):
                     print("🔴 Failed to get the user's repositories: \(error)")
@@ -113,10 +113,9 @@ private extension SignInViewModel {
         }
     }
     
-    // TODO: Remove perfomSegue(), while start using RepositoriesViewModel
-    func perfomSegue() {
+    func presentProfileViewController() {
         if let loginViewContoller = UIApplication.topMostViewController() as? LoginViewController {
-            loginViewContoller.performSegue(withIdentifier: "showDetailsViewController", sender: nil)
+            loginViewContoller.presentProfileViewController()
         }
     }
 }

@@ -3,6 +3,8 @@ import UIKit
 class LoginViewController: UIViewController {
     @IBOutlet private weak var loginButton: UIButton!
     
+    private let profileViewController = ProfileViewController(nibName: "ProfileViewController", bundle: nil)
+    
     private var viewModel = SignInViewModel()
     
     override func viewDidLoad() {
@@ -11,17 +13,8 @@ class LoginViewController: UIViewController {
         loginButton.layer.cornerRadius = loginButton.frame.height/2
     }
     
-    func performSegue() {
-        performSegue(withIdentifier: "showDetailsViewController", sender: nil)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "showDetailsViewController") {
-            print("🟢🟢🟢🟢 Segue prepared ok")
-// TODO: Setup destination VC and perform Segue
-//            let destinationVC = segue.destination as! DetailsViewController
-//            destinationVC.flickrImage = image(for: selectedIndexPath)
-        }
+    func presentProfileViewController() {
+        self.present(profileViewController, animated: true, completion: nil)
     }
     
     @IBAction func loginButtonAction(_ sender: UIButton) {
