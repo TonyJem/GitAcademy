@@ -4,6 +4,7 @@ class SignInViewModel: NSObject {
     private var isShowingRepositoriesView = false
     private var isLoading = false
     
+// TODO: Remove repositories, while start using RepositoriesViewModel
     var repositories: [Repository] = []
     
     func signInDidTap() {
@@ -82,6 +83,7 @@ private extension SignInViewModel {
             }
     }
     
+    // TODO: Remove loadRepositories(), while start using RepositoriesViewModel
     func loadRepositories() {
         NetworkRequest
             .RequestType
@@ -102,6 +104,7 @@ private extension SignInViewModel {
             }
     }
     
+    // TODO: Remove while not necessary for tests
     func printRepositoriasNames() {
         print("🟢🟢🟢 Start Printing repositorias...")
         
@@ -110,12 +113,12 @@ private extension SignInViewModel {
         }
     }
     
+    // TODO: Remove perfomSegue(), while start using RepositoriesViewModel
     func perfomSegue() {
         if let loginViewContoller = UIApplication.topMostViewController() as? LoginViewController {
             loginViewContoller.performSegue(withIdentifier: "showDetailsViewController", sender: nil)
         }
     }
-    
 }
 
 //MARK: - AuthenticationServices
