@@ -82,12 +82,12 @@ struct NetworkRequest {
     
     typealias NetworkResult<T: Decodable> = (response: HTTPURLResponse, object: T)
     
-    // MARK: Private Constants
+    // MARK: - Private Constants
     static let callbackURLScheme = "authhub"
     static let clientID = "Iv1.8f06ae8264fe2a88"
     static let clientSecret = "fc3ad5b268c0b3a121b0b16b07c8a1709beaecd5"
     
-    // MARK: Properties
+    // MARK: - Properties
     var method: HTTPMethod
     var url: URL
     
@@ -98,7 +98,7 @@ struct NetworkRequest {
         Self.username = ""
     }
     
-    // MARK: Methods
+    // MARK: - Methods
     func start<T: Decodable>(responseType: T.Type, completionHandler: @escaping ((Result<NetworkResult<T>, Error>) -> Void)) {
         var request = URLRequest(url: url)
         request.httpMethod = method.rawValue

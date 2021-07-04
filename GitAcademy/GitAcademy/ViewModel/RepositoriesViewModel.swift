@@ -1,8 +1,9 @@
 import Foundation
 
 class RepositoriesViewModel: ObservableObject {
-    @Published private(set) var repositories: [Repository]
     let username: String
+    
+    var repositories: [Repository]
     
     init() {
         self.repositories = []
@@ -17,7 +18,7 @@ class RepositoriesViewModel: ObservableObject {
         self.username = username
     }
     
-    func load() {
+    func loadRepositories() {
         NetworkRequest
             .RequestType
             .getRepos
@@ -29,7 +30,7 @@ class RepositoriesViewModel: ObservableObject {
                         self?.repositories = networkResponse.object
                     }
                 case .failure(let error):
-                    print("Failed to get the user's repositories: \(error)")
+                    print("🔴 Failed to get the user's repositories: \(error)")
                 }
             }
     }
