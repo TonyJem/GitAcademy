@@ -68,8 +68,7 @@ private extension ProfileViewController {
     // TODO: Refactor to have one method for different cells
     private func profileCell(for indexPath: IndexPath) -> UITableViewCell {
         guard let cell = profileTableView.dequeueReusableCell(withIdentifier: String(describing: ProfileCell.self), for: indexPath) as? ProfileCell else { return UITableViewCell() }
-        // TODO: Fill cell with data
-        //        cell.fill()
+        cell.fillContent()
         return cell
     }
     
@@ -77,7 +76,7 @@ private extension ProfileViewController {
     private func repositoryCell(for indexPath: IndexPath) -> UITableViewCell {
         guard let cell = profileTableView.dequeueReusableCell(withIdentifier: String(describing: RepositoryCell.self), for: indexPath) as? RepositoryCell else { return UITableViewCell() }
         // TODO: Fill cell with data
-        //        cell.fill()
+        //        cell.fillContent()
         return cell
     }
 }

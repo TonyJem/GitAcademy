@@ -125,6 +125,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                             <state key="normal" title="+ Follow"/>
+                                            <connections>
+                                                <action selector="followButtonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="tci-aL-CWR"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -167,6 +170,14 @@
                 <constraint firstItem="QQh-xU-aAl" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="v71-Jc-gPs"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="avatarImageView" destination="Yvr-4X-Ekv" id="XWs-3o-vfd"/>
+                <outlet property="followButton" destination="Gcm-Ko-O4F" id="tGq-kM-BxS"/>
+                <outlet property="followersCountLabel" destination="utt-XX-NmF" id="F1d-yZ-Inx"/>
+                <outlet property="followingCountLabel" destination="xCf-M7-Mjd" id="lMz-t1-64j"/>
+                <outlet property="nameLabel" destination="zCI-vf-CZ3" id="CBP-qR-x9d"/>
+                <outlet property="usernameLabel" destination="27v-Mt-Fg9" id="aoD-2c-jS2"/>
+            </connections>
             <point key="canvasLocation" x="-26.086956521739133" y="171.42857142857142"/>
         </view>
     </objects>
