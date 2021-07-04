@@ -4,7 +4,7 @@ class LoginViewModel: NSObject {
     private var isShowingRepositoriesView = false
     private var isLoading = false
     
-// TODO: Remove repositories, while start using RepositoriesViewModel
+    // TODO: Remove repositories, while start using RepositoriesViewModel
     var repositories: [Repository] = []
     
     func login() {
@@ -69,13 +69,17 @@ private extension LoginViewModel {
             .networkRequest()?
             .start(responseType: User.self) { [weak self] result in
                 switch result {
-                case .success:
-                    self?.isShowingRepositoriesView = true
-                    print("🟢 Start Loading repositorias...")
+                case .success(let networkResponse):
                     
-                    self?.loadRepositories()
-                    
-                    
+                    DispatchQueue.main.async {
+                        let user = networkResponse.object
+                        print("🟣 Avatar_URL: \(user.avatar_url)")
+                        
+                        self?.isShowingRepositoriesView = true
+                        print("🟢 Start Loading repositorias...")
+                        
+                        self?.loadRepositories()
+                    }
                 case .failure(let error):
                     print("🔴 Failed to get user, or there is no valid/active session: \(error.localizedDescription)")
                 }
