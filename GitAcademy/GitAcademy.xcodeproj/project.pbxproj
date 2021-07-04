@@ -23,6 +23,7 @@
 		3ADA3773269180AD0009D500 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADA3772269180AD0009D500 /* Repository.swift */; };
 		3ADA3778269180BD0009D500 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADA3777269180BD0009D500 /* User.swift */; };
 		3AE8BB4C2691B4AA005801AD /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE8BB4B2691B4AA005801AD /* DetailsViewController.swift */; };
+		3AE8BB522691BC2B005801AD /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE8BB512691BC2B005801AD /* File.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		3ADA3772269180AD0009D500 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		3ADA3777269180BD0009D500 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		3AE8BB4B2691B4AA005801AD /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		3AE8BB512691BC2B005801AD /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 		3AC7F91E2678D63100561DBB /* GitAcademy */ = {
 			isa = PBXGroup;
 			children = (
+				3AE8BB502691BC20005801AD /* Extensions */,
 				3A13DD51269187F2001ACB49 /* ViewModel */,
 				3ADA377C269180DF0009D500 /* Model */,
 				3A42287726919AD500B54EF7 /* ViewControllers */,
@@ -174,6 +177,14 @@
 				3ADA3777269180BD0009D500 /* User.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		3AE8BB502691BC20005801AD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3AE8BB512691BC2B005801AD /* File.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,6 +318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3ADA3773269180AD0009D500 /* Repository.swift in Sources */,
+				3AE8BB522691BC2B005801AD /* File.swift in Sources */,
 				3AC7F9242678D63100561DBB /* LoginViewController.swift in Sources */,
 				3AC7F9202678D63100561DBB /* AppDelegate.swift in Sources */,
 				3AE8BB4C2691B4AA005801AD /* DetailsViewController.swift in Sources */,

@@ -17,7 +17,7 @@ class LoginViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "showDetailsViewController") {
-            print("🟢 Segue prepared ok")
+            print("🟢🟢🟢🟢 Segue prepared ok")
 //            let destinationVC = segue.destination as! DetailsViewController
 //            destinationVC.flickrImage = image(for: selectedIndexPath)
         }

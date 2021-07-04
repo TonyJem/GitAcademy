@@ -94,6 +94,7 @@ private extension SignInViewModel {
                         self?.repositories = networkResponse.object
                         print("🟢🟢 Repositorias loaded with Success!")
                         self?.printRepositoriasNames()
+                        self?.perfomSegue()
                     }
                 case .failure(let error):
                     print("🔴 Failed to get the user's repositories: \(error)")
@@ -106,6 +107,12 @@ private extension SignInViewModel {
         
         for (index, repositoria) in repositories.enumerated() {
             print("🟣 \(index) 👍 \(repositoria.id) Repositoria \(repositoria.name)")
+        }
+    }
+    
+    func perfomSegue() {
+        if let topVC = UIApplication.getTopViewController() {
+            topVC.performSegue(withIdentifier: "showDetailsViewController", sender: nil)
         }
     }
     
