@@ -26,6 +26,8 @@
 		3ADB57C12691E40100354A8F /* RepositoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3ADB57C02691E40100354A8F /* RepositoryCell.xib */; };
 		3ADB57CE2691E69200354A8F /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADB57CD2691E69200354A8F /* ProfileCell.swift */; };
 		3ADB57D32691E6B800354A8F /* RepositoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADB57D22691E6B800354A8F /* RepositoryCell.swift */; };
+		3ADB57DC2691E75500354A8F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADB57DA2691E75500354A8F /* ProfileViewController.swift */; };
+		3ADB57DD2691E75500354A8F /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3ADB57DB2691E75500354A8F /* ProfileViewController.xib */; };
 		3AE8BB4C2691B4AA005801AD /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE8BB4B2691B4AA005801AD /* DetailsViewController.swift */; };
 		3AE8BB522691BC2B005801AD /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE8BB512691BC2B005801AD /* UIApplication.swift */; };
 /* End PBXBuildFile section */
@@ -73,6 +75,8 @@
 		3ADB57C02691E40100354A8F /* RepositoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoryCell.xib; sourceTree = "<group>"; };
 		3ADB57CD2691E69200354A8F /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
 		3ADB57D22691E6B800354A8F /* RepositoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCell.swift; sourceTree = "<group>"; };
+		3ADB57DA2691E75500354A8F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		3ADB57DB2691E75500354A8F /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		3AE8BB4B2691B4AA005801AD /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		3AE8BB512691BC2B005801AD /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -195,6 +199,8 @@
 				3ADB57CD2691E69200354A8F /* ProfileCell.swift */,
 				3ADB57C02691E40100354A8F /* RepositoryCell.xib */,
 				3ADB57D22691E6B800354A8F /* RepositoryCell.swift */,
+				3ADB57DB2691E75500354A8F /* ProfileViewController.xib */,
+				3ADB57DA2691E75500354A8F /* ProfileViewController.swift */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -310,6 +316,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3ADB57DD2691E75500354A8F /* ProfileViewController.xib in Resources */,
 				3AC7F92F2678D63300561DBB /* LaunchScreen.storyboard in Resources */,
 				3ADB57BC2691D99100354A8F /* ProfileCell.xib in Resources */,
 				3AC7F92C2678D63300561DBB /* Assets.xcassets in Resources */,
@@ -351,6 +358,7 @@
 				3A13DD48269187C2001ACB49 /* RepositoriesViewModel.swift in Sources */,
 				3ADA3778269180BD0009D500 /* User.swift in Sources */,
 				3ADA376E269180990009D500 /* NetworkRequest+User.swift in Sources */,
+				3ADB57DC2691E75500354A8F /* ProfileViewController.swift in Sources */,
 				3AC7F92A2678D63100561DBB /* GitAcademy.xcdatamodeld in Sources */,
 				3ADA3769269180860009D500 /* NetworkRequest.swift in Sources */,
 			);
