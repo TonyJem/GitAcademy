@@ -111,8 +111,8 @@ private extension SignInViewModel {
     }
     
     func perfomSegue() {
-        if let topVC = UIApplication.getTopViewController() {
-            topVC.performSegue(withIdentifier: "showDetailsViewController", sender: nil)
+        if let loginViewContoller = UIApplication.topMostViewController() as? LoginViewController {
+            loginViewContoller.performSegue(withIdentifier: "showDetailsViewController", sender: nil)
         }
     }
     
