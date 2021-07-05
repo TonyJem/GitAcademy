@@ -175,8 +175,8 @@
                 <outlet property="followButton" destination="Gcm-Ko-O4F" id="tGq-kM-BxS"/>
                 <outlet property="followersCountLabel" destination="utt-XX-NmF" id="F1d-yZ-Inx"/>
                 <outlet property="followingCountLabel" destination="xCf-M7-Mjd" id="lMz-t1-64j"/>
+                <outlet property="loginLabel" destination="27v-Mt-Fg9" id="aoD-2c-jS2"/>
                 <outlet property="nameLabel" destination="zCI-vf-CZ3" id="CBP-qR-x9d"/>
-                <outlet property="usernameLabel" destination="27v-Mt-Fg9" id="aoD-2c-jS2"/>
             </connections>
             <point key="canvasLocation" x="-26.086956521739133" y="171.42857142857142"/>
         </view>

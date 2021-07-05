@@ -3,7 +3,7 @@ import UIKit
 class ProfileCell: UITableViewCell {
     @IBOutlet private weak var avatarImageView: UIImageView!
     @IBOutlet private weak var nameLabel: UILabel!
-    @IBOutlet private weak var usernameLabel: UILabel!
+    @IBOutlet private weak var loginLabel: UILabel!
     @IBOutlet private weak var followersCountLabel: UILabel!
     @IBOutlet private weak var followingCountLabel: UILabel!
     @IBOutlet private weak var followButton: UIButton!
@@ -17,7 +17,7 @@ class ProfileCell: UITableViewCell {
         let user = Core.profile.user
         avatarImageView.downloaded(from: user.avatar_url)
         nameLabel.text = user.name
-        usernameLabel.text = user.login
+        loginLabel.text = user.login
         followersCountLabel.text = String(user.followers)
         followingCountLabel.text = String(user.following)
     }
