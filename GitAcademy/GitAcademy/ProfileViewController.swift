@@ -13,6 +13,7 @@ class ProfileViewController: UIViewController {
         
         profileTableView.register(UINib(nibName: String(describing: RepositoryCell.self), bundle: Bundle.main), forCellReuseIdentifier: String(describing: RepositoryCell.self))
         
+        profileTableView.backgroundColor = .systemGray5
         profileTableView.dataSource = self
         profileTableView.delegate = self
         profileTableView.tableFooterView = UIView()
@@ -48,8 +49,15 @@ extension ProfileViewController: UITableViewDataSource {
             return UITableViewCell()
         }
     }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        // TODO: Magic number
+        return 14.0
+    }
+
 }
 
+// TODO: Remove Delegate if not needed
 extension ProfileViewController: UITableViewDelegate {
 }
 
