@@ -16,6 +16,7 @@ class ProfileCell: UITableViewCell {
         // TODO: Find better sollution how to inject User data without using Core
         let user = Core.profile.user
         avatarImageView.downloaded(from: user.avatar_url)
+        nameLabel.isHidden = user.name == nil
         nameLabel.text = user.name
         loginLabel.text = user.login
         followersCountLabel.text = String(user.followers)
