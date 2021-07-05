@@ -105,6 +105,7 @@ private extension ProfileViewModel {
         print("🟣 Public Repos: \(user.public_repos)")
         
         Core.profile.user = user
+        print("🟡 Login from Core: \(Core.profile.user.login)")
     }
     
     func fetchRepositories() {

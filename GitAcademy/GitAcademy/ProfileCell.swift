@@ -24,12 +24,13 @@ class ProfileCell: UITableViewCell {
         print("🟢 followButton Did Tap")
     }
     
-    func fillContent(with profile: Profile) {
+    func fillContent() {
+        // TODO: Find better sollution how to inject User data without using Core
+        let user = Core.profile.user
         avatarImageView.image = UIImage(imageLiteralResourceName: "testAvatar")
-        nameLabel.text = profile.user.name
-        usernameLabel.text = profile.user.login
-        followersCountLabel.text = String(profile.user.followers)
-        followingCountLabel.text = String(profile.user.following)
-//        followButton.isHidden = true
+        nameLabel.text = user.name
+        usernameLabel.text = user.login
+        followersCountLabel.text = String(user.followers)
+        followingCountLabel.text = String(user.following)
     }
 }
