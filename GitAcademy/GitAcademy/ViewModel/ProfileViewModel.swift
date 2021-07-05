@@ -4,8 +4,8 @@ class ProfileViewModel: NSObject {
     // TODO: Create progress indicator
     private var isLoading = false
     
-    // TODO: Remove repositories, while start using RepositoriesViewModel
-    var repositories: [Repository] = []
+    private var user: User?
+    private var repositories: [Repository] = []
     
     func login() {
         guard let signInURL = NetworkRequest.RequestType.signIn.networkRequest()?.url else {
@@ -33,7 +33,6 @@ class ProfileViewModel: NSObject {
                 switch result {
                 case .success:
                     self.fetchUser()
-                    print("🟢 getUser success!")
                 case .failure(let error):
                     print("🔴 Failed to exchange access code for tokens: \(error)")
                     self.isLoading = false
@@ -68,19 +67,35 @@ private extension ProfileViewModel {
             .getUser
             .networkRequest()?
             .start(responseType: User.self) { [weak self] result in
+                guard let self = self else { return }
                 switch result {
                 case .success(let networkResponse):
-                    
                     DispatchQueue.main.async {
-                        let user = networkResponse.object
-                        print("🟣 Avatar_URL: \(user.avatar_url)")
-                        self?.fetchRepositories()
+                        self.user = networkResponse.object
+                        print("🟢 fetchUser success!")
+                        self.printUserDetails()
+                        // TODO: Remove getting repositories list to independent thread
+                        self.fetchRepositories()
                     }
                 case .failure(let error):
                     print("🔴 Failed to get user, or there is no valid/active session: \(error.localizedDescription)")
                 }
-                self?.isLoading = false
+                self.isLoading = false
             }
+    }
+    
+    // TODO: Remove while is not neccesary
+    func printUserDetails() {
+        guard let user = user  else { return }
+        print("🟣 Avatar_URL: \(user.avatar_url)")
+        
+        if let name = user.name {
+            print("🟣 Name: \(name)")
+        } else {
+            print("🟣 Name: ''")
+        }
+        
+        print("🟣 Username: \(user.login)")
     }
     
     func fetchRepositories() {
@@ -89,17 +104,24 @@ private extension ProfileViewModel {
             .getRepos
             .networkRequest()?
             .start(responseType: [Repository].self) { [weak self] result in
+                guard let self = self else { return }
                 switch result {
                 case .success(let networkResponse):
                     DispatchQueue.main.async {
-                        self?.repositories = networkResponse.object
-                        print("🟢🟢 Repositorias loaded with Success!")
-                        self?.presentProfileViewController()
+                        self.repositories = networkResponse.object
+                        print("🟢🟢 fetchRepositories success !")
+                        self.printRepositoriesDetails()
+                        self.presentProfileViewController()
                     }
                 case .failure(let error):
                     print("🔴 Failed to get the user's repositories: \(error)")
                 }
             }
+    }
+    
+    // TODO: Remove while is not neccesary
+    func printRepositoriesDetails() {
+        print("🟣🟣 Repositories Count: \(repositories.count)")
     }
     
     func presentProfileViewController() {
