@@ -8,7 +8,7 @@ extension UIView {
         if let radius = radius {
             layer.cornerRadius = radius
         } else {
-            layer.cornerRadius = frame.width/2
+            layer.cornerRadius = frame.height/2
         }
         
         if let clips = clips {
