@@ -6,6 +6,7 @@ class ProfileViewModel: NSObject {
     
     private var user: User?
     private var repositories: [Repository] = []
+    private var starredRepositories: [Repository] = []
     
     func login() {
         guard let signInURL = NetworkRequest.RequestType.signIn.networkRequest()?.url else {
@@ -129,7 +130,11 @@ private extension ProfileViewModel {
     func printRepositoriesDetails() {
         print("🟣🟣 Repositories Count: \(repositories.count)")
         
-        for (index, repo) in repositories.enumerated() {
+        starredRepositories = repositories.filter { $0.stargazers_count > 0 }
+        print("🟣🟣 StarredRepositories Count: \(starredRepositories.count)")
+        
+        // WHY?: Should count only user's starred, or starred in where are included other stargazers also ?
+        for (index, repo) in starredRepositories.enumerated() {
             print("🟣\(index)🟣 Name: \(repo.name) 🟣 Stars: \(repo.stargazers_count)")
         }
     }
