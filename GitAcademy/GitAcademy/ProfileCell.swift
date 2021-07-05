@@ -1,7 +1,8 @@
 import UIKit
 
+// TODO: Create Parent cell for ProfileCell and RepositoryCell and iherit common stuff from there
 class ProfileCell: UITableViewCell {
-    @IBOutlet private weak var contanerView: UIView!
+    @IBOutlet private weak var containerView: UIView!
     @IBOutlet private weak var avatarContainerView: UIView!
     @IBOutlet private weak var avatarImageView: UIImageView!
     @IBOutlet private weak var nameLabel: UILabel!
@@ -18,8 +19,8 @@ class ProfileCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        contanerView.roundCorners(radius: cornerRadius)
-        contanerView.setShadow()
+        containerView.roundCorners(radius: cornerRadius)
+        containerView.setShadow()
         avatarImageView.roundCorners()
         avatarContainerView.roundCorners()
         avatarContainerView.setShadow(offsetSize: shadowOffset,

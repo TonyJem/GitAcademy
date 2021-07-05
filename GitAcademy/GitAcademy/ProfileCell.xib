@@ -165,7 +165,7 @@
             <connections>
                 <outlet property="avatarContainerView" destination="vnV-3y-mTe" id="rR4-f4-l7A"/>
                 <outlet property="avatarImageView" destination="GaG-go-msF" id="dqr-B6-CgD"/>
-                <outlet property="contanerView" destination="0ZF-93-yEO" id="aLr-CO-ed3"/>
+                <outlet property="containerView" destination="0ZF-93-yEO" id="aLr-CO-ed3"/>
                 <outlet property="followButton" destination="Gcm-Ko-O4F" id="QCg-8m-9hl"/>
                 <outlet property="followersButton" destination="ONI-Id-82o" id="0ll-mO-05A"/>
                 <outlet property="followingButton" destination="IGI-9z-GDQ" id="uiI-cs-Xu8"/>
