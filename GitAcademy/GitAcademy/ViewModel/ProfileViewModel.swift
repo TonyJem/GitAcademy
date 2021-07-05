@@ -96,6 +96,12 @@ private extension ProfileViewModel {
         }
         
         print("🟣 Username: \(user.login)")
+        
+        print("🟣 Followers: \(user.followers)")
+        
+        print("🟣 Following: \(user.following)")
+        
+        print("🟣 Public Repos: \(user.public_repos)")
     }
     
     func fetchRepositories() {
