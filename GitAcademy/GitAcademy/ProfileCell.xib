@@ -67,7 +67,7 @@
                             <rect key="frame" x="20" y="140" width="374" height="90"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="hiz-bc-A2u">
-                                    <rect key="frame" x="0.0" y="0.0" width="217.5" height="20"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="207" height="20"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QeH-Dv-hOM">
                                             <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
@@ -76,46 +76,26 @@
                                                 <constraint firstAttribute="width" secondItem="QeH-Dv-hOM" secondAttribute="height" multiplier="1:1" id="ZYa-ao-iMg"/>
                                             </constraints>
                                         </imageView>
-                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="QTj-X7-NzI">
-                                            <rect key="frame" x="25" y="0.0" width="87.5" height="20"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="utt-XX-NmF">
-                                                    <rect key="frame" x="0.0" y="0.0" width="18" height="20"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="followers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aqV-Ww-xRZ">
-                                                    <rect key="frame" x="26" y="0.0" width="61.5" height="20"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </stackView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ONI-Id-82o">
+                                            <rect key="frame" x="25" y="0.0" width="83" height="20"/>
+                                            <state key="normal" title="77 followers"/>
+                                            <connections>
+                                                <action selector="followersButonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="lK5-gc-GaA"/>
+                                            </connections>
+                                        </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4NT-Ce-QQ9">
-                                            <rect key="frame" x="117.5" y="0.0" width="5" height="20"/>
+                                            <rect key="frame" x="113" y="0.0" width="5" height="20"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Gyc-sB-NPe">
-                                            <rect key="frame" x="127.5" y="0.0" width="90" height="20"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="88" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xCf-M7-Mjd">
-                                                    <rect key="frame" x="0.0" y="0.0" width="20.5" height="20"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="following" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c9N-CO-Zxn">
-                                                    <rect key="frame" x="28.5" y="0.0" width="61.5" height="20"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </stackView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IGI-9z-GDQ">
+                                            <rect key="frame" x="123" y="0.0" width="84" height="20"/>
+                                            <state key="normal" title="88 following"/>
+                                            <connections>
+                                                <action selector="followingButtonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="Ezy-R3-esg"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                 </stackView>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s6z-3b-cZ6">
@@ -173,8 +153,8 @@
             <connections>
                 <outlet property="avatarImageView" destination="Yvr-4X-Ekv" id="XWs-3o-vfd"/>
                 <outlet property="followButton" destination="Gcm-Ko-O4F" id="tGq-kM-BxS"/>
-                <outlet property="followersCountLabel" destination="utt-XX-NmF" id="F1d-yZ-Inx"/>
-                <outlet property="followingCountLabel" destination="xCf-M7-Mjd" id="lMz-t1-64j"/>
+                <outlet property="followersButton" destination="ONI-Id-82o" id="7Fz-OR-QWc"/>
+                <outlet property="followingButton" destination="IGI-9z-GDQ" id="NGq-e0-Mht"/>
                 <outlet property="loginLabel" destination="27v-Mt-Fg9" id="aoD-2c-jS2"/>
                 <outlet property="nameLabel" destination="zCI-vf-CZ3" id="CBP-qR-x9d"/>
             </connections>
