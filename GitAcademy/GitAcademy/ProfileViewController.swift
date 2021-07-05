@@ -75,7 +75,7 @@ private extension ProfileViewController {
     // TODO: Refactor to have one method for different cells
     private func repositoryCell(for indexPath: IndexPath) -> UITableViewCell {
         guard let cell = profileTableView.dequeueReusableCell(withIdentifier: String(describing: RepositoryCell.self), for: indexPath) as? RepositoryCell else { return UITableViewCell() }
-        cell.fillContent()
+        indexPath.row == 0 ? cell.fillRepositories() : cell.fillStarred()
         return cell
     }
 }
