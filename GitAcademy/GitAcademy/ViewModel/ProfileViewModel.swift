@@ -128,6 +128,10 @@ private extension ProfileViewModel {
     // TODO: Remove while is not neccesary
     func printRepositoriesDetails() {
         print("🟣🟣 Repositories Count: \(repositories.count)")
+        
+        for (index, repo) in repositories.enumerated() {
+            print("🟣\(index)🟣 Name: \(repo.name) 🟣 Stars: \(repo.stargazers_count)")
+        }
     }
     
     func presentProfileViewController() {
