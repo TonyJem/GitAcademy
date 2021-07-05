@@ -55,7 +55,13 @@ struct NetworkRequest {
                 else {
                     return nil
                 }
-                return urlComponents(path: "/users/\(username)/repos", queryItems: nil).url
+                // TODO: Implement Logic to go throught all pages and count all repositories
+                // WHY?: Getting only 80 repositories instead of 82 as shown in GitHub App ?
+                let queryItems = [
+                    URLQueryItem(name: "page", value: "1"),
+                    URLQueryItem(name: "per_page", value: "100")
+                ]
+                return urlComponents(path: "/users/\(username)/repos", queryItems: queryItems).url
             case .getUser:
                 return urlComponents(path: "/user", queryItems: nil).url
             case .signIn:
