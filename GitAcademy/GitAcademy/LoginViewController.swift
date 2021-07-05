@@ -5,7 +5,7 @@ class LoginViewController: UIViewController {
     
     private let profileViewController = ProfileViewController(nibName: "ProfileViewController", bundle: nil)
     
-    private var viewModel = LoginViewModel()
+    private var viewModel = ProfileViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()

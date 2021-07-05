@@ -1,7 +1,7 @@
 import AuthenticationServices
 
-class LoginViewModel: NSObject {
-    private var isShowingRepositoriesView = false
+class ProfileViewModel: NSObject {
+    // TODO: Create progress indicator
     private var isLoading = false
     
     // TODO: Remove repositories, while start using RepositoriesViewModel
@@ -32,7 +32,7 @@ class LoginViewModel: NSObject {
             networkRequest.start(responseType: String.self) { result in
                 switch result {
                 case .success:
-                    self.getUser()
+                    self.fetchUser()
                     print("🟢 getUser success!")
                 case .failure(let error):
                     print("🔴 Failed to exchange access code for tokens: \(error)")
@@ -59,8 +59,8 @@ class LoginViewModel: NSObject {
 }
 
 //MARK: - Private
-private extension LoginViewModel {
-    func getUser() {
+private extension ProfileViewModel {
+    func fetchUser() {
         isLoading = true
         
         NetworkRequest
@@ -74,11 +74,7 @@ private extension LoginViewModel {
                     DispatchQueue.main.async {
                         let user = networkResponse.object
                         print("🟣 Avatar_URL: \(user.avatar_url)")
-                        
-                        self?.isShowingRepositoriesView = true
-                        print("🟢 Start Loading repositorias...")
-                        
-                        self?.loadRepositories()
+                        self?.fetchRepositories()
                     }
                 case .failure(let error):
                     print("🔴 Failed to get user, or there is no valid/active session: \(error.localizedDescription)")
@@ -87,8 +83,7 @@ private extension LoginViewModel {
             }
     }
     
-    // TODO: Remove loadRepositories(), while start using RepositoriesViewModel
-    func loadRepositories() {
+    func fetchRepositories() {
         NetworkRequest
             .RequestType
             .getRepos
@@ -99,22 +94,12 @@ private extension LoginViewModel {
                     DispatchQueue.main.async {
                         self?.repositories = networkResponse.object
                         print("🟢🟢 Repositorias loaded with Success!")
-                        self?.printRepositoriasNames()
                         self?.presentProfileViewController()
                     }
                 case .failure(let error):
                     print("🔴 Failed to get the user's repositories: \(error)")
                 }
             }
-    }
-    
-    // TODO: Remove while not necessary for tests
-    func printRepositoriasNames() {
-        print("🟢🟢🟢 Start Printing repositorias...")
-        
-        for (index, repositoria) in repositories.enumerated() {
-            print("🟣 \(index) 👍 \(repositoria.id) Repositoria \(repositoria.name)")
-        }
     }
     
     func presentProfileViewController() {
@@ -125,7 +110,7 @@ private extension LoginViewModel {
 }
 
 //MARK: - AuthenticationServices
-extension LoginViewModel: ASWebAuthenticationPresentationContextProviding {
+extension ProfileViewModel: ASWebAuthenticationPresentationContextProviding {
     func presentationAnchor(for session: ASWebAuthenticationSession)
     -> ASPresentationAnchor {
         let window = UIApplication.shared.windows.first { $0.isKeyWindow }
