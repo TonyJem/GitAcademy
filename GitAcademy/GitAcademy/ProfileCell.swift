@@ -8,18 +8,6 @@ class ProfileCell: UITableViewCell {
     @IBOutlet private weak var followingCountLabel: UILabel!
     @IBOutlet private weak var followButton: UIButton!
     
-    // TODO: Remove method if not used
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-    
-    // TODO: Remove method if not used
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        // Configure the view for the selected state
-    }
-    
     @IBAction func followButtonAction(_ sender: UIButton) {
         print("🟢 followButton Did Tap")
     }

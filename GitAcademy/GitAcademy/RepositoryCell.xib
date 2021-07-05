@@ -21,17 +21,19 @@
                             <rect key="frame" x="20" y="15" width="40" height="40"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nA1-vc-yXP">
-                                    <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                    <rect key="frame" x="5" y="5" width="30" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="nA1-vc-yXP" secondAttribute="height" multiplier="1:1" id="LSr-aK-tsZ"/>
+                                        <constraint firstAttribute="width" constant="30" id="owi-4b-JhI"/>
+                                    </constraints>
                                 </imageView>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="40" id="3D2-sK-To4"/>
-                                <constraint firstItem="nA1-vc-yXP" firstAttribute="leading" secondItem="QUd-EG-ti9" secondAttribute="leading" id="3h2-fC-N4R"/>
-                                <constraint firstAttribute="trailing" secondItem="nA1-vc-yXP" secondAttribute="trailing" id="BmD-NN-qcd"/>
-                                <constraint firstItem="nA1-vc-yXP" firstAttribute="top" secondItem="QUd-EG-ti9" secondAttribute="top" id="c3P-84-iZr"/>
+                                <constraint firstItem="nA1-vc-yXP" firstAttribute="centerX" secondItem="QUd-EG-ti9" secondAttribute="centerX" id="cT5-ic-1Dx"/>
                                 <constraint firstAttribute="width" secondItem="QUd-EG-ti9" secondAttribute="height" multiplier="1:1" id="gBP-Wr-yGf"/>
-                                <constraint firstAttribute="bottom" secondItem="nA1-vc-yXP" secondAttribute="bottom" id="hY2-nv-YLu"/>
+                                <constraint firstItem="nA1-vc-yXP" firstAttribute="centerY" secondItem="QUd-EG-ti9" secondAttribute="centerY" id="t9I-eh-gn6"/>
                             </constraints>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repositories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zAQ-Qf-Iqf">
@@ -71,6 +73,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="countLabel" destination="ZI3-W4-dwN" id="nUo-c7-8iT"/>
+                <outlet property="iconContainerView" destination="QUd-EG-ti9" id="bNI-M0-1Hz"/>
                 <outlet property="iconImageView" destination="nA1-vc-yXP" id="U13-6E-LdI"/>
                 <outlet property="titleLabel" destination="zAQ-Qf-Iqf" id="PW1-KR-QaT"/>
             </connections>
