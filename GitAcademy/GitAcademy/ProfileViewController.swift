@@ -15,7 +15,6 @@ class ProfileViewController: UIViewController {
         
         profileTableView.backgroundColor = .systemGray5
         profileTableView.dataSource = self
-        profileTableView.delegate = self
         profileTableView.tableFooterView = UIView()
     }
 }
@@ -49,10 +48,6 @@ extension ProfileViewController: UITableViewDataSource {
             return UITableViewCell()
         }
     }
-}
-
-// TODO: Remove Delegate if not needed
-extension ProfileViewController: UITableViewDelegate {
 }
 
 private extension ProfileViewController {
