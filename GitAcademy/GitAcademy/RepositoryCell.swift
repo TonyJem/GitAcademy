@@ -22,6 +22,6 @@ class RepositoryCell: UITableViewCell {
     func fillContent() {
         iconImageView.image = UIImage(imageLiteralResourceName: "testAvatar")
         titleLabel.text = "Test Title"
-        countLabel.text = "00"
+        countLabel.text = "51"
     }
 }

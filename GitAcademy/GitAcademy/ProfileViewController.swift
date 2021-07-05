@@ -6,6 +6,8 @@ class ProfileViewController: UIViewController {
     
     private let numberOfSections = 2
     
+    private var profile = Core.profile
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -68,7 +70,7 @@ private extension ProfileViewController {
     // TODO: Refactor to have one method for different cells
     private func profileCell(for indexPath: IndexPath) -> UITableViewCell {
         guard let cell = profileTableView.dequeueReusableCell(withIdentifier: String(describing: ProfileCell.self), for: indexPath) as? ProfileCell else { return UITableViewCell() }
-        cell.fillContent()
+        cell.fillContent(with: profile)
         return cell
     }
     

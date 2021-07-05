@@ -24,12 +24,12 @@ class ProfileCell: UITableViewCell {
         print("🟢 followButton Did Tap")
     }
     
-    func fillContent() {
+    func fillContent(with profile: Profile) {
         avatarImageView.image = UIImage(imageLiteralResourceName: "testAvatar")
-        nameLabel.text = "Test Name"
-        usernameLabel.text = "Test UserName"
-        followersCountLabel.text = "99"
-        followingCountLabel.text = "55"
-        followButton.isHidden = true
+        nameLabel.text = profile.user.name
+        usernameLabel.text = profile.user.login
+        followersCountLabel.text = String(profile.user.followers)
+        followingCountLabel.text = String(profile.user.following)
+//        followButton.isHidden = true
     }
 }

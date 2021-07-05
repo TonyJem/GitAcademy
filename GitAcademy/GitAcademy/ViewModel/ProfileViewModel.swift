@@ -4,7 +4,6 @@ class ProfileViewModel: NSObject {
     // TODO: Create progress indicator
     private var isLoading = false
     
-    private var profile: Profile?
     private var user: User?
     private var repositories: [Repository] = []
     private var starredRepositories: [Repository] = []
@@ -104,6 +103,8 @@ private extension ProfileViewModel {
         print("🟣 Following: \(user.following)")
         
         print("🟣 Public Repos: \(user.public_repos)")
+        
+        Core.profile.user = user
     }
     
     func fetchRepositories() {
@@ -119,7 +120,6 @@ private extension ProfileViewModel {
                         self.repositories = networkResponse.object
                         print("🟢🟢 fetchRepositories success !")
                         self.printRepositoriesDetails()
-                        self.createProfile()
                         self.presentProfileViewController()
                     }
                 case .failure(let error):
@@ -136,15 +136,12 @@ private extension ProfileViewModel {
         print("🟣🟣 StarredRepositories Count: \(starredRepositories.count)")
         
         // WHY?: Should count only user's starred, or starred in where are included other stargazers also ?
-        for (index, repo) in starredRepositories.enumerated() {
-            print("🟣\(index)🟣 Name: \(repo.name) 🟣 Stars: \(repo.stargazers_count)")
-        }
-    }
-    
-    func createProfile() {
-        if let user = user {
-            profile = Profile(user: user, repositories: repositories, starredRepositories: starredRepositories)
-        }
+//        for (index, repo) in starredRepositories.enumerated() {
+//            print("🟣\(index)🟣 Name: \(repo.name) 🟣 Stars: \(repo.stargazers_count)")
+//        }
+        
+        Core.profile.repositories = repositories
+        Core.profile.starredRepositories = starredRepositories
     }
     
     func presentProfileViewController() {
