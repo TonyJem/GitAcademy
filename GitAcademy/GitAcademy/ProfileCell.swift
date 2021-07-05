@@ -1,6 +1,7 @@
 import UIKit
 
 class ProfileCell: UITableViewCell {
+    @IBOutlet private weak var contanerView: UIView!
     @IBOutlet private weak var avatarImageView: UIImageView!
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var loginLabel: UILabel!
@@ -8,7 +9,14 @@ class ProfileCell: UITableViewCell {
     @IBOutlet private weak var followingButton: UIButton!
     @IBOutlet private weak var followButton: UIButton!
     
-//    MARK: - Actions
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        contanerView.roundCorners(radius: 10)
+        contanerView.setShadow()
+    }
+    
+    //    MARK: - Actions
     @IBAction func followersButonAction(_ sender: UIButton) {
         print("🟢 Followers Button Did Tap")
     }

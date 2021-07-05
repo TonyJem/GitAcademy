@@ -169,8 +169,8 @@
 		3AC7F9382678D63300561DBB /* GitAcademyTests */ = {
 			isa = PBXGroup;
 			children = (
-				3AC7F9392678D63300561DBB /* GitAcademyTests.swift */,
 				3AC7F93B2678D63300561DBB /* Info.plist */,
+				3AC7F9392678D63300561DBB /* GitAcademyTests.swift */,
 			);
 			path = GitAcademyTests;
 			sourceTree = "<group>";
