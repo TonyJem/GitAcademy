@@ -49,12 +49,6 @@ extension ProfileViewController: UITableViewDataSource {
             return UITableViewCell()
         }
     }
-    
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        // TODO: Magic number
-        return 14.0
-    }
-
 }
 
 // TODO: Remove Delegate if not needed
