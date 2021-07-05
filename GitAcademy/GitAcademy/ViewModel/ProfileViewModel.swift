@@ -72,9 +72,9 @@ private extension ProfileViewModel {
                 switch result {
                 case .success(let networkResponse):
                     DispatchQueue.main.async {
-                        self.user = networkResponse.object
                         print("🟢 fetchUser success!")
-                        self.printUserDetails()
+                        Core.profile.user = networkResponse.object
+                        
                         // TODO: Remove getting repositories list to independent thread
                         self.fetchRepositories()
                     }
@@ -83,29 +83,6 @@ private extension ProfileViewModel {
                 }
                 self.isLoading = false
             }
-    }
-    
-    // TODO: Remove while is not neccesary
-    func printUserDetails() {
-        guard let user = user  else { return }
-        print("🟣 Avatar_URL: \(user.avatar_url)")
-        
-        if let name = user.name {
-            print("🟣 Name: \(name)")
-        } else {
-            print("🟣 Name: ''")
-        }
-        
-        print("🟣 Username: \(user.login)")
-        
-        print("🟣 Followers: \(user.followers)")
-        
-        print("🟣 Following: \(user.following)")
-        
-        print("🟣 Public Repos: \(user.public_repos)")
-        
-        Core.profile.user = user
-        print("🟡 Login from Core: \(Core.profile.user.login)")
     }
     
     func fetchRepositories() {

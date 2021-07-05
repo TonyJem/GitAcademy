@@ -25,17 +25,6 @@ extension ProfileViewController: UITableViewDataSource {
         return numberOfSections
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        switch section {
-        case 0:
-            return "Profile"
-        case 1:
-            return "Repositories"
-        default:
-            return nil
-        }
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
