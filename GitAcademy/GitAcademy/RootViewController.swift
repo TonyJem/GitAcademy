@@ -23,7 +23,7 @@ class RootViewController: UIViewController {
     }
     
     func showLoginScreen() {
-        let new = UINavigationController(rootViewController: LoginViewController())
+        let new = UINavigationController(rootViewController: RootLoginViewController())
         
         addChild(new)
         new.view.frame = view.bounds
@@ -43,7 +43,7 @@ class RootViewController: UIViewController {
     }
     
     func switchToLogout() {
-        let loginViewController = LoginViewController()
+        let loginViewController = RootLoginViewController()
         let logoutScreen = UINavigationController(rootViewController: loginViewController)
         animateDismissTransition(to: logoutScreen)
     }
