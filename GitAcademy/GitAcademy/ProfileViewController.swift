@@ -26,10 +26,7 @@ class ProfileViewController: UIViewController {
     }
     
     @objc private func logout() {
-        // TODO: Clear the user session (example only, not for the production)
-        UserDefaults.standard.set(false, forKey: "LOGGED_IN")
-        // TODO: Navigate to login screen
-        SceneDelegate.shared.rootViewController.switchToLogout()
+        SceneDelegate.shared.rootViewController.switchToLoginScreen()
     }
 }
 

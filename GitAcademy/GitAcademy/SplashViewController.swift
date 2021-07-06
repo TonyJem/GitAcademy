@@ -32,12 +32,10 @@ class SplashViewController: UIViewController {
             // to store the user session or any other sensitive information;
             // We only use it to keep it here before implementing KeyChain.
             
-            if UserDefaults.standard.bool(forKey: "LOGGED_IN") {
-                // TODO: navigate to protected page
+            if Core.accountManager.userIsLoggedIn {
                 SceneDelegate.shared.rootViewController.switchToMainScreen()
             } else {
-                // TODO: navigate to login screen
-                SceneDelegate.shared.rootViewController.switchToLogout()
+                SceneDelegate.shared.rootViewController.switchToLoginScreen()
             }
         }
     }
