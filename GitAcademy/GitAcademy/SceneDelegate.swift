@@ -33,6 +33,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 }
 
 // TODO: Change ForceUnwraping with "!" to something more acceptable
+// Force-unwrap is totally reasonable here as long as we don’t change the RootViewController.
+// If we do suddenly change it — crashing the app is probably the best way to go anyway.
 extension SceneDelegate {
     static var shared: SceneDelegate {
         return UIApplication.shared.connectedScenes.first!.delegate as! SceneDelegate
