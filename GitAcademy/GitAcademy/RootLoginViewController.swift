@@ -14,8 +14,9 @@ class RootLoginViewController: UIViewController {
     }
     
     @objc private func login() {
-          // TODO: store the user session (example only, not for the production)
-          UserDefaults.standard.set(true, forKey: "LOGGED_IN")
-          // TODO: navigate to the Main Screen
-       }
+        // TODO: store the user session (example only, not for the production)
+        UserDefaults.standard.set(true, forKey: "LOGGED_IN")
+        // TODO: navigate to the Main Screen
+        SceneDelegate.shared.rootViewController.switchToMainScreen()
+    }
 }
