@@ -50,7 +50,6 @@ struct AccountManager {
     func registerLogOut() {
         userDefaults.set(false, forKey: UserDefaultsKey.loggedInState)
     }
-    
 }
 
 // MARK: - keyChain Methods

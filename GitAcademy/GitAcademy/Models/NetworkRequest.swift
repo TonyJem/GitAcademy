@@ -50,7 +50,7 @@ struct NetworkRequest {
                 return urlComponents(host: "github.com", path: "/login/oauth/access_token", queryItems: queryItems).url
             case .getRepos:
                 guard
-                    let username = NetworkRequest.username,
+                    let username = Core.accountManager.username,
                     !username.isEmpty
                 else {
                     return nil
@@ -89,6 +89,7 @@ struct NetworkRequest {
     typealias NetworkResult<T: Decodable> = (response: HTTPURLResponse, object: T)
     
     // MARK: - Private Constants
+    // TODO: Decide how we can hide this info ?
     static let callbackURLScheme = "authhub"
     static let clientID = "Iv1.8f06ae8264fe2a88"
     static let clientSecret = "fc3ad5b268c0b3a121b0b16b07c8a1709beaecd5"
@@ -98,17 +99,18 @@ struct NetworkRequest {
     var url: URL
     
     // MARK: Static Methods
+    // TODO: Do we need this method if yes, rename it to "LogOut" or similar to be consistent
     static func signOut() {
-        Self.accessToken = ""
-        Self.refreshToken = ""
-        Self.username = ""
+        Core.accountManager.accessToken = ""
+        Core.accountManager.refreshToken = ""
+        Core.accountManager.username = ""
     }
     
     // MARK: - Methods
     func start<T: Decodable>(responseType: T.Type, completionHandler: @escaping ((Result<NetworkResult<T>, Error>) -> Void)) {
         var request = URLRequest(url: url)
         request.httpMethod = method.rawValue
-        if let accessToken = NetworkRequest.accessToken {
+        if let accessToken = Core.accountManager.accessToken {
             request.setValue("token \(accessToken)", forHTTPHeaderField: "Authorization")
         }
         let session = URLSession.shared.dataTask(with: request) { data, response, error in
@@ -139,16 +141,15 @@ struct NetworkRequest {
                     }
                 }
                 DispatchQueue.main.async {
-                    NetworkRequest.accessToken = dictionary["access_token"]
-                    NetworkRequest.refreshToken = dictionary["refresh_token"]
-                    // swiftlint:disable:next force_cast
+                    Core.accountManager.accessToken = dictionary["access_token"]
+                    Core.accountManager.refreshToken = dictionary["refresh_token"]
                     completionHandler(.success((response, "Success" as! T)))
                 }
                 return
             } else if let object = try? JSONDecoder().decode(T.self, from: data) {
                 DispatchQueue.main.async {
                     if let user = object as? User {
-                        NetworkRequest.username = user.login
+                        Core.accountManager.username = user.login
                     }
                     completionHandler(.success((response, object)))
                 }
