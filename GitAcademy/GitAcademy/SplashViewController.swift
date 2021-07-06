@@ -33,9 +33,9 @@ class SplashViewController: UIViewController {
             // We only use it to keep it here before implementing KeyChain.
             
             if Core.accountManager.userIsLoggedIn {
-                SceneDelegate.shared.rootViewController.switchToMainScreen()
+                SceneDelegate.shared.rootViewController.navigateToMainScreen()
             } else {
-                SceneDelegate.shared.rootViewController.switchToLoginScreen()
+                SceneDelegate.shared.rootViewController.navigateToLoginScreen()
             }
         }
     }

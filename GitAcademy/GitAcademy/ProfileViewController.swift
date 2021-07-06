@@ -26,7 +26,7 @@ class ProfileViewController: UIViewController {
     }
     
     @objc private func logout() {
-        SceneDelegate.shared.rootViewController.switchToLoginScreen()
+        SceneDelegate.shared.rootViewController.navigateToLoginScreen()
     }
 }
 

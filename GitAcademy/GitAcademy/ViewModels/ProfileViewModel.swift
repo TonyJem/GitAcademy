@@ -1,12 +1,12 @@
+// WHY?: Should we count only user's starred, or starred in where are included other stargazers also ?
 import AuthenticationServices
 
 class ProfileViewModel: NSObject {
     // TODO: Create progress indicator
     private var isLoading = false
     
-    private var user: User?
-    private var repositories: [Repository] = []
-    private var starredRepositories: [Repository] = []
+    // TODO: May be move profile to init, to start it with data already fetched
+    private var profile = Profile(user: User(avatar_url: "", login: "CoreLog", name: "CoreName", followers: 99, following: 101, public_repos: 199), repositories: [], starredRepositories: [])
     
     func login() {
         guard let signInURL = NetworkRequest.RequestType.signIn.networkRequest()?.url else {
@@ -73,7 +73,7 @@ private extension ProfileViewModel {
                 case .success(let networkResponse):
                     DispatchQueue.main.async {
                         print("🟢 fetchUser success!")
-                        Core.profile.user = networkResponse.object
+                        self.profile.user = networkResponse.object
                         
                         // TODO: Remove getting repositories list to independent thread
                         self.fetchRepositories()
@@ -95,36 +95,16 @@ private extension ProfileViewModel {
                 switch result {
                 case .success(let networkResponse):
                     DispatchQueue.main.async {
-                        self.repositories = networkResponse.object
                         print("🟢🟢 fetchRepositories success !")
-                        self.printRepositoriesDetails()
-                        self.navigateToMainScreen()
+                        self.profile.repositories = networkResponse.object
+                        self.profile.starredRepositories = networkResponse.object.filter { $0.stargazers_count > 0 }
+                        Core.accountManager.profile = self.profile
+                        SceneDelegate.shared.rootViewController.navigateToMainScreen()
                     }
                 case .failure(let error):
                     print("🔴 Failed to get the user's repositories: \(error)")
                 }
             }
-    }
-    
-    // TODO: Remove while is not neccesary
-    func printRepositoriesDetails() {
-        print("🟣🟣 Repositories Count: \(repositories.count)")
-        
-        starredRepositories = repositories.filter { $0.stargazers_count > 0 }
-        print("🟣🟣 StarredRepositories Count: \(starredRepositories.count)")
-        
-        // WHY?: Should count only user's starred, or starred in where are included other stargazers also ?
-//        for (index, repo) in starredRepositories.enumerated() {
-//            print("🟣\(index)🟣 Name: \(repo.name) 🟣 Stars: \(repo.stargazers_count)")
-//        }
-        
-        Core.profile.repositories = repositories
-        Core.profile.starredRepositories = starredRepositories
-        Core.accountManager.profile = Core.profile
-    }
-    
-    func navigateToMainScreen() {
-        SceneDelegate.shared.rootViewController.switchToMainScreen()
     }
 }
 

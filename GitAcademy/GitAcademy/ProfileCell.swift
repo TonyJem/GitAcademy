@@ -43,6 +43,7 @@ class ProfileCell: UITableViewCell {
     
     //    MARK: - Methods
     func fillContent() {
+//        TODO: Unwrapp prifile in TableviewController and then provide to cells only for them neccessary stuff
         guard let profile = Core.accountManager.profile else { return }
         let user = profile.user
         avatarImageView.downloaded(from: user.avatar_url)
