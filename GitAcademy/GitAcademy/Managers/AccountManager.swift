@@ -4,6 +4,9 @@ struct AccountManager {
     
     private enum UserDefaultsKey {
         static let loggedInState = "LOGGED_IN"
+        static let username = "username"
+        static let accessToken = "accessToken"
+        static let refreshToken = "refreshToken"
     }
     
     private var keyChain = KeychainSwift()
@@ -13,6 +16,33 @@ struct AccountManager {
         return userDefaults.bool(forKey: UserDefaultsKey.loggedInState)
     }
     
+    var username: String? {
+        get {
+            userDefaults.string(forKey: UserDefaultsKey.username)
+        }
+        set {
+            userDefaults.setValue(newValue, forKey: UserDefaultsKey.username)
+        }
+    }
+    
+    var accessToken: String? {
+        get {
+            userDefaults.string(forKey: UserDefaultsKey.accessToken)
+        }
+        set {
+            userDefaults.setValue(newValue, forKey: UserDefaultsKey.accessToken)
+        }
+    }
+    
+    var refreshToken: String? {
+        get {
+            userDefaults.string(forKey: UserDefaultsKey.refreshToken)
+        }
+        set {
+            userDefaults.setValue(newValue, forKey: UserDefaultsKey.refreshToken)
+        }
+    }
+    
     func registerLogIn() {
         userDefaults.set(true, forKey: UserDefaultsKey.loggedInState)
     }
@@ -20,6 +50,7 @@ struct AccountManager {
     func registerLogOut() {
         userDefaults.set(false, forKey: UserDefaultsKey.loggedInState)
     }
+    
 }
 
 // MARK: - keyChain Methods
