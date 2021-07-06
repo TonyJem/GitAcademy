@@ -122,13 +122,6 @@ private extension ProfileViewModel {
         Core.profile.starredRepositories = starredRepositories
     }
     
-//    TODO: Remove this function and all realated to it stuff:
-    func presentProfileViewController() {
-        if let loginViewContoller = UIApplication.topMostViewController() as? LoginViewController {
-            loginViewContoller.presentProfileViewController()
-        }
-    }
-    
     func navigateToMainScreen() {
         // TODO: store the user session (example only, not for the production)
         UserDefaults.standard.set(true, forKey: "LOGGED_IN")
