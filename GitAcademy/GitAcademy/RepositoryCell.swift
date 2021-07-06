@@ -22,13 +22,15 @@ class RepositoryCell: UITableViewCell {
         iconContainerView.backgroundColor = .systemPurple
         iconImageView.image = #imageLiteral(resourceName: "repositories")
         titleLabel.text = "Repositories"
-        countLabel.text = String(Core.profile.repositories.count)
+        guard let profile = Core.accountManager.profile else { return }
+        countLabel.text = String(profile.repositories.count)
     }
     
     func fillStarred() {
         iconContainerView.backgroundColor = .systemYellow
         iconImageView.image = #imageLiteral(resourceName: "starred")
         titleLabel.text = "Starred"
-        countLabel.text = String(Core.profile.starredRepositories.count)
+        guard let profile = Core.accountManager.profile else { return }
+        countLabel.text = String(profile.starredRepositories.count)
     }
 }

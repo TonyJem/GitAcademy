@@ -120,6 +120,7 @@ private extension ProfileViewModel {
         
         Core.profile.repositories = repositories
         Core.profile.starredRepositories = starredRepositories
+        Core.accountManager.profile = Core.profile
     }
     
     func navigateToMainScreen() {

@@ -1,5 +1,5 @@
 import UIKit
-
+// TODO: Insert Default Avatar image to show it while real image is loading
 // TODO: Create Parent cell for ProfileCell and RepositoryCell and iherit common stuff from there
 class ProfileCell: UITableViewCell {
     @IBOutlet private weak var containerView: UIView!
@@ -43,8 +43,8 @@ class ProfileCell: UITableViewCell {
     
     //    MARK: - Methods
     func fillContent() {
-        // TODO: Find better sollution how to inject User data without using Core
-        let user = Core.profile.user
+        guard let profile = Core.accountManager.profile else { return }
+        let user = profile.user
         avatarImageView.downloaded(from: user.avatar_url)
         nameLabel.isHidden = user.name == nil
         nameLabel.text = user.name

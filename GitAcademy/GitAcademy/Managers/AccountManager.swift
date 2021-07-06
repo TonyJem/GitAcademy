@@ -3,10 +3,11 @@ import Foundation
 struct AccountManager {
     
     private enum UserDefaultsKey {
-        static let loggedInState = "LOGGED_IN"
+        static let loggedInState = "loggedIn"
         static let username = "username"
         static let accessToken = "accessToken"
         static let refreshToken = "refreshToken"
+        static let profile = "profile"
     }
     
     private var keyChain = KeychainSwift()
@@ -42,6 +43,20 @@ struct AccountManager {
         set {
             let token = newValue != nil ? newValue! : ""
             toKeyChain(token, for: UserDefaultsKey.refreshToken)
+        }
+    }
+    
+    var profile: Profile? {
+        get {
+            guard let profile = userDefaults.object(forKey: UserDefaultsKey.profile) as? Data else {
+                return nil
+            }
+            return try? JSONDecoder().decode(Profile.self, from: profile)
+        } set {
+            print("Set user login 🟢 \(String(describing: newValue?.user.login))")
+            let profile = try? JSONEncoder().encode(newValue)
+            print("🟢 Profile DATA:\(String(describing: profile))")
+            userDefaults.set(profile, forKey: UserDefaultsKey.profile)
         }
     }
     
