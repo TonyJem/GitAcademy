@@ -35,9 +35,6 @@
                                         <state key="normal" title="Login">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
-                                        <connections>
-                                            <action selector="loginButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a5D-Zf-PeD"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -55,9 +52,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="bwS-i5-daa"/>
-                    <connections>
-                        <outlet property="loginButton" destination="vE1-cA-j0e" id="tus-MN-EU9"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -73,9 +67,6 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="a8w-yX-mzw"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TVd-4i-u7D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
