@@ -2,6 +2,7 @@ import UIKit
 
 class RootViewController: UIViewController {
     
+    private let loginViewController = LoginViewController(nibName: "LoginViewController", bundle: nil)
     private var current: UIViewController
     
     init() {
@@ -23,7 +24,7 @@ class RootViewController: UIViewController {
     }
     
     func showLoginScreen() {
-        let new = UINavigationController(rootViewController: RootLoginViewController())
+        let new = UINavigationController(rootViewController: loginViewController)
         
         addChild(new)
         new.view.frame = view.bounds
@@ -43,7 +44,6 @@ class RootViewController: UIViewController {
     }
     
     func switchToLogout() {
-        let loginViewController = RootLoginViewController()
         let logoutScreen = UINavigationController(rootViewController: loginViewController)
         animateDismissTransition(to: logoutScreen)
     }
@@ -58,7 +58,8 @@ private extension RootViewController {
         
         transition(from: current, to: new, duration: 1,
                    options: [.transitionCrossDissolve, .curveEaseOut],
-                   animations: { }) { completed in
+                   animations: { }
+        ) { completed in
             self.current.removeFromParent()
             new.didMove(toParent: self)
             self.current = new
@@ -72,7 +73,8 @@ private extension RootViewController {
         
         transition(from: current, to: new, duration: 1,
                    options: [], animations: {
-                    new.view.frame = self.view.bounds }) { completed in
+                    new.view.frame = self.view.bounds }
+        ) { completed in
             self.current.removeFromParent()
             new.didMove(toParent: self)
             self.current = new

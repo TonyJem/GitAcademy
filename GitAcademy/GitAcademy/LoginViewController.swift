@@ -19,6 +19,13 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginButtonAction(_ sender: UIButton) {
         print("🟢 LoginButton Did Tap")
-        viewModel.login()
+        
+        // TODO: store the user session (example only, not for the production)
+        UserDefaults.standard.set(true, forKey: "LOGGED_IN")
+        // TODO: navigate to the Main Screen
+        SceneDelegate.shared.rootViewController.switchToMainScreen()
+        
+        // TODO: Enable normal login functionality
+        // viewModel.login()
     }
 }
