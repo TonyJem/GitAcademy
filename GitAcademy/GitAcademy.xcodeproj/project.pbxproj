@@ -168,12 +168,12 @@
 			path = Delegate;
 			sourceTree = "<group>";
 		};
-		3A3C837F269485AD004E87D0 /* Resources */ = {
+		3A3C837F269485AD004E87D0 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
 				3A3C8380269485DF004E87D0 /* SwiftKeychain.swift */,
 			);
-			path = Resources;
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		3A3C838826948932004E87D0 /* Managers */ = {
@@ -225,7 +225,7 @@
 				3A13DD51269187F2001ACB49 /* ViewModels */,
 				3A42287726919AD500B54EF7 /* ViewControllers */,
 				3A3C836E26946A0E004E87D0 /* Delegate */,
-				3A3C837F269485AD004E87D0 /* Resources */,
+				3A3C837F269485AD004E87D0 /* Helpers */,
 				3AC7F92B2678D63300561DBB /* Assets.xcassets */,
 				3AC7F92D2678D63300561DBB /* LaunchScreen.storyboard */,
 				3AC7F9302678D63300561DBB /* Info.plist */,

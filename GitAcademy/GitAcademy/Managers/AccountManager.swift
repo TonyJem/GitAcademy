@@ -31,7 +31,10 @@ struct AccountManager {
             fromKeyChain(UserDefaultsKey.accessToken)
         }
         set {
-            let token = newValue != nil ? newValue! : ""
+            var token = ""
+            if let unwrappedValue = newValue {
+                token = unwrappedValue
+            }
             toKeyChain(token, for: UserDefaultsKey.accessToken)
         }
     }
