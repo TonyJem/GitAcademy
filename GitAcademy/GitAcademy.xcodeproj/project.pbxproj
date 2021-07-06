@@ -114,21 +114,67 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3A13DD51269187F2001ACB49 /* ViewModel */ = {
+		3A13DD51269187F2001ACB49 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
 				3A13DD4C269187DB001ACB49 /* ProfileViewModel.swift */,
 			);
-			path = ViewModel;
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		3A3C836A26946962004E87D0 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				3A3C833E26942E20004E87D0 /* LoginViewController.xib */,
+				3AC7F9232678D63100561DBB /* LoginViewController.swift */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		3A3C836B26946975004E87D0 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				3ADB57DB2691E75500354A8F /* ProfileViewController.xib */,
+				3ADB57DA2691E75500354A8F /* ProfileViewController.swift */,
+				3ADB57BA2691D93E00354A8F /* Cells */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
+		3A3C836C269469B5004E87D0 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				3ADB57BB2691D99100354A8F /* ProfileCell.xib */,
+				3ADB57CD2691E69200354A8F /* ProfileCell.swift */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
+		3A3C836D269469DB004E87D0 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				3ADB57C02691E40100354A8F /* RepositoryCell.xib */,
+				3ADB57D22691E6B800354A8F /* RepositoryCell.swift */,
+			);
+			name = Repository;
+			sourceTree = "<group>";
+		};
+		3A3C836E26946A0E004E87D0 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				3AC7F9212678D63100561DBB /* SceneDelegate.swift */,
+				3AC7F91F2678D63100561DBB /* AppDelegate.swift */,
+			);
+			path = Delegate;
 			sourceTree = "<group>";
 		};
 		3A42287726919AD500B54EF7 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				3AC7F9232678D63100561DBB /* LoginViewController.swift */,
-				3A3C833E26942E20004E87D0 /* LoginViewController.xib */,
-				3A3C834C26943824004E87D0 /* RootViewController.swift */,
 				3A3C835226943D2A004E87D0 /* SplashViewController.swift */,
+				3A3C834C26943824004E87D0 /* RootViewController.swift */,
+				3A3C836A26946962004E87D0 /* Login */,
+				3A3C836B26946975004E87D0 /* Profile */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -158,12 +204,10 @@
 			children = (
 				3A3C831E2692EFB7004E87D0 /* Core.swift */,
 				3AE8BB502691BC20005801AD /* Extensions */,
-				3A13DD51269187F2001ACB49 /* ViewModel */,
-				3ADA377C269180DF0009D500 /* Model */,
+				3A13DD51269187F2001ACB49 /* ViewModels */,
+				3ADA377C269180DF0009D500 /* Models */,
 				3A42287726919AD500B54EF7 /* ViewControllers */,
-				3ADB57BA2691D93E00354A8F /* Profile */,
-				3AC7F9212678D63100561DBB /* SceneDelegate.swift */,
-				3AC7F91F2678D63100561DBB /* AppDelegate.swift */,
+				3A3C836E26946A0E004E87D0 /* Delegate */,
 				3AC7F92B2678D63300561DBB /* Assets.xcassets */,
 				3AC7F92D2678D63300561DBB /* LaunchScreen.storyboard */,
 				3AC7F9302678D63300561DBB /* Info.plist */,
@@ -190,7 +234,7 @@
 			path = GitAcademyUITests;
 			sourceTree = "<group>";
 		};
-		3ADA377C269180DF0009D500 /* Model */ = {
+		3ADA377C269180DF0009D500 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				3ADA3768269180860009D500 /* NetworkRequest.swift */,
@@ -199,20 +243,16 @@
 				3ADA3777269180BD0009D500 /* User.swift */,
 				3A3C83192692E68D004E87D0 /* Profile.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
-		3ADB57BA2691D93E00354A8F /* Profile */ = {
+		3ADB57BA2691D93E00354A8F /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				3ADB57BB2691D99100354A8F /* ProfileCell.xib */,
-				3ADB57CD2691E69200354A8F /* ProfileCell.swift */,
-				3ADB57C02691E40100354A8F /* RepositoryCell.xib */,
-				3ADB57D22691E6B800354A8F /* RepositoryCell.swift */,
-				3ADB57DB2691E75500354A8F /* ProfileViewController.xib */,
-				3ADB57DA2691E75500354A8F /* ProfileViewController.swift */,
+				3A3C836C269469B5004E87D0 /* Profile */,
+				3A3C836D269469DB004E87D0 /* Repository */,
 			);
-			name = Profile;
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		3AE8BB502691BC20005801AD /* Extensions */ = {
