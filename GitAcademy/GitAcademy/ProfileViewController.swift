@@ -16,6 +16,20 @@ class ProfileViewController: UIViewController {
         profileTableView.backgroundColor = .systemGray5
         profileTableView.dataSource = self
         profileTableView.tableFooterView = UIView()
+        
+        title = "Main Screen"
+        // TODO: Make sure to have a "Log Out" button only on "Main Screen", on other screens should be regula "Back" button
+        let logoutButton = UIBarButtonItem(
+            title: "Log Out", style: .plain,
+            target: self, action: #selector(logout))
+        navigationItem.setLeftBarButton(logoutButton, animated: true)
+    }
+    
+    @objc private func logout() {
+        // TODO: Clear the user session (example only, not for the production)
+        UserDefaults.standard.set(false, forKey: "LOGGED_IN")
+        // TODO: Navigate to login screen
+        SceneDelegate.shared.rootViewController.switchToLogout()
     }
 }
 

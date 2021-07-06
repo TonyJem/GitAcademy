@@ -3,6 +3,7 @@ import UIKit
 class RootViewController: UIViewController {
     
     private let loginViewController = LoginViewController(nibName: "LoginViewController", bundle: nil)
+    
     private var current: UIViewController
     
     init() {
@@ -38,8 +39,8 @@ class RootViewController: UIViewController {
     }
     
     func switchToMainScreen() {
-        let mainViewController = MainViewController()
-        let mainScreen = UINavigationController(rootViewController: mainViewController)
+        let profileViewController = ProfileViewController(nibName: "ProfileViewController", bundle: nil)
+        let mainScreen = UINavigationController(rootViewController: profileViewController)
         animateFadeTransition(to: mainScreen)
     }
     
