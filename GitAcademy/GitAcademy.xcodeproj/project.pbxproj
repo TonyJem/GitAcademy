@@ -16,6 +16,7 @@
 		3A3C834D26943824004E87D0 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3C834C26943824004E87D0 /* RootViewController.swift */; };
 		3A3C835326943D2A004E87D0 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3C835226943D2A004E87D0 /* SplashViewController.swift */; };
 		3A3C8381269485DF004E87D0 /* SwiftKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3C8380269485DF004E87D0 /* SwiftKeychain.swift */; };
+		3A3C838A2694895F004E87D0 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3C83892694895F004E87D0 /* UserDefaultsManager.swift */; };
 		3AC7F9202678D63100561DBB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC7F91F2678D63100561DBB /* AppDelegate.swift */; };
 		3AC7F9222678D63100561DBB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC7F9212678D63100561DBB /* SceneDelegate.swift */; };
 		3AC7F9242678D63100561DBB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC7F9232678D63100561DBB /* LoginViewController.swift */; };
@@ -63,6 +64,7 @@
 		3A3C834C26943824004E87D0 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		3A3C835226943D2A004E87D0 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		3A3C8380269485DF004E87D0 /* SwiftKeychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftKeychain.swift; sourceTree = "<group>"; };
+		3A3C83892694895F004E87D0 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		3AC7F91C2678D63100561DBB /* GitAcademy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitAcademy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AC7F91F2678D63100561DBB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3AC7F9212678D63100561DBB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -176,6 +178,14 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		3A3C838826948932004E87D0 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				3A3C83892694895F004E87D0 /* UserDefaultsManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		3A42287726919AD500B54EF7 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -212,8 +222,9 @@
 			children = (
 				3A3C831E2692EFB7004E87D0 /* Core.swift */,
 				3AE8BB502691BC20005801AD /* Extensions */,
-				3A13DD51269187F2001ACB49 /* ViewModels */,
+				3A3C838826948932004E87D0 /* Managers */,
 				3ADA377C269180DF0009D500 /* Models */,
+				3A13DD51269187F2001ACB49 /* ViewModels */,
 				3A42287726919AD500B54EF7 /* ViewControllers */,
 				3A3C836E26946A0E004E87D0 /* Delegate */,
 				3A3C837F269485AD004E87D0 /* Resources */,
@@ -412,6 +423,7 @@
 				3ADA3773269180AD0009D500 /* Repository.swift in Sources */,
 				3A3C831F2692EFB7004E87D0 /* Core.swift in Sources */,
 				3A3C831A2692E68D004E87D0 /* Profile.swift in Sources */,
+				3A3C838A2694895F004E87D0 /* UserDefaultsManager.swift in Sources */,
 				3AC7F9242678D63100561DBB /* LoginViewController.swift in Sources */,
 				3AC7F9202678D63100561DBB /* AppDelegate.swift in Sources */,
 				3A3C83272692FC57004E87D0 /* UIImageView.swift in Sources */,
