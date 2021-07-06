@@ -24,7 +24,7 @@ class SplashViewController: UIViewController {
     private func makeServiceCall() {
         activityIndicator.startAnimating()
         
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(2)) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(1)) {
             self.activityIndicator.stopAnimating()
             
             // TODO: Use KeyChain instead of UserDefaults

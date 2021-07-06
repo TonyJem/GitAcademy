@@ -56,7 +56,7 @@ private extension RootViewController {
         current.willMove(toParent: nil)
         addChild(new)
         
-        transition(from: current, to: new, duration: 2,
+        transition(from: current, to: new, duration: 1,
                    options: [.transitionCrossDissolve, .curveEaseOut],
                    animations: { }) { completed in
             self.current.removeFromParent()
@@ -70,7 +70,7 @@ private extension RootViewController {
         current.willMove(toParent: nil)
         addChild(new)
         
-        transition(from: current, to: new, duration: 2,
+        transition(from: current, to: new, duration: 1,
                    options: [], animations: {
                     new.view.frame = self.view.bounds }) { completed in
             self.current.removeFromParent()
