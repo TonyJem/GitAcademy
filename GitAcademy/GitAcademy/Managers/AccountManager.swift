@@ -3,28 +3,24 @@ import Foundation
 struct AccountManager {
     
     private enum UserDefaultsKey {
-        static let variable1 = "Key1"
-        static let variable2 = "Key2"
-        static let variable3 = "Key3"
+        static let loggedInState = "LOGGED_IN"
     }
     
     private var keyChain = KeychainSwift()
     private var userDefaults = UserDefaults.standard
     
     var userIsLoggedIn: Bool {
-        return userDefaults.bool(forKey: "LOGGED_IN")
+        return userDefaults.bool(forKey: UserDefaultsKey.loggedInState)
     }
     
     func registerLogIn() {
-        userDefaults.set(true, forKey: "LOGGED_IN")
+        userDefaults.set(true, forKey: UserDefaultsKey.loggedInState)
     }
     
     func registerLogOut() {
-        userDefaults.set(false, forKey: "LOGGED_IN")
+        userDefaults.set(false, forKey: UserDefaultsKey.loggedInState)
     }
-    
 }
-
 
 // MARK: - keyChain Methods
 private extension AccountManager {
