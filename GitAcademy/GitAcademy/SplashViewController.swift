@@ -33,9 +33,9 @@ class SplashViewController: UIViewController {
             // We only use it to keep it here before implementing KeyChain.
             
             if UserDefaults.standard.bool(forKey: "LOGGED_IN") {
-                // navigate to protected page
+                // TODO: navigate to protected page
             } else {
-                // navigate to login screen
+                // TODO: navigate to login screen
             }
         }
     }
