@@ -27,19 +27,21 @@ struct AccountManager {
     
     var accessToken: String? {
         get {
-            userDefaults.string(forKey: UserDefaultsKey.accessToken)
+            fromKeyChain(UserDefaultsKey.accessToken)
         }
         set {
-            userDefaults.setValue(newValue, forKey: UserDefaultsKey.accessToken)
+            let token = newValue != nil ? newValue! : ""
+            toKeyChain(token, for: UserDefaultsKey.accessToken)
         }
     }
     
     var refreshToken: String? {
         get {
-            userDefaults.string(forKey: UserDefaultsKey.refreshToken)
+            fromKeyChain(UserDefaultsKey.refreshToken)
         }
         set {
-            userDefaults.setValue(newValue, forKey: UserDefaultsKey.refreshToken)
+            let token = newValue != nil ? newValue! : ""
+            toKeyChain(token, for: UserDefaultsKey.refreshToken)
         }
     }
     
@@ -54,12 +56,11 @@ struct AccountManager {
 
 // MARK: - keyChain Methods
 private extension AccountManager {
-    
-    private func savePassword(_ password: String, username: String) {
-        keyChain.set(password, forKey: username)
+    private func toKeyChain(_ token: String, for key: String) {
+        keyChain.set(token, forKey: key)
     }
     
-    private func getPassword(username: String) -> String? {
-        keyChain.get(username)
+    private func fromKeyChain(_ key: String) -> String? {
+        keyChain.get(key)
     }
 }
