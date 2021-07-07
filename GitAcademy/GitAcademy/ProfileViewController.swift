@@ -19,7 +19,6 @@ class ProfileViewController: UIViewController {
         profileTableView.delegate = self
         profileTableView.tableFooterView = UIView()
         
-        title = "Main Screen"
         // TODO: Make sure to have a "Log Out" button only on "Main Screen", on other screens should be regula "Back" button
         let logoutButton = UIBarButtonItem(
             title: "Log Out", style: .plain,

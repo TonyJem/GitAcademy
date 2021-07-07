@@ -7,6 +7,7 @@ class RepositoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "Repositories"
         repositoriesTableView.backgroundColor = .systemGray5
         repositoriesTableView.dataSource = self
         repositoriesTableView.delegate = self
