@@ -1,13 +1,11 @@
 import UIKit
 
-// TODO: Use or remove comments below
-// Splash Screen will be the first screen that the user will see when the app is launched.
-// This is the best time to do all the service API calls,
-// check the user session, trigger pre-login analytics, etc.
-
 class SplashViewController: UIViewController {
     
+    private let indicatorAlpha: CGFloat = 0.4
     private let activityIndicator = UIActivityIndicatorView(style: .large)
+    private let loginVC = LoginViewController()
+    private let profileVC = ProfileViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,8 +13,7 @@ class SplashViewController: UIViewController {
         view.backgroundColor = .white
         view.addSubview(activityIndicator)
         activityIndicator.frame = view.bounds
-        // TODO: Magic numbers
-        activityIndicator.backgroundColor = UIColor(white: 0, alpha: 0.4)
+        activityIndicator.backgroundColor = UIColor(white: .zero, alpha: indicatorAlpha)
         
         makeServiceCall()
     }
@@ -24,19 +21,13 @@ class SplashViewController: UIViewController {
     private func makeServiceCall() {
         activityIndicator.startAnimating()
         
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(1)) {
-            self.activityIndicator.stopAnimating()
-            
-            // TODO: Use KeyChain instead of UserDefaults
-            // We definitely don’t want to use the UserDefaults in production
-            // to store the user session or any other sensitive information;
-            // We only use it to keep it here before implementing KeyChain.
-            
-            if Core.accountManager.userIsLoggedIn {
-                SceneDelegate.shared.rootViewController.navigateToMainScreen()
-            } else {
-                SceneDelegate.shared.rootViewController.navigateToLoginScreen()
-            }
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(.zero)) { [self] in
+            activityIndicator.stopAnimating()
+            Core.accountManager.userIsLoggedIn ? show(profileVC) : show(loginVC)
         }
+    }
+    
+    private func show(_ controller: UIViewController) {
+        SceneDelegate.shared.rootViewController.show(controller)
     }
 }

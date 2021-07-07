@@ -24,8 +24,8 @@ class RootViewController: UIViewController {
         current.didMove(toParent: self)
     }
     
-    func showLoginScreen() {
-        let new = UINavigationController(rootViewController: loginViewController)
+    func show(_ controller: UIViewController) {
+        let new = UINavigationController(rootViewController: controller)
         
         addChild(new)
         new.view.frame = view.bounds
@@ -38,14 +38,14 @@ class RootViewController: UIViewController {
         current = new
     }
     
-    func navigateToMainScreen() {
+    func navigateToMainScreenAnimated() {
         let profileViewController = ProfileViewController(nibName: "ProfileViewController", bundle: nil)
         let mainScreen = UINavigationController(rootViewController: profileViewController)
         Core.accountManager.registerLogIn()
         animateFadeTransition(to: mainScreen)
     }
     
-    func navigateToLoginScreen() {
+    func navigateToLoginScreenAnimated() {
         let loginScreen = UINavigationController(rootViewController: loginViewController)
         Core.accountManager.registerLogOut()
         animateDismissTransition(to: loginScreen)
@@ -70,7 +70,8 @@ private extension RootViewController {
         }
     }
     
-    func animateDismissTransition(to new: UIViewController, completion: (() -> Void)? = nil) {
+    func animateDismissTransition(to new: UIViewController,
+                                  completion: (() -> Void)? = nil) {
         current.willMove(toParent: nil)
         addChild(new)
         

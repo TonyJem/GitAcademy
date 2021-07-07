@@ -99,7 +99,7 @@ private extension ProfileViewModel {
                         self.profile.repositories = networkResponse.object
                         self.profile.starredRepositories = networkResponse.object.filter { $0.stargazersCount > 0 }
                         Core.accountManager.profile = self.profile
-                        SceneDelegate.shared.rootViewController.navigateToMainScreen()
+                        SceneDelegate.shared.rootViewController.navigateToMainScreenAnimated()
                     }
                 case .failure(let error):
                     print("🔴 Failed to get the user's repositories: \(error)")
