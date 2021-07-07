@@ -16,6 +16,7 @@ class ProfileViewController: UIViewController {
         
         profileTableView.backgroundColor = .systemGray5
         profileTableView.dataSource = self
+        profileTableView.delegate = self
         profileTableView.tableFooterView = UIView()
         
         title = "Main Screen"
@@ -28,6 +29,22 @@ class ProfileViewController: UIViewController {
     
     @objc private func logout() {
         SceneDelegate.shared.rootViewController.navigateToLoginScreenAnimated()
+    }
+}
+
+private extension ProfileViewController {
+    // TODO: Refactor to have one method for different cells
+    private func profileCell(for indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = profileTableView.dequeueReusableCell(withIdentifier: String(describing: ProfileCell.self), for: indexPath) as? ProfileCell else { return UITableViewCell() }
+        cell.fillContent()
+        return cell
+    }
+    
+    // TODO: Refactor to have one method for different cells
+    private func repositoryCell(for indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = profileTableView.dequeueReusableCell(withIdentifier: String(describing: RepositoryCell.self), for: indexPath) as? RepositoryCell else { return UITableViewCell() }
+        indexPath.row == 0 ? cell.fillRepositories() : cell.fillStarred()
+        return cell
     }
 }
 
@@ -62,18 +79,16 @@ extension ProfileViewController: UITableViewDataSource {
     }
 }
 
-private extension ProfileViewController {
-    // TODO: Refactor to have one method for different cells
-    private func profileCell(for indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = profileTableView.dequeueReusableCell(withIdentifier: String(describing: ProfileCell.self), for: indexPath) as? ProfileCell else { return UITableViewCell() }
-        cell.fillContent()
-        return cell
-    }
-    
-    // TODO: Refactor to have one method for different cells
-    private func repositoryCell(for indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = profileTableView.dequeueReusableCell(withIdentifier: String(describing: RepositoryCell.self), for: indexPath) as? RepositoryCell else { return UITableViewCell() }
-        indexPath.row == 0 ? cell.fillRepositories() : cell.fillStarred()
-        return cell
+extension ProfileViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard indexPath.section == 1 else { return }
+        switch indexPath.row {
+        case 0:
+            print("🟢 Did select Repo row")
+        case 1:
+            print("🟢 Did select Starred row")
+        default:
+            break
+        }
     }
 }
