@@ -4,7 +4,7 @@ class SplashViewController: UIViewController {
     
     private let loginVC = LoginViewController()
     private let profileVC = ProfileViewController()
-    private let indicatorAlpha: CGFloat = 0.4
+    private let alfa: CGFloat = 0.4
     private let activityIndicator = UIActivityIndicatorView(style: .large)
     
     override func viewDidLoad() {
@@ -13,7 +13,7 @@ class SplashViewController: UIViewController {
         view.backgroundColor = .white
         view.addSubview(activityIndicator)
         activityIndicator.frame = view.bounds
-        activityIndicator.backgroundColor = UIColor(white: .zero, alpha: indicatorAlpha)
+        activityIndicator.backgroundColor = UIColor(white: .zero, alpha: alfa)
         
         makeServiceCall()
     }
