@@ -56,9 +56,7 @@ struct AccountManager {
             }
             return try? JSONDecoder().decode(Profile.self, from: profile)
         } set {
-            print("Set user login 🟢 \(String(describing: newValue?.user.login))")
             let profile = try? JSONEncoder().encode(newValue)
-            print("🟢 Profile DATA:\(String(describing: profile))")
             userDefaults.set(profile, forKey: UserDefaultsKey.profile)
         }
     }
