@@ -3,11 +3,13 @@ import UIKit
 class RootViewController: UIViewController {
     
     private let loginViewController = LoginViewController(nibName: "LoginViewController", bundle: nil)
+    private let profileViewController = ProfileViewController(nibName: "ProfileViewController", bundle: nil)
+    private let transitionDuration = 0.75
     
     private var current: UIViewController
     
     init() {
-        self.current = SplashViewController()
+        self.current = InitialViewController()
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -39,7 +41,6 @@ class RootViewController: UIViewController {
     }
     
     func navigateToMainScreenAnimated() {
-        let profileViewController = ProfileViewController(nibName: "ProfileViewController", bundle: nil)
         let mainScreen = UINavigationController(rootViewController: profileViewController)
         Core.accountManager.registerLogIn()
         animateFadeTransition(to: mainScreen)
@@ -59,7 +60,7 @@ private extension RootViewController {
         current.willMove(toParent: nil)
         addChild(new)
         
-        transition(from: current, to: new, duration: 1,
+        transition(from: current, to: new, duration: transitionDuration,
                    options: [.transitionCrossDissolve, .curveEaseOut],
                    animations: { }
         ) { completed in
@@ -75,7 +76,7 @@ private extension RootViewController {
         current.willMove(toParent: nil)
         addChild(new)
         
-        transition(from: current, to: new, duration: 1,
+        transition(from: current, to: new, duration: transitionDuration,
                    options: [], animations: {
                     new.view.frame = self.view.bounds }
         ) { completed in

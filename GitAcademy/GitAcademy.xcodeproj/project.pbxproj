@@ -14,7 +14,7 @@
 		3A3C832C26930993004E87D0 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3C832B26930992004E87D0 /* UIView.swift */; };
 		3A3C833F26942E20004E87D0 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A3C833E26942E20004E87D0 /* LoginViewController.xib */; };
 		3A3C834D26943824004E87D0 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3C834C26943824004E87D0 /* RootViewController.swift */; };
-		3A3C835326943D2A004E87D0 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3C835226943D2A004E87D0 /* SplashViewController.swift */; };
+		3A3C835326943D2A004E87D0 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3C835226943D2A004E87D0 /* InitialViewController.swift */; };
 		3A3C8381269485DF004E87D0 /* SwiftKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3C8380269485DF004E87D0 /* SwiftKeychain.swift */; };
 		3A3C838A2694895F004E87D0 /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3C83892694895F004E87D0 /* AccountManager.swift */; };
 		3AC7F9202678D63100561DBB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC7F91F2678D63100561DBB /* AppDelegate.swift */; };
@@ -61,7 +61,7 @@
 		3A3C832B26930992004E87D0 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		3A3C833E26942E20004E87D0 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		3A3C834C26943824004E87D0 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
-		3A3C835226943D2A004E87D0 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		3A3C835226943D2A004E87D0 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		3A3C8380269485DF004E87D0 /* SwiftKeychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftKeychain.swift; sourceTree = "<group>"; };
 		3A3C83892694895F004E87D0 /* AccountManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountManager.swift; sourceTree = "<group>"; };
 		3AC7F91C2678D63100561DBB /* GitAcademy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitAcademy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -187,7 +187,7 @@
 		3A42287726919AD500B54EF7 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				3A3C835226943D2A004E87D0 /* SplashViewController.swift */,
+				3A3C835226943D2A004E87D0 /* InitialViewController.swift */,
 				3A3C834C26943824004E87D0 /* RootViewController.swift */,
 				3A3C836A26946962004E87D0 /* Login */,
 				3A3C836B26946975004E87D0 /* Profile */,
@@ -427,7 +427,7 @@
 				3AC7F9222678D63100561DBB /* SceneDelegate.swift in Sources */,
 				3A13DD4D269187DC001ACB49 /* ProfileViewModel.swift in Sources */,
 				3ADA3778269180BD0009D500 /* User.swift in Sources */,
-				3A3C835326943D2A004E87D0 /* SplashViewController.swift in Sources */,
+				3A3C835326943D2A004E87D0 /* InitialViewController.swift in Sources */,
 				3A3C8381269485DF004E87D0 /* SwiftKeychain.swift in Sources */,
 				3A3C832C26930993004E87D0 /* UIView.swift in Sources */,
 				3ADB57DC2691E75500354A8F /* ProfileViewController.swift in Sources */,
