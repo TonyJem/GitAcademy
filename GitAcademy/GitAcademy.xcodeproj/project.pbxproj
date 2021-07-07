@@ -28,7 +28,7 @@
 		3ADA3769269180860009D500 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADA3768269180860009D500 /* NetworkRequest.swift */; };
 		3ADA3773269180AD0009D500 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADA3772269180AD0009D500 /* Repository.swift */; };
 		3ADA3778269180BD0009D500 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADA3777269180BD0009D500 /* User.swift */; };
-		3ADA4E63269637A20021DD62 /* RepositoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADA4E61269637A20021DD62 /* RepositoryViewController.swift */; };
+		3ADA4E63269637A20021DD62 /* RepositoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADA4E61269637A20021DD62 /* RepositoriesViewController.swift */; };
 		3ADA4E64269637A20021DD62 /* RepositoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3ADA4E62269637A20021DD62 /* RepositoryViewController.xib */; };
 		3ADA4E6E2696421F0021DD62 /* RepositoryDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADA4E6C2696421F0021DD62 /* RepositoryDetailsCell.swift */; };
 		3ADA4E6F2696421F0021DD62 /* RepositoryDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3ADA4E6D2696421F0021DD62 /* RepositoryDetailsCell.xib */; };
@@ -85,7 +85,7 @@
 		3ADA3768269180860009D500 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		3ADA3772269180AD0009D500 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		3ADA3777269180BD0009D500 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		3ADA4E61269637A20021DD62 /* RepositoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryViewController.swift; sourceTree = "<group>"; };
+		3ADA4E61269637A20021DD62 /* RepositoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesViewController.swift; sourceTree = "<group>"; };
 		3ADA4E62269637A20021DD62 /* RepositoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoryViewController.xib; sourceTree = "<group>"; };
 		3ADA4E6C2696421F0021DD62 /* RepositoryDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailsCell.swift; sourceTree = "<group>"; };
 		3ADA4E6D2696421F0021DD62 /* RepositoryDetailsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoryDetailsCell.xib; sourceTree = "<group>"; };
@@ -199,7 +199,7 @@
 				3A3C834C26943824004E87D0 /* RootViewController.swift */,
 				3A3C836A26946962004E87D0 /* Login */,
 				3A3C836B26946975004E87D0 /* Profile */,
-				3ADA4E60269637410021DD62 /* Repository */,
+				3ADA4E60269637410021DD62 /* Repositories */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -272,14 +272,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		3ADA4E60269637410021DD62 /* Repository */ = {
+		3ADA4E60269637410021DD62 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
 				3ADA4E62269637A20021DD62 /* RepositoryViewController.xib */,
-				3ADA4E61269637A20021DD62 /* RepositoryViewController.swift */,
+				3ADA4E61269637A20021DD62 /* RepositoriesViewController.swift */,
 				3ADA4E6B269641AE0021DD62 /* Cells */,
 			);
-			name = Repository;
+			name = Repositories;
 			sourceTree = "<group>";
 		};
 		3ADA4E6B269641AE0021DD62 /* Cells */ = {
@@ -448,7 +448,7 @@
 				3ADB57D32691E6B800354A8F /* RepositoryCell.swift in Sources */,
 				3A3C834D26943824004E87D0 /* RootViewController.swift in Sources */,
 				3ADA3773269180AD0009D500 /* Repository.swift in Sources */,
-				3ADA4E63269637A20021DD62 /* RepositoryViewController.swift in Sources */,
+				3ADA4E63269637A20021DD62 /* RepositoriesViewController.swift in Sources */,
 				3A3C831F2692EFB7004E87D0 /* Core.swift in Sources */,
 				3A3C831A2692E68D004E87D0 /* Profile.swift in Sources */,
 				3A3C838A2694895F004E87D0 /* AccountManager.swift in Sources */,

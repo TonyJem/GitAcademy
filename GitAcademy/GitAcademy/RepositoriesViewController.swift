@@ -1,6 +1,6 @@
 import UIKit
 
-class RepositoryViewController: UIViewController {
+class RepositoriesViewController: UIViewController {
     
     @IBOutlet private weak var repositoriesTableView: UITableView!
     
@@ -15,7 +15,7 @@ class RepositoryViewController: UIViewController {
     }
 }
 
-extension RepositoryViewController: UITableViewDataSource {
+extension RepositoriesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return 88
@@ -27,6 +27,6 @@ extension RepositoryViewController: UITableViewDataSource {
     }
 }
 
-extension RepositoryViewController: UITableViewDelegate {
+extension RepositoriesViewController: UITableViewDelegate {
     
 }
