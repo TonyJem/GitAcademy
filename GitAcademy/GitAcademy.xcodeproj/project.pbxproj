@@ -30,6 +30,8 @@
 		3ADA3778269180BD0009D500 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADA3777269180BD0009D500 /* User.swift */; };
 		3ADA4E63269637A20021DD62 /* RepositoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADA4E61269637A20021DD62 /* RepositoryViewController.swift */; };
 		3ADA4E64269637A20021DD62 /* RepositoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3ADA4E62269637A20021DD62 /* RepositoryViewController.xib */; };
+		3ADA4E6E2696421F0021DD62 /* RepositoryDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADA4E6C2696421F0021DD62 /* RepositoryDetailsCell.swift */; };
+		3ADA4E6F2696421F0021DD62 /* RepositoryDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3ADA4E6D2696421F0021DD62 /* RepositoryDetailsCell.xib */; };
 		3ADB57BC2691D99100354A8F /* ProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3ADB57BB2691D99100354A8F /* ProfileCell.xib */; };
 		3ADB57C12691E40100354A8F /* RepositoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3ADB57C02691E40100354A8F /* RepositoryCell.xib */; };
 		3ADB57CE2691E69200354A8F /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADB57CD2691E69200354A8F /* ProfileCell.swift */; };
@@ -85,6 +87,8 @@
 		3ADA3777269180BD0009D500 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		3ADA4E61269637A20021DD62 /* RepositoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryViewController.swift; sourceTree = "<group>"; };
 		3ADA4E62269637A20021DD62 /* RepositoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoryViewController.xib; sourceTree = "<group>"; };
+		3ADA4E6C2696421F0021DD62 /* RepositoryDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailsCell.swift; sourceTree = "<group>"; };
+		3ADA4E6D2696421F0021DD62 /* RepositoryDetailsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoryDetailsCell.xib; sourceTree = "<group>"; };
 		3ADB57BB2691D99100354A8F /* ProfileCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileCell.xib; sourceTree = "<group>"; };
 		3ADB57C02691E40100354A8F /* RepositoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoryCell.xib; sourceTree = "<group>"; };
 		3ADB57CD2691E69200354A8F /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
@@ -273,8 +277,18 @@
 			children = (
 				3ADA4E62269637A20021DD62 /* RepositoryViewController.xib */,
 				3ADA4E61269637A20021DD62 /* RepositoryViewController.swift */,
+				3ADA4E6B269641AE0021DD62 /* Cells */,
 			);
 			name = Repository;
+			sourceTree = "<group>";
+		};
+		3ADA4E6B269641AE0021DD62 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3ADA4E6C2696421F0021DD62 /* RepositoryDetailsCell.swift */,
+				3ADA4E6D2696421F0021DD62 /* RepositoryDetailsCell.xib */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		3ADB57BA2691D93E00354A8F /* Cells */ = {
@@ -398,6 +412,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3ADA4E6F2696421F0021DD62 /* RepositoryDetailsCell.xib in Resources */,
 				3ADB57DD2691E75500354A8F /* ProfileViewController.xib in Resources */,
 				3AC7F92F2678D63300561DBB /* LaunchScreen.storyboard in Resources */,
 				3ADA4E64269637A20021DD62 /* RepositoryViewController.xib in Resources */,
@@ -445,6 +460,7 @@
 				3ADA3778269180BD0009D500 /* User.swift in Sources */,
 				3A3C835326943D2A004E87D0 /* InitialViewController.swift in Sources */,
 				3A3C8381269485DF004E87D0 /* SwiftKeychain.swift in Sources */,
+				3ADA4E6E2696421F0021DD62 /* RepositoryDetailsCell.swift in Sources */,
 				3A3C832C26930993004E87D0 /* UIView.swift in Sources */,
 				3ADB57DC2691E75500354A8F /* ProfileViewController.swift in Sources */,
 				3AC7F92A2678D63100561DBB /* GitAcademy.xcdatamodeld in Sources */,
