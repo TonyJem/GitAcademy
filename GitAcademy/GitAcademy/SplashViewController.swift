@@ -2,10 +2,10 @@ import UIKit
 
 class SplashViewController: UIViewController {
     
-    private let indicatorAlpha: CGFloat = 0.4
-    private let activityIndicator = UIActivityIndicatorView(style: .large)
     private let loginVC = LoginViewController()
     private let profileVC = ProfileViewController()
+    private let indicatorAlpha: CGFloat = 0.4
+    private let activityIndicator = UIActivityIndicatorView(style: .large)
     
     override func viewDidLoad() {
         super.viewDidLoad()
