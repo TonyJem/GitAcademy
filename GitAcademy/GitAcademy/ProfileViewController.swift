@@ -85,6 +85,7 @@ extension ProfileViewController: UITableViewDelegate {
         switch indexPath.row {
         case 0:
             print("🟢 Did select Repo row")
+            navigationController?.pushViewController(RepositoryViewController(), animated: true)
         case 1:
             print("🟢 Did select Starred row")
         default:
