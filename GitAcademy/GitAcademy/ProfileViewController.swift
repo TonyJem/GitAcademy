@@ -1,3 +1,4 @@
+// TODO: Remove "selection" while clicking on cells in Profile Table View
 import UIKit
 
 class ProfileViewController: UIViewController {

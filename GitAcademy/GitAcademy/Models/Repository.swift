@@ -1,8 +1,13 @@
 import Foundation
 
-//TODO: Change snake case to normal Swift Names
-struct Repository: Decodable, Encodable, Identifiable {
+struct Repository: Codable, Identifiable {
     var id: Int
     var name: String
-    var stargazers_count: Int
+    var stargazersCount: Int
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case name
+        case stargazersCount = "stargazers_count"
+    }
 }
