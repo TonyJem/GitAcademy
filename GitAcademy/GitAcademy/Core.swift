@@ -4,6 +4,8 @@
 // TODO: Make all related to API and Networking separated in API folder;
 // TODO: Check naming convention for Enums;
 // TODO: Change to Codable while used both: Decodable and Encodable
+// TODO: Put "normal" colors to each screen element
+// TODO: Prevent jumping from Login to GithubWeb and back to Loginscreen while authentificatin via GitHub
 
 import Foundation
 
