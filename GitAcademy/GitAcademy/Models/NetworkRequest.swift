@@ -149,7 +149,7 @@ struct NetworkRequest {
             } else if let object = try? JSONDecoder().decode(T.self, from: data) {
                 DispatchQueue.main.async {
                     if let user = object as? User {
-                        Core.accountManager.username = user.login
+                        Core.accountManager.username = user.username
                     }
                     completionHandler(.success((response, object)))
                 }

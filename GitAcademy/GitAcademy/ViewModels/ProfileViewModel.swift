@@ -6,8 +6,8 @@ class ProfileViewModel: NSObject {
     private var isLoading = false
     
     // TODO: May be move profile to init, to start it with data already fetched
-    private var profile = Profile(user: User(avatar: "", login: "CoreLog", name: "CoreName", followers: 99, following: 101, public_repos: 199), repositories: [], starredRepositories: [])
-    
+    private var profile = Profile(user: User(avatar: "", username: "", name: "", followers: 0, following: 0),
+                                  repositories: [], starredRepositories: [])
     func login() {
         guard let signInURL = NetworkRequest.RequestType.signIn.networkRequest()?.url else {
             print("🔴 Could not create the sign in URL .")

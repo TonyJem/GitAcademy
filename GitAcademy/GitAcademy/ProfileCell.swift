@@ -49,7 +49,7 @@ class ProfileCell: UITableViewCell {
         avatarImageView.downloaded(from: user.avatar)
         nameLabel.isHidden = user.name == nil
         nameLabel.text = user.name
-        loginLabel.text = user.login
+        loginLabel.text = user.username
         followersButton.setTitle("\(user.followers) followers", for: .normal)
         followingButton.setTitle("\(user.following) following", for: .normal)
     }

@@ -4,6 +4,7 @@ struct AccountManager {
     
     private enum UserDefaultsKey {
         static let loggedInState = "loggedIn"
+        // TODO: Decide if should keep username sepratelly or it can be used from Profile model?
         static let username = "username"
         static let accessToken = "accessToken"
         static let refreshToken = "refreshToken"
