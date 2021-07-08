@@ -18,6 +18,7 @@
 		3A3C8381269485DF004E87D0 /* SwiftKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3C8380269485DF004E87D0 /* SwiftKeychain.swift */; };
 		3A3C838A2694895F004E87D0 /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3C83892694895F004E87D0 /* AccountManager.swift */; };
 		3A42921A269750FD0092A2A8 /* RepositoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A429219269750FD0092A2A8 /* RepositoriesViewController.xib */; };
+		3A4292252697784C0092A2A8 /* Starred.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4292242697784C0092A2A8 /* Starred.swift */; };
 		3AC7F9202678D63100561DBB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC7F91F2678D63100561DBB /* AppDelegate.swift */; };
 		3AC7F9222678D63100561DBB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC7F9212678D63100561DBB /* SceneDelegate.swift */; };
 		3AC7F9242678D63100561DBB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC7F9232678D63100561DBB /* LoginViewController.swift */; };
@@ -69,6 +70,7 @@
 		3A3C8380269485DF004E87D0 /* SwiftKeychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftKeychain.swift; sourceTree = "<group>"; };
 		3A3C83892694895F004E87D0 /* AccountManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountManager.swift; sourceTree = "<group>"; };
 		3A429219269750FD0092A2A8 /* RepositoriesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoriesViewController.xib; sourceTree = "<group>"; };
+		3A4292242697784C0092A2A8 /* Starred.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Starred.swift; sourceTree = "<group>"; };
 		3AC7F91C2678D63100561DBB /* GitAcademy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitAcademy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AC7F91F2678D63100561DBB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3AC7F9212678D63100561DBB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -265,8 +267,9 @@
 			isa = PBXGroup;
 			children = (
 				3ADA3768269180860009D500 /* NetworkRequest.swift */,
-				3ADA3772269180AD0009D500 /* Repository.swift */,
 				3ADA3777269180BD0009D500 /* User.swift */,
+				3ADA3772269180AD0009D500 /* Repository.swift */,
+				3A4292242697784C0092A2A8 /* Starred.swift */,
 				3A3C83192692E68D004E87D0 /* Profile.swift */,
 			);
 			path = Models;
@@ -451,6 +454,7 @@
 				3ADA4E63269637A20021DD62 /* RepositoriesViewController.swift in Sources */,
 				3A3C831F2692EFB7004E87D0 /* Core.swift in Sources */,
 				3A3C831A2692E68D004E87D0 /* Profile.swift in Sources */,
+				3A4292252697784C0092A2A8 /* Starred.swift in Sources */,
 				3A3C838A2694895F004E87D0 /* AccountManager.swift in Sources */,
 				3AC7F9242678D63100561DBB /* LoginViewController.swift in Sources */,
 				3AC7F9202678D63100561DBB /* AppDelegate.swift in Sources */,
