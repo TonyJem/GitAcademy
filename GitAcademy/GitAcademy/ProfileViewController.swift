@@ -10,9 +10,11 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        profileTableView.register(UINib(nibName: String(describing: ProfileCell.self), bundle: Bundle.main), forCellReuseIdentifier: String(describing: ProfileCell.self))
+        profileTableView.register(UINib(nibName: String(describing: ProfileCell.self), bundle: Bundle.main),
+                                  forCellReuseIdentifier: String(describing: ProfileCell.self))
         
-        profileTableView.register(UINib(nibName: String(describing: RepositoryCell.self), bundle: Bundle.main), forCellReuseIdentifier: String(describing: RepositoryCell.self))
+        profileTableView.register(UINib(nibName: String(describing: RepositoryCell.self), bundle: Bundle.main),
+                                  forCellReuseIdentifier: String(describing: RepositoryCell.self))
         
         profileTableView.backgroundColor = .systemGray5
         profileTableView.dataSource = self
