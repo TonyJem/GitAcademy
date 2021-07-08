@@ -2,8 +2,6 @@
 import AuthenticationServices
 
 class ProfileViewModel: NSObject {
-    // TODO: Create progress indicator
-    private var isLoading = false
     
     // TODO: May be move profile to init, to start it with data already fetched
     private var profile = Profile(user: User(avatar: "", username: "", name: "", followers: 0, following: 0),
@@ -29,14 +27,12 @@ class ProfileViewModel: NSObject {
                 return
             }
             
-            self.isLoading = true
             networkRequest.start(responseType: String.self) { result in
                 switch result {
                 case .success:
                     self.fetchUser()
                 case .failure(let error):
                     print("🔴 Failed to exchange access code for tokens: \(error)")
-                    self.isLoading = false
                 }
             }
         }
@@ -61,8 +57,6 @@ class ProfileViewModel: NSObject {
 //MARK: - Private
 private extension ProfileViewModel {
     func fetchUser() {
-        isLoading = true
-        
         NetworkRequest
             .RequestType
             .getUser
@@ -81,7 +75,6 @@ private extension ProfileViewModel {
                 case .failure(let error):
                     print("🔴 Failed to get user, or there is no valid/active session: \(error.localizedDescription)")
                 }
-                self.isLoading = false
             }
     }
     
