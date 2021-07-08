@@ -4,10 +4,10 @@ struct AccountManager {
     
     private enum UserDefaultsKey {
         // TODO: Decide if should keep username sepratelly or it can be used from Profile model?
+        static let profile = "profile"
         static let username = "username"
         static let accessToken = "accessToken"
         static let refreshToken = "refreshToken"
-        static let profile = "profile"
     }
     
     private var keyChain = KeychainSwift()
