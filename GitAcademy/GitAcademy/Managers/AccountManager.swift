@@ -73,7 +73,7 @@ struct AccountManager {
     
 }
 
-// MARK: - Privat Methods
+// MARK: - Private Methods
 private extension AccountManager {
     func cleanCredentials() {
         Core.accountManager.username = nil
@@ -82,7 +82,7 @@ private extension AccountManager {
     }
 }
 
-// MARK: - keyChain Methods
+// MARK: - KeyChain Methods
 private extension AccountManager {
     private func toKeyChain(_ token: String, for key: String) {
         keyChain.set(token, forKey: key)
