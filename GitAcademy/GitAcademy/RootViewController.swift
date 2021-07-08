@@ -42,13 +42,13 @@ class RootViewController: UIViewController {
     
     func navigateToMainScreenAnimated() {
         let mainScreen = UINavigationController(rootViewController: profileViewController)
-        Core.accountManager.registerLogIn()
+        Core.accountManager.logIn()
         animateFadeTransition(to: mainScreen)
     }
     
     func navigateToLoginScreenAnimated() {
         let loginScreen = UINavigationController(rootViewController: loginViewController)
-        Core.accountManager.registerLogOut()
+        Core.accountManager.logOut()
         animateDismissTransition(to: loginScreen)
     }
 }

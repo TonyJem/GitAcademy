@@ -98,14 +98,6 @@ struct NetworkRequest {
     var method: HTTPMethod
     var url: URL
     
-    // MARK: Static Methods
-    // TODO: Do we need this method if yes, rename it to "LogOut" or similar to be consistent
-    static func signOut() {
-        Core.accountManager.accessToken = ""
-        Core.accountManager.refreshToken = ""
-        Core.accountManager.username = ""
-    }
-    
     // MARK: - Methods
     func start<T: Decodable>(responseType: T.Type, completionHandler: @escaping ((Result<NetworkResult<T>, Error>) -> Void)) {
         var request = URLRequest(url: url)

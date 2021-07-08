@@ -62,12 +62,23 @@ struct AccountManager {
         }
     }
     
-    func registerLogIn() {
+    func logIn() {
         userDefaults.set(true, forKey: UserDefaultsKey.loggedInState)
     }
     
-    func registerLogOut() {
+    func logOut() {
         userDefaults.set(false, forKey: UserDefaultsKey.loggedInState)
+        cleanCredentials()
+    }
+    
+}
+
+// MARK: - Privat Methods
+private extension AccountManager {
+    func cleanCredentials() {
+        Core.accountManager.username = nil
+        Core.accountManager.accessToken = nil
+        Core.accountManager.refreshToken = nil
     }
 }
 
