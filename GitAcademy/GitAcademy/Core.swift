@@ -6,6 +6,7 @@
 // TODO: Change to Codable while used both: Decodable and Encodable
 // TODO: Put "normal" colors to each screen element
 // TODO: Prevent jumping from Login to GithubWeb and back to Loginscreen while authentificatin via GitHub
+// TODO: Implement to get Starred Repositorias better via call: https://api.github.com/users/tonyjem/starred
 
 import Foundation
 
