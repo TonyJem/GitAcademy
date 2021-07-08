@@ -6,6 +6,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet private weak var profileTableView: UITableView!
     
     private let numberOfSections = 2
+    private let repositoriesViewController = RepositoriesViewController(nibName: "RepositoriesViewController", bundle: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,7 +87,7 @@ extension ProfileViewController: UITableViewDelegate {
         switch indexPath.row {
         case 0:
             print("🟢 Did select Repo row")
-            navigationController?.pushViewController(RepositoriesViewController(), animated: true)
+            navigationController?.pushViewController(repositoriesViewController, animated: true)
         case 1:
             print("🟢 Did select Starred row")
         default:

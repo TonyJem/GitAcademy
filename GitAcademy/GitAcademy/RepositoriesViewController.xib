@@ -10,29 +10,29 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RepositoriesViewController" customModule="GitAcademy" customModuleProvider="target">
             <connections>
-                <outlet property="repositoriesTableView" destination="wtv-Hw-sgB" id="QBc-WK-8oY"/>
-                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="repositoriesTableView" destination="LIg-KC-8l7" id="6AP-PC-Ci7"/>
+                <outlet property="view" destination="iN0-l3-epB" id="j41-K8-w7N"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wtv-Hw-sgB">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LIg-KC-8l7">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
             </subviews>
-            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="wtv-Hw-sgB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="0h1-Ix-GsV"/>
-                <constraint firstItem="wtv-Hw-sgB" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="13q-lo-Fid"/>
-                <constraint firstAttribute="bottom" secondItem="wtv-Hw-sgB" secondAttribute="bottom" id="fyC-9C-54P"/>
-                <constraint firstAttribute="trailing" secondItem="wtv-Hw-sgB" secondAttribute="trailing" id="lcc-zb-NCe"/>
+                <constraint firstAttribute="bottom" secondItem="LIg-KC-8l7" secondAttribute="bottom" id="4ko-p8-ccb"/>
+                <constraint firstAttribute="trailing" secondItem="LIg-KC-8l7" secondAttribute="trailing" id="HKY-Wv-zVm"/>
+                <constraint firstItem="LIg-KC-8l7" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="pBy-f3-uxK"/>
+                <constraint firstItem="LIg-KC-8l7" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="pEp-fs-TxA"/>
             </constraints>
-            <point key="canvasLocation" x="137.68115942028987" y="111.83035714285714"/>
+            <point key="canvasLocation" x="-223.18840579710147" y="152.67857142857142"/>
         </view>
     </objects>
     <resources>
