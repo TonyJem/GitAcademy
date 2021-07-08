@@ -44,14 +44,6 @@ class ProfileViewModel: NSObject {
             print("🔴 Failed to start ASWebAuthenticationSession")
         }
     }
-    
-    /* TODO: Find out if need to get user without fetching token it: in case yes - use it; no - delete this block
-     func appeared() {
-     // Try to get the user in case the tokens are already stored on this device
-     getUser()
-     }
-     */
-    
 }
 
 //MARK: - Private
