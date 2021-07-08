@@ -6,6 +6,8 @@ class ProfileViewController: UIViewController {
     @IBOutlet private weak var profileTableView: UITableView!
     
     private let numberOfSections = 2
+    private let numberOfRowsInSectionProfile = 1
+    private let numberOfRowsInSectionRepositories = 2
     private let repositoriesViewController = RepositoriesViewController(nibName: "RepositoriesViewController", bundle: nil)
     
     override func viewDidLoad() {
@@ -59,11 +61,9 @@ extension ProfileViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
-            // TODO: Magic number
-            return 1
+            return numberOfRowsInSectionProfile
         case 1:
-            // TODO: Magic number
-            return 2
+            return numberOfRowsInSectionRepositories
         default:
             return .zero
         }
