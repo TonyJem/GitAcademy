@@ -141,6 +141,7 @@
 		3A1D355F269884000037D46D /* API */ = {
 			isa = PBXGroup;
 			children = (
+				3ADA3768269180860009D500 /* NetworkRequest.swift */,
 				3A1D35602698841D0037D46D /* APIError.swift */,
 				3A1D35692698859B0037D46D /* APIManager.swift */,
 				3A1D3574269886A40037D46D /* APIEndPoint.swift */,
@@ -294,7 +295,6 @@
 		3ADA377C269180DF0009D500 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				3ADA3768269180860009D500 /* NetworkRequest.swift */,
 				3A3C83192692E68D004E87D0 /* Profile.swift */,
 			);
 			path = Models;
