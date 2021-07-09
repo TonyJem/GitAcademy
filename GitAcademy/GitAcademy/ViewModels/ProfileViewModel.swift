@@ -30,6 +30,7 @@ class ProfileViewModel: NSObject {
                 switch result {
                 case .success:
                     Core.apiManager.fetchUser()
+                    self.fetchUserNew()
                 case .failure(let error):
                     print("🔴 Failed to exchange access code for tokens: \(error)")
                 }
@@ -41,6 +42,19 @@ class ProfileViewModel: NSObject {
         
         if !authenticationSession.start() {
             print("🔴 Failed to start ASWebAuthenticationSession")
+        }
+    }
+    
+    func fetchUserNew() {
+        // self.turnActivityIndicatorON()
+        Core.apiManager.fetchUserNew { result in
+            switch result {
+            case .success(let user):
+                print("🟢 Newly fetched User is: \(user.username)")
+            case .failure(let error):
+                print("🔴 \(error)")
+            }
+            // self.turnActivityIndicatorOFF()
         }
     }
 }

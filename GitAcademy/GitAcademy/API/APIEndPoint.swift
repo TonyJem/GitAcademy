@@ -8,7 +8,7 @@ enum APIEndpoint {
     var url: URL? {
         switch self {
         case .user:
-          return makeURL(endpoint: "_")
+          return makeURL(endpoint: "user")
         case .repositories:
           return makeURL(endpoint: "_")
         case .starred:

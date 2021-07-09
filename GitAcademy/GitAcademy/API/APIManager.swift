@@ -15,7 +15,7 @@ extension APIManager {
                 switch result {
                 case .success(let networkResponse):
                     DispatchQueue.main.async {
-                        print("🟢 fetchUser success! User name is: \(networkResponse.object.username)")
+                        print("🟢 OLd fetchUser success! User name is: \(networkResponse.object.username)")
                     }
                 case .failure(let error):
                     print("🔴 Failed to get user, or there is no valid/active session: \(error.localizedDescription)")
