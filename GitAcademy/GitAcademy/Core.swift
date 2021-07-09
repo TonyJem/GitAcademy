@@ -7,5 +7,6 @@
 import Foundation
 
 struct Core {
+    static var apiManager = APIManager()
     static var accountManager = AccountManager()
 }

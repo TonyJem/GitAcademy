@@ -82,7 +82,7 @@ private extension ProfileViewModel {
                     DispatchQueue.main.async {
                         print("🟢🟢 fetchRepositories success !")
                         self.profile.repositories = networkResponse.object
-                        self.profile.starredRepositories = networkResponse.object.filter { $0.stargazersCount > 0 }
+//                        self.profile.starredRepositories = networkResponse.object.filter { $0.stargazersCount > 0 }
                         Core.accountManager.profile = self.profile
                         SceneDelegate.shared.rootViewController.navigateToMainScreenAnimated()
                     }

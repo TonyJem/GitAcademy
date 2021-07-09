@@ -88,8 +88,23 @@ extension ProfileViewController: UITableViewDelegate {
             navigationController?.pushViewController(repositoriesViewController, animated: true)
         case 1:
             print("🟢 Did select Starred row")
+            fetchStarred()
         default:
             break
+        }
+    }
+    
+    func fetchStarred() {
+        // self.turnActivityIndicatorON()
+        Core.apiManager.fetchStarred { result in
+            switch result {
+            case .success(let starred):
+                Core.accountManager.profile?.starredRepositories = starred
+                print("🟢 First Starred Repo name: \(starred[0].name)")
+            case .failure(let error):
+                print("🔴 \(error)")
+            }
+            // self.turnActivityIndicatorOFF()
         }
     }
 }
