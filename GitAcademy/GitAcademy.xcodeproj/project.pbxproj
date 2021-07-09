@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		3A13DD4D269187DC001ACB49 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A13DD4C269187DB001ACB49 /* ProfileViewModel.swift */; };
 		3A1D35612698841D0037D46D /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1D35602698841D0037D46D /* APIError.swift */; };
+		3A1D356A2698859B0037D46D /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1D35692698859B0037D46D /* APIManager.swift */; };
+		3A1D3575269886A40037D46D /* APIEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1D3574269886A40037D46D /* APIEndPoint.swift */; };
 		3A3C831A2692E68D004E87D0 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3C83192692E68D004E87D0 /* Profile.swift */; };
 		3A3C831F2692EFB7004E87D0 /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3C831E2692EFB7004E87D0 /* Core.swift */; };
 		3A3C83272692FC57004E87D0 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3C83262692FC57004E87D0 /* UIImageView.swift */; };
@@ -62,6 +64,8 @@
 /* Begin PBXFileReference section */
 		3A13DD4C269187DB001ACB49 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		3A1D35602698841D0037D46D /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		3A1D35692698859B0037D46D /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		3A1D3574269886A40037D46D /* APIEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndPoint.swift; sourceTree = "<group>"; };
 		3A3C83192692E68D004E87D0 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		3A3C831E2692EFB7004E87D0 /* Core.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core.swift; sourceTree = "<group>"; };
 		3A3C83262692FC57004E87D0 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
@@ -138,8 +142,21 @@
 			isa = PBXGroup;
 			children = (
 				3A1D35602698841D0037D46D /* APIError.swift */,
+				3A1D35692698859B0037D46D /* APIManager.swift */,
+				3A1D3574269886A40037D46D /* APIEndPoint.swift */,
+				3A1D35682698854A0037D46D /* Responces */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		3A1D35682698854A0037D46D /* Responces */ = {
+			isa = PBXGroup;
+			children = (
+				3ADA3777269180BD0009D500 /* User.swift */,
+				3ADA3772269180AD0009D500 /* Repository.swift */,
+				3A4292242697784C0092A2A8 /* Starred.swift */,
+			);
+			path = Responces;
 			sourceTree = "<group>";
 		};
 		3A3C836A26946962004E87D0 /* Login */ = {
@@ -278,9 +295,6 @@
 			isa = PBXGroup;
 			children = (
 				3ADA3768269180860009D500 /* NetworkRequest.swift */,
-				3ADA3777269180BD0009D500 /* User.swift */,
-				3ADA3772269180AD0009D500 /* Repository.swift */,
-				3A4292242697784C0092A2A8 /* Starred.swift */,
 				3A3C83192692E68D004E87D0 /* Profile.swift */,
 			);
 			path = Models;
@@ -458,6 +472,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A1D356A2698859B0037D46D /* APIManager.swift in Sources */,
 				3ADB57CE2691E69200354A8F /* ProfileCell.swift in Sources */,
 				3ADB57D32691E6B800354A8F /* RepositoryCell.swift in Sources */,
 				3A3C834D26943824004E87D0 /* RootViewController.swift in Sources */,
@@ -468,6 +483,7 @@
 				3A4292252697784C0092A2A8 /* Starred.swift in Sources */,
 				3A3C838A2694895F004E87D0 /* AccountManager.swift in Sources */,
 				3AC7F9242678D63100561DBB /* LoginViewController.swift in Sources */,
+				3A1D3575269886A40037D46D /* APIEndPoint.swift in Sources */,
 				3AC7F9202678D63100561DBB /* AppDelegate.swift in Sources */,
 				3A1D35612698841D0037D46D /* APIError.swift in Sources */,
 				3A3C83272692FC57004E87D0 /* UIImageView.swift in Sources */,
