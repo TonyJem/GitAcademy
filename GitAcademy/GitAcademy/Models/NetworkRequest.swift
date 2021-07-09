@@ -6,13 +6,6 @@ struct NetworkRequest {
         case post = "POST"
     }
     
-    enum RequestError: Error {
-        case invalidResponse
-        case networkCreationError
-        case otherError
-        case sessionExpired
-    }
-    
     enum RequestType: Equatable {
         case codeExchange(code: String)
         case getRepos
@@ -108,7 +101,7 @@ struct NetworkRequest {
         let session = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let response = response as? HTTPURLResponse else {
                 DispatchQueue.main.async {
-                    completionHandler(.failure(RequestError.invalidResponse))
+                    completionHandler(.failure(APIError.invalidResponse))
                 }
                 return
             }
@@ -117,7 +110,7 @@ struct NetworkRequest {
                 let data = data
             else {
                 DispatchQueue.main.async {
-                    let error = error ?? NetworkRequest.RequestError.otherError
+                    let error = error ?? APIError.otherError
                     completionHandler(.failure(error))
                 }
                 return
@@ -148,7 +141,7 @@ struct NetworkRequest {
                 return
             } else {
                 DispatchQueue.main.async {
-                    completionHandler(.failure(NetworkRequest.RequestError.otherError))
+                    completionHandler(.failure(APIError.otherError))
                 }
             }
         }
