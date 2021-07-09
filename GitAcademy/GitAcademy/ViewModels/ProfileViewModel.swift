@@ -1,3 +1,4 @@
+// WHY?: Should we count only user's starred, or starred in where are included other stargazers also ?
 import AuthenticationServices
 
 class ProfileViewModel: NSObject {
@@ -12,11 +13,11 @@ class ProfileViewModel: NSObject {
         }
         
         let callbackURLScheme = NetworkRequest.callbackURLScheme
-        
         let authenticationSession = ASWebAuthenticationSession(
             url: signInURL,
-            callbackURLScheme: callbackURLScheme) { callbackURL, error in
+            callbackURLScheme: callbackURLScheme) { [weak self] callbackURL, error in
             guard error == nil,
+                  let self = self,
                   let callbackURL = callbackURL,
                   let queryItems = URLComponents(string: callbackURL.absoluteString)?.queryItems,
                   let code = queryItems.first(where: { $0.name == "code" })?.value,
@@ -29,7 +30,7 @@ class ProfileViewModel: NSObject {
             networkRequest.start(responseType: String.self) { result in
                 switch result {
                 case .success:
-                    Core.apiManager.fetchUser()
+                    self.fetchUser()
                 case .failure(let error):
                     print("🔴 Failed to exchange access code for tokens: \(error)")
                 }
@@ -42,6 +43,53 @@ class ProfileViewModel: NSObject {
         if !authenticationSession.start() {
             print("🔴 Failed to start ASWebAuthenticationSession")
         }
+    }
+}
+
+//MARK: - Private
+private extension ProfileViewModel {
+    func fetchUser() {
+        NetworkRequest
+            .RequestType
+            .getUser
+            .networkRequest()?
+            .start(responseType: User.self) { [weak self] result in
+                guard let self = self else { return }
+                switch result {
+                case .success(let networkResponse):
+                    DispatchQueue.main.async {
+                        print("🟢 fetchUser success!")
+                        self.profile.user = networkResponse.object
+                        
+                        // TODO: Remove getting repositories list to independent thread
+                        self.fetchRepositories()
+                    }
+                case .failure(let error):
+                    print("🔴 Failed to get user, or there is no valid/active session: \(error.localizedDescription)")
+                }
+            }
+    }
+    
+    func fetchRepositories() {
+        NetworkRequest
+            .RequestType
+            .getRepos
+            .networkRequest()?
+            .start(responseType: [Repository].self) { [weak self] result in
+                guard let self = self else { return }
+                switch result {
+                case .success(let networkResponse):
+                    DispatchQueue.main.async {
+                        print("🟢🟢 fetchRepositories success !")
+                        self.profile.repositories = networkResponse.object
+//                        self.profile.starredRepositories = networkResponse.object.filter { $0.stargazersCount > 0 }
+                        Core.accountManager.profile = self.profile
+                        SceneDelegate.shared.rootViewController.navigateToMainScreenAnimated()
+                    }
+                case .failure(let error):
+                    print("🔴 Failed to get the user's repositories: \(error)")
+                }
+            }
     }
 }
 
