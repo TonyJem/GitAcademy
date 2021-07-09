@@ -1,3 +1,6 @@
+// selected User Starred repos:
+// https://api.github.com/users/tonyjem/starred
+
 import Foundation
 
 enum APIEndpoint {
