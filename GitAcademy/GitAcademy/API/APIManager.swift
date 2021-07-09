@@ -10,6 +10,19 @@ struct APIManager {
 
 extension APIManager {
     
+    func fetchUser() {
+        NetworkRequest.RequestType.getUser.networkRequest()?.start(responseType: User.self) { result in
+                switch result {
+                case .success(let networkResponse):
+                    DispatchQueue.main.async {
+                        print("🟢 fetchUser success! User name is: \(networkResponse.object.username)")
+                    }
+                case .failure(let error):
+                    print("🔴 Failed to get user, or there is no valid/active session: \(error.localizedDescription)")
+                }
+            }
+    }
+    
     func fetchStarred(_ completion: @escaping (Result<[Starred], APIError>) -> ()) {
         guard let url = APIEndpoint.starred.url else {
             completion(.failure(.failedURLCreation))
@@ -23,8 +36,8 @@ extension APIManager {
             DispatchQueue.main.async {
                 if let data = data {
                     do {
-                        let episodes = try JSONDecoder().decode([Starred].self, from: data)
-                        completion(.success(episodes))
+                        let starred = try JSONDecoder().decode([Starred].self, from: data)
+                        completion(.success(starred))
                     } catch {
                         completion(.failure(.unexpectedDataFormat))
                     }
@@ -34,4 +47,30 @@ extension APIManager {
             }
         }.resume()
     }
+    
+
+
+    
+  /*
+    func fetchRepositories() {
+        NetworkRequest
+            .RequestType
+            .getRepos
+            .networkRequest()?
+            .start(responseType: [Repository].self) { [weak self] result in
+                guard let self = self else { return }
+                switch result {
+                case .success(let networkResponse):
+                    DispatchQueue.main.async {
+                        print("🟢🟢 fetchRepositories success !")
+                        self.profile.repositories = networkResponse.object
+                        Core.accountManager.profile = self.profile
+                        SceneDelegate.shared.rootViewController.navigateToMainScreenAnimated()
+                    }
+                case .failure(let error):
+                    print("🔴 Failed to get the user's repositories: \(error)")
+                }
+            }
+    }
+ */
 }
