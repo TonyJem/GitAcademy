@@ -324,8 +324,8 @@
 		3ADA4E6B269641AE0021DD62 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				3ADA4E6C2696421F0021DD62 /* RepositoryDetailsCell.swift */,
 				3ADA4E6D2696421F0021DD62 /* RepositoryDetailsCell.xib */,
+				3ADA4E6C2696421F0021DD62 /* RepositoryDetailsCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";

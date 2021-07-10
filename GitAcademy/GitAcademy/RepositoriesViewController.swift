@@ -41,6 +41,7 @@ private extension RepositoriesViewController {
                 
                 Core.accountManager.profile?.repositories = repositories
                 self.repositories = repositories
+                self.repositoriesTableView.reloadData()
                 
             case .failure(let error):
                 print("🔴 \(error)")
@@ -58,6 +59,9 @@ extension RepositoriesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell = repositoriesTableView.dequeueReusableCell(withIdentifier: String(describing: RepositoryDetailsCell.self), for: indexPath) as? RepositoryDetailsCell else { return UITableViewCell() }
+        
+        let repository = repositories[indexPath.row]
+        cell.fillContent(for: repository)
         return cell
     }
 }
