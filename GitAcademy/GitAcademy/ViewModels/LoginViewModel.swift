@@ -28,9 +28,7 @@ class LoginViewModel: NSObject {
             
             networkRequest.start(responseType: String.self) { result in
                 switch result {
-                case .success(let answer):
-                    let object = answer.object
-                    print("🟣🟣🟣 Object: \(object)")
+                case .success:
                     self.fetchUser()
                 case .failure(let error):
                     print("🔴 Failed to exchange access code for tokens: \(error)")
@@ -56,8 +54,6 @@ private extension LoginViewModel {
             case .success(let networkResponse):
                 DispatchQueue.main.async {
                     print("🟢 Fetch User success !")
-                    print("🟢 Username: \(networkResponse.object.username)")
-                    print("🟢 Username PublicRepos count: \(networkResponse.object.publicReposCount)")
                     self.profile.user = networkResponse.object
                     Core.accountManager.profile = self.profile
                     SceneDelegate.shared.rootViewController.navigateToMainScreenAnimated(with: networkResponse.object)

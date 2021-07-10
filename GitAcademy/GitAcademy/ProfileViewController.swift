@@ -18,7 +18,7 @@ class ProfileViewController: UIViewController {
     var starredCountIsLoaded = false {
         didSet {
             if starredCountIsLoaded {
-                print("🟢🟢🟢🟢 starredCountIsLoaded: \(starredCount)")
+                print("🟢🟢🟢🟢 starredCount did Update to: \(starredCount)")
             }
         }
     }
