@@ -1,4 +1,5 @@
 // TODO: Remove "cell selection" while clicking on cells in Profile Table View
+// TODO: Learn and Refactor to move functionality to ViewModel
 import UIKit
 
 class ProfileViewController: UIViewController {
@@ -13,6 +14,7 @@ class ProfileViewController: UIViewController {
     private let numberOfRowsInSectionRepositories = 2
     private let repositoriesViewController = RepositoriesViewController(nibName: "RepositoriesViewController", bundle: nil)
     
+    // TODO: Setup Laoding indicator while fetchnig starred repos
     var starredCountIsLoaded = false {
         didSet {
             if starredCountIsLoaded {
@@ -34,14 +36,12 @@ class ProfileViewController: UIViewController {
         
         profileTableView.register(UINib(nibName: String(describing: ProfileCell.self), bundle: Bundle.main),
                                   forCellReuseIdentifier: String(describing: ProfileCell.self))
-        
         profileTableView.register(UINib(nibName: String(describing: RepositoryCell.self), bundle: Bundle.main),
                                   forCellReuseIdentifier: String(describing: RepositoryCell.self))
-        
-        profileTableView.backgroundColor = .systemGray5
-        profileTableView.dataSource = self
         profileTableView.delegate = self
+        profileTableView.dataSource = self
         profileTableView.tableFooterView = UIView()
+        profileTableView.backgroundColor = .systemGray5
         
         if isMainScreen {
             let logoutButton = UIBarButtonItem(
@@ -56,6 +56,7 @@ class ProfileViewController: UIViewController {
     }
 }
 
+// MARK: - Private methods
 private extension ProfileViewController {
     func profileCell(for indexPath: IndexPath) -> UITableViewCell {
         guard let cell = profileTableView.dequeueReusableCell(withIdentifier: String(describing: ProfileCell.self), for: indexPath) as? ProfileCell,
@@ -80,8 +81,6 @@ private extension ProfileViewController {
             switch result {
             case .success(let starred):
                 print("🟢🟢🟢 Fetch Starred success !")
-                print("🟢🟢🟢 Starred count: \(starred.count)")
-                print("🟢🟢🟢 1st Starred description: \(starred[0].description)")
                 Core.accountManager.profile?.starredRepositories = starred
                 self.starredCount = starred.count
                 self.starredCountIsLoaded = true
@@ -96,6 +95,7 @@ private extension ProfileViewController {
     }
 }
 
+// MARK: - TableView Data Source
 extension ProfileViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -125,6 +125,7 @@ extension ProfileViewController: UITableViewDataSource {
     }
 }
 
+// MARK: - TableView Delegate
 extension ProfileViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard indexPath.section == 1 else { return }
