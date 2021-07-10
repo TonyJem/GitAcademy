@@ -9,6 +9,7 @@ import Foundation
 enum APIEndpoint {
     case repositories
     case starred
+    case contributors
     
     var url: URL? {
         
@@ -28,6 +29,8 @@ enum APIEndpoint {
             return makeURL(endpoint: "users/\(username)/repos", queryItems: queryItems)
         case .starred:
             return makeURL(endpoint: "users/\(username)/starred", queryItems: queryItems)
+        case .contributors:
+            return makeURL(endpoint: "repos/\(username)/02Lecture-Protocols/contributors", queryItems: queryItems)
         }
     }
 }
