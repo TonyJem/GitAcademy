@@ -13,6 +13,15 @@ class ProfileViewController: UIViewController {
     private let repositoriesViewController = RepositoriesViewController(nibName: "RepositoriesViewController", bundle: nil)
     private let viewModel = ProfileViewModel()
     
+    private var starredCountIsLoaded = false {
+        didSet {
+            if starredCountIsLoaded {
+                print("🟢🟢🟢 starredCountIsLoaded: \(starredCount)")
+            }
+        }
+    }
+    private var starredCount = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,6 +41,8 @@ class ProfileViewController: UIViewController {
             title: "Log Out", style: .plain,
             target: self, action: #selector(logout))
         navigationItem.setLeftBarButton(logoutButton, animated: true)
+        
+        viewModel.fetchStarred()
     }
     
     @objc private func logout() {
