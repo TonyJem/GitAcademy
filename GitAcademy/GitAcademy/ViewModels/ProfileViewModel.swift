@@ -78,10 +78,8 @@ private extension ProfileViewModel {
                 print("🟢🟢 1st Repo Description: \(String(describing: repos[0].description))")
                 print("🟢🟢 1st Repo Stars: \(repos[0].stargazersCount)")
                 print("🟢🟢 1st Repo Language: \(String(describing: repos[0].language))")
-                print("🟡 1st Repo Contributors:")
                 
                 Core.accountManager.profile?.repositories = repos
-                
                 self.fetchContibutors(for: repos[0])
                 
             case .failure(let error):
