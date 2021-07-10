@@ -11,7 +11,7 @@ enum APIEndpoint {
     case starred
     case contributors
     
-    var url: URL? {
+    func url(for repo: Repository? = nil) -> URL? {
         
         guard let username = Core.accountManager.username,
               !username.isEmpty else {
@@ -27,10 +27,13 @@ enum APIEndpoint {
         switch self {
         case .repositories:
             return makeURL(endpoint: "users/\(username)/repos", queryItems: queryItems)
+            
         case .starred:
             return makeURL(endpoint: "users/\(username)/starred", queryItems: queryItems)
+            
         case .contributors:
-            return makeURL(endpoint: "repos/\(username)/02Lecture-Protocols/contributors", queryItems: queryItems)
+            guard let repository = repo else { return nil }
+            return makeURL(endpoint: "repos/\(username)/\(repository.name)/contributors", queryItems: queryItems)
         }
     }
 }

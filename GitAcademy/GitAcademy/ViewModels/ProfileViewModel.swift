@@ -81,11 +81,28 @@ private extension ProfileViewModel {
                 print("🟡 1st Repo Contributors:")
                 
                 Core.accountManager.profile?.repositories = repos
-                self.fetchStarred()
+                
+                self.fetchContibutors(for: repos[0])
+                
             case .failure(let error):
                 print("🔴 \(error)")
             }
         }
+    }
+    
+    func fetchContibutors(for repo: Repository) {
+        Core.apiManager.fetchContributors(for: repo, { result in
+            switch result {
+            case .success(let contributors):
+                print("🟣 Fetch Contributors success !")
+                print("🟣 Contributors count: \(contributors.count)")
+                print("🟣 1st contibutor description: \(contributors[0].username)")
+                
+                self.fetchStarred()
+            case .failure(let error):
+                print("🔴 \(error)")
+            }
+        })
     }
     
     func fetchStarred() {

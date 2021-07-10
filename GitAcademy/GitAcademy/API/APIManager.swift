@@ -11,7 +11,7 @@ struct APIManager {
 extension APIManager {
     
     func fetchStarred(_ completion: @escaping (Result<[Starred], APIError>) -> ()) {
-        guard let url = APIEndpoint.starred.url else {
+        guard let url = APIEndpoint.starred.url() else {
             completion(.failure(.failedURLCreation))
             return
         }
@@ -36,7 +36,7 @@ extension APIManager {
     }
     
     func fetchRepositories(_ completion: @escaping (Result<[Repository], APIError>) -> ()) {
-        guard let url = APIEndpoint.repositories.url else {
+        guard let url = APIEndpoint.repositories.url() else {
             completion(.failure(.failedURLCreation))
             return
         }
@@ -60,8 +60,9 @@ extension APIManager {
         }.resume()
     }
     
-    func fetchContributors(_ completion: @escaping (Result<[Contributor], APIError>) -> ()) {
-        guard let url = APIEndpoint.contributors.url else {
+    func fetchContributors(for repo: Repository,
+                           _ completion: @escaping (Result<[Contributor], APIError>) -> ()) {
+        guard let url = APIEndpoint.contributors.url(for: repo) else {
             completion(.failure(.failedURLCreation))
             return
         }
