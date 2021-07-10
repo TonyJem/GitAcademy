@@ -6,6 +6,7 @@ class ProfileViewController: UIViewController {
     
     // TODO: May possible to set User via init while creating ProfileViewController ?
     var user: User?
+    var isMainScreen = false
     
     private let numberOfSections = 2
     private let numberOfRowsInSectionProfile = 1
@@ -42,11 +43,12 @@ class ProfileViewController: UIViewController {
         profileTableView.delegate = self
         profileTableView.tableFooterView = UIView()
         
-        // TODO: Make sure to have a "Log Out" button only on "Main Screen", on other screens should be regula "Back" button
-        let logoutButton = UIBarButtonItem(
-            title: "Log Out", style: .plain,
-            target: self, action: #selector(logout))
-        navigationItem.setLeftBarButton(logoutButton, animated: true)
+        if isMainScreen {
+            let logoutButton = UIBarButtonItem(
+                title: "Log Out", style: .plain,
+                target: self, action: #selector(logout))
+            navigationItem.setLeftBarButton(logoutButton, animated: true)
+        }
     }
     
     @objc private func logout() {

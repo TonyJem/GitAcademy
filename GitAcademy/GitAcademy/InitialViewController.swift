@@ -9,7 +9,9 @@ class InitialViewController: UIViewController {
         super.viewDidLoad()
         
         if let user = Core.accountManager.profile?.user {
+            
             profileVC.user = user
+            profileVC.isMainScreen = true
         }
         
         Core.accountManager.userIsLoggedIn ? show(profileVC) : show(loginVC)
