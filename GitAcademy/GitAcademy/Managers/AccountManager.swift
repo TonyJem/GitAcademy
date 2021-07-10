@@ -6,6 +6,7 @@ struct AccountManager {
         // TODO: Decide if should keep username sepratelly or it can be used from Profile model?
         static let profile = "profile"
         static let username = "username"
+        static let loggedInState = "loggedIn"
         static let accessToken = "accessToken"
         static let refreshToken = "refreshToken"
     }
@@ -14,7 +15,7 @@ struct AccountManager {
     private var userDefaults = UserDefaults.standard
     
     var userIsLoggedIn: Bool {
-        return Core.accountManager.username != nil
+        return userDefaults.bool(forKey: UserDefaultsKey.loggedInState)
     }
     
     var profile: Profile? {
@@ -60,7 +61,21 @@ struct AccountManager {
             toKeyChain(token, for: UserDefaultsKey.refreshToken)
         }
     }
+    
+    func registerLogIn() {
+        userDefaults.set(true, forKey: UserDefaultsKey.loggedInState)
+    }
+    
+    func registerLogOut() {
+        userDefaults.set(false, forKey: UserDefaultsKey.loggedInState)
+        cleanCredentials()
+    }
 
+    
+}
+
+// MARK: - Private Methods
+private extension AccountManager {
     func cleanCredentials() {
         Core.accountManager.profile = nil
         Core.accountManager.username = nil
