@@ -46,6 +46,7 @@
 		3ADB57D32691E6B800354A8F /* RepositoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADB57D22691E6B800354A8F /* RepositoryCell.swift */; };
 		3ADB57DC2691E75500354A8F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADB57DA2691E75500354A8F /* ProfileViewController.swift */; };
 		3ADB57DD2691E75500354A8F /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3ADB57DB2691E75500354A8F /* ProfileViewController.xib */; };
+		3AE413EC269A3B3800027031 /* colorsJSON in Resources */ = {isa = PBXBuildFile; fileRef = 3AE413EB269A3B3800027031 /* colorsJSON */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +112,7 @@
 		3ADB57D22691E6B800354A8F /* RepositoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCell.swift; sourceTree = "<group>"; };
 		3ADB57DA2691E75500354A8F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		3ADB57DB2691E75500354A8F /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
+		3AE413EB269A3B3800027031 /* colorsJSON */ = {isa = PBXFileReference; lastKnownFileType = text; path = colorsJSON; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				3A3C8380269485DF004E87D0 /* SwiftKeychain.swift */,
+				3AE413EB269A3B3800027031 /* colorsJSON */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -452,6 +455,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AE413EC269A3B3800027031 /* colorsJSON in Resources */,
 				3ADA4E6F2696421F0021DD62 /* RepositoryDetailsCell.xib in Resources */,
 				3ADB57DD2691E75500354A8F /* ProfileViewController.xib in Resources */,
 				3AC7F92F2678D63300561DBB /* LaunchScreen.storyboard in Resources */,
