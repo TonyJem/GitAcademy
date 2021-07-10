@@ -49,7 +49,6 @@ struct NetworkRequest {
                     return nil
                 }
                 // TODO: Implement Logic to go throught all pages and count all repositories
-                // WHY?: Getting only 80 repositories instead of 82 as shown in GitHub App ?
                 let queryItems = [
                     URLQueryItem(name: "page", value: "1"),
                     URLQueryItem(name: "per_page", value: "100")
