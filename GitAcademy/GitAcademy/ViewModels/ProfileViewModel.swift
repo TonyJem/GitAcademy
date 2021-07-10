@@ -1,7 +1,7 @@
 import Foundation
 
 class ProfileViewModel: NSObject {
-   
+    
     func fetchRepositories() {
         Core.apiManager.fetchRepositories { result in
             switch result {

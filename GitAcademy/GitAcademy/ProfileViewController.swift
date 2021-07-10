@@ -5,6 +5,7 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet private weak var profileTableView: UITableView!
     
+    private let viewModel = ProfileViewModel()
     private let numberOfSections = 2
     private let numberOfRowsInSectionProfile = 1
     private let numberOfRowsInSectionRepositories = 2

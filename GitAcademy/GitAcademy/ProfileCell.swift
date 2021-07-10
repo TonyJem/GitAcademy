@@ -5,7 +5,7 @@ class ProfileCell: UITableViewCell {
     @IBOutlet private weak var avatarContainerView: UIView!
     @IBOutlet private weak var avatarImageView: UIImageView!
     @IBOutlet private weak var nameLabel: UILabel!
-    @IBOutlet private weak var loginLabel: UILabel!
+    @IBOutlet private weak var userNameLabel: UILabel!
     @IBOutlet private weak var followersButton: UIButton!
     @IBOutlet private weak var followingButton: UIButton!
     @IBOutlet private weak var followButton: UIButton!
@@ -48,7 +48,7 @@ class ProfileCell: UITableViewCell {
         avatarImageView.downloaded(from: user.avatar)
         nameLabel.isHidden = user.name == nil
         nameLabel.text = user.name
-        loginLabel.text = user.username
+        userNameLabel.text = user.username
         followersButton.setTitle("\(user.followers) followers", for: .normal)
         followingButton.setTitle("\(user.following) following", for: .normal)
     }
