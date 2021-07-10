@@ -10,16 +10,18 @@ enum APIEndpoint {
               !username.isEmpty else {
             return nil
         }
+        
+        // TODO: Implement Logic to go throught all pages and count all repositories
+        let queryItems = [
+            URLQueryItem(name: "page", value: "1"),
+            URLQueryItem(name: "per_page", value: "100")
+        ]
+        
         switch self {
         case .repositories:
-            // TODO: Implement Logic to go throught all pages and count all repositories
-            let queryItems = [
-                URLQueryItem(name: "page", value: "1"),
-                URLQueryItem(name: "per_page", value: "100")
-            ]
             return makeURL(endpoint: "users/\(username)/repos", queryItems: queryItems)
         case .starred:
-            return makeURL(endpoint: "users/\(username)/starred")
+            return makeURL(endpoint: "users/\(username)/starred", queryItems: queryItems)
         }
     }
 }
