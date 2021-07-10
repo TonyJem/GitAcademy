@@ -28,7 +28,9 @@ class ProfileViewModel: NSObject {
             
             networkRequest.start(responseType: String.self) { result in
                 switch result {
-                case .success:
+                case .success(let answer):
+                    let object = answer.object
+                    print("🟣🟣🟣 Object: \(object)")
                     self.fetchUser()
                 case .failure(let error):
                     print("🔴 Failed to exchange access code for tokens: \(error)")

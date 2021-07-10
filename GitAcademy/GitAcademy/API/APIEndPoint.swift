@@ -1,3 +1,6 @@
+// selected User's Starred profile:
+// https://api.github.com/users/tonyjem
+
 // selected User's Starred repos:
 // https://api.github.com/users/tonyjem/starred
 
@@ -7,6 +10,7 @@
 import Foundation
 
 enum APIEndpoint {
+    case user
     case repositories
     case starred
     case contributors
@@ -25,6 +29,9 @@ enum APIEndpoint {
         ]
         
         switch self {
+        case .user:
+            return makeURL(endpoint: "users/\(username)")
+            
         case .repositories:
             return makeURL(endpoint: "users/\(username)/repos", queryItems: queryItems)
             

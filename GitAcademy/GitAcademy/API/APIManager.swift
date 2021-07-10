@@ -10,6 +10,31 @@ struct APIManager {
 
 extension APIManager {
     
+    func getUser(_ completion: @escaping (Result<User, APIError>) -> ()) {
+        guard let url = APIEndpoint.user.url() else {
+            completion(.failure(.failedURLCreation))
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        
+        session.dataTask(with: request) { data, response, error in
+            DispatchQueue.main.async {
+                if let data = data {
+                    do {
+                        let user = try JSONDecoder().decode(User.self, from: data)
+                        completion(.success(user))
+                    } catch {
+                        completion(.failure(.unexpectedDataFormat))
+                    }
+                } else {
+                    completion(.failure(.failedRequest))
+                }
+            }
+        }.resume()
+    }
+    
     func fetchStarred(_ completion: @escaping (Result<[Starred], APIError>) -> ()) {
         guard let url = APIEndpoint.starred.url() else {
             completion(.failure(.failedURLCreation))
