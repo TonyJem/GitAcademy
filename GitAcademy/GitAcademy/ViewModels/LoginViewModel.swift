@@ -1,6 +1,6 @@
 import AuthenticationServices
 
-class ProfileViewModel: NSObject {
+class LoginViewModel: NSObject {
     
     // TODO: May be move profile to init, to start it with data already fetched
     private var profile = Profile(user: User(avatar: "", username: "", name: "", followers: 0, following: 0),
@@ -48,7 +48,7 @@ class ProfileViewModel: NSObject {
 }
 
 //MARK: - Private
-private extension ProfileViewModel {
+private extension LoginViewModel {
     func fetchUser() {
         NetworkRequest.RequestType.getUser.networkRequest()?.start(responseType: User.self) { [weak self] result in
             guard let self = self else { return }
@@ -122,7 +122,7 @@ private extension ProfileViewModel {
 }
 
 //MARK: - AuthenticationServices
-extension ProfileViewModel: ASWebAuthenticationPresentationContextProviding {
+extension LoginViewModel: ASWebAuthenticationPresentationContextProviding {
     func presentationAnchor(for session: ASWebAuthenticationSession)
     -> ASPresentationAnchor {
         let window = UIApplication.shared.windows.first { $0.isKeyWindow }

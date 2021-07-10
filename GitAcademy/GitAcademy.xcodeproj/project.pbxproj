@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3A13DD4D269187DC001ACB49 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A13DD4C269187DB001ACB49 /* ProfileViewModel.swift */; };
+		3A13DD4D269187DC001ACB49 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A13DD4C269187DB001ACB49 /* LoginViewModel.swift */; };
 		3A1D35612698841D0037D46D /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1D35602698841D0037D46D /* APIError.swift */; };
 		3A1D356A2698859B0037D46D /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1D35692698859B0037D46D /* APIManager.swift */; };
 		3A1D3575269886A40037D46D /* APIEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1D3574269886A40037D46D /* APIEndPoint.swift */; };
@@ -64,7 +64,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3A13DD4C269187DB001ACB49 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		3A13DD4C269187DB001ACB49 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		3A1D35602698841D0037D46D /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		3A1D35692698859B0037D46D /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		3A1D3574269886A40037D46D /* APIEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndPoint.swift; sourceTree = "<group>"; };
@@ -137,7 +137,7 @@
 		3A13DD51269187F2001ACB49 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				3A13DD4C269187DB001ACB49 /* ProfileViewModel.swift */,
+				3A13DD4C269187DB001ACB49 /* LoginViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -495,7 +495,7 @@
 				3A1D35612698841D0037D46D /* APIError.swift in Sources */,
 				3A3C83272692FC57004E87D0 /* UIImageView.swift in Sources */,
 				3AC7F9222678D63100561DBB /* SceneDelegate.swift in Sources */,
-				3A13DD4D269187DC001ACB49 /* ProfileViewModel.swift in Sources */,
+				3A13DD4D269187DC001ACB49 /* LoginViewModel.swift in Sources */,
 				3ADA3778269180BD0009D500 /* User.swift in Sources */,
 				3AAEEE7A2699825B007FEA6C /* Contributor.swift in Sources */,
 				3A3C835326943D2A004E87D0 /* InitialViewController.swift in Sources */,
