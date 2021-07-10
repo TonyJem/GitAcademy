@@ -1,6 +1,16 @@
 import Foundation
 
 struct NetworkRequest {
+    typealias NetworkResult<T: Decodable> = (response: HTTPURLResponse, object: T)
+    
+    // TODO: Decide how we can hide this info ?
+    static let callbackURLScheme = "authhub"
+    static let clientID = "Iv1.8f06ae8264fe2a88"
+    static let clientSecret = "fc3ad5b268c0b3a121b0b16b07c8a1709beaecd5"
+
+    var method: HTTPMethod
+    var url: URL
+    
     enum HTTPMethod: String {
         case get = "GET"
         case post = "POST"
@@ -62,17 +72,6 @@ struct NetworkRequest {
         }
     }
     
-    typealias NetworkResult<T: Decodable> = (response: HTTPURLResponse, object: T)
-    
-    // MARK: - Private Constants
-    // TODO: Decide how we can hide this info ?
-    static let callbackURLScheme = "authhub"
-    static let clientID = "Iv1.8f06ae8264fe2a88"
-    static let clientSecret = "fc3ad5b268c0b3a121b0b16b07c8a1709beaecd5"
-    
-    // MARK: - Properties
-    var method: HTTPMethod
-    var url: URL
     
     // MARK: - Methods
     func start<T: Decodable>(responseType: T.Type, completionHandler: @escaping ((Result<NetworkResult<T>, Error>) -> Void)) {
