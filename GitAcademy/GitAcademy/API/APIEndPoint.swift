@@ -1,3 +1,9 @@
+// selected User's Starred repos:
+// https://api.github.com/users/tonyjem/starred
+
+// selected User's, selected repos's conributors:
+// https://api.github.com/repos/tonyjem/02Lecture-Protocols/contributors
+
 import Foundation
 
 enum APIEndpoint {
