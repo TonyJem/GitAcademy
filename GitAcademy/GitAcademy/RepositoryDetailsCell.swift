@@ -21,6 +21,7 @@ class RepositoryDetailsCell: UITableViewCell {
         containerView.setShadow()
         avatarImageView.roundCorners()
         avatarContainerView.roundCorners()
+        languageIconView.roundCorners()
     }
     
     @IBAction func starsButtonAction(_ sender: UIButton) {
