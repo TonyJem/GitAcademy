@@ -73,7 +73,8 @@ private extension ProfileViewModel {
                 print("🟢🟢 Fetch Repositories success !")
                 print("🟢🟢 Repositories count: \(repos.count)")
                 
-                print("🟡 1st Repo Owner's Username:")
+                print("🟢🟢 1st Repo Owner's Username: \(repos[0].owner.username)")
+                print("🟢🟢 1st Repo Owner's AvatarURL: \(repos[0].owner.avatar)")
                 print("🟢🟢 1st Repo Name: \(String(describing: repos[0].name))")
                 print("🟢🟢 1st Repo Description: \(String(describing: repos[0].description))")
                 print("🟢🟢 1st Repo Stars: \(repos[0].stargazersCount)")
