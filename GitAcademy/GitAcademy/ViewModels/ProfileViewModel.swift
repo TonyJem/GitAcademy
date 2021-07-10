@@ -1,4 +1,3 @@
-// WHY?: Should we count only user's starred, or starred in where are included other stargazers also ?
 import AuthenticationServices
 
 class ProfileViewModel: NSObject {
