@@ -3,7 +3,13 @@ import UIKit
 class RepositoriesViewController: UIViewController {
     @IBOutlet private weak var repositoriesTableView: UITableView!
     
-    var repositories: [Repository]?
+    var repositories: [Repository] = []
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        fetchRepositories()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,18 +28,19 @@ private extension RepositoriesViewController {
     func fetchRepositories() {
         Core.apiManager.fetchRepositories { result in
             switch result {
-            case .success(let repos):
+            case .success(let repositories):
                 print("🟢🟢 Fetch Repositories success !")
-                print("🟢🟢 Repositories count: \(repos.count)")
+                print("🟢🟢 Repositories count: \(repositories.count)")
                 
-                print("🟢🟢 1st Repo Owner's Username: \(repos[0].owner.username)")
-                print("🟢🟢 1st Repo Owner's AvatarURL: \(repos[0].owner.avatarURL)")
-                print("🟢🟢 1st Repo Name: \(String(describing: repos[0].name))")
-                print("🟢🟢 1st Repo Description: \(String(describing: repos[0].description))")
-                print("🟢🟢 1st Repo Stars: \(repos[0].stargazersCount)")
-                print("🟢🟢 1st Repo Language: \(String(describing: repos[0].language))")
+                print("🟢🟢 1st Repo Owner's Username: \(repositories[0].owner.username)")
+                print("🟢🟢 1st Repo Owner's AvatarURL: \(repositories[0].owner.avatarURL)")
+                print("🟢🟢 1st Repo Name: \(String(describing: repositories[0].name))")
+                print("🟢🟢 1st Repo Description: \(String(describing: repositories[0].description))")
+                print("🟢🟢 1st Repo Stars: \(repositories[0].stargazersCount)")
+                print("🟢🟢 1st Repo Language: \(String(describing: repositories[0].language))")
                 
-                Core.accountManager.profile?.repositories = repos
+                Core.accountManager.profile?.repositories = repositories
+                self.repositories = repositories
                 
             case .failure(let error):
                 print("🔴 \(error)")
@@ -45,7 +52,7 @@ private extension RepositoriesViewController {
 // MARK: - TableView DataSource
 extension RepositoriesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return repositories.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
