@@ -11,7 +11,6 @@ class ProfileViewController: UIViewController {
     private let numberOfRowsInSectionProfile = 1
     private let numberOfRowsInSectionRepositories = 2
     private let repositoriesViewController = RepositoriesViewController(nibName: "RepositoriesViewController", bundle: nil)
-    private let viewModel = ProfileViewModel()
     
     var starredCountIsLoaded = false {
         didSet {
@@ -26,8 +25,7 @@ class ProfileViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
-//        viewModel.fetchStarred()
-        starredCount = viewModel.getStarredCount(for: self)
+        fetchStarred()
     }
     
     override func viewDidLoad() {
@@ -73,6 +71,26 @@ private extension ProfileViewController {
         }
         indexPath.row == 0 ? cell.fillRepositories(with: user.publicReposCount) : cell.fillStarred(with: starredCount)
         return cell
+    }
+    
+    func fetchStarred() {
+        Core.apiManager.fetchStarred { result in
+            switch result {
+            case .success(let starred):
+                print("🟢🟢🟢 Fetch Starred success !")
+                print("🟢🟢🟢 Starred count: \(starred.count)")
+                print("🟢🟢🟢 1st Starred description: \(starred[0].description)")
+                Core.accountManager.profile?.starredRepositories = starred
+                self.starredCount = starred.count
+                self.starredCountIsLoaded = true
+                
+                let index = IndexPath(row: 1, section: 1)
+                self.profileTableView.reloadRows(at: [index], with: .automatic)
+                
+            case .failure(let error):
+                print("🔴 \(error)")
+            }
+        }
     }
 }
 
