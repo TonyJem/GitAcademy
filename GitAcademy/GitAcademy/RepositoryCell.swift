@@ -18,12 +18,11 @@ class RepositoryCell: UITableViewCell {
         containerView.setShadow()
     }
     
-    func fillRepositories() {
+    func fillRepositories(with count: Int) {
         iconContainerView.backgroundColor = .systemPurple
         iconImageView.image = #imageLiteral(resourceName: "repositories")
         titleLabel.text = "Repositories"
-        guard let profile = Core.accountManager.profile else { return }
-        countLabel.text = String(profile.repositories.count)
+        countLabel.text = String(count)
     }
     
     func fillStarred() {

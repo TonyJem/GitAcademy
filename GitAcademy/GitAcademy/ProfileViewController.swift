@@ -50,8 +50,11 @@ private extension ProfileViewController {
     }
     
     func repositoryCell(for indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = profileTableView.dequeueReusableCell(withIdentifier: String(describing: RepositoryCell.self), for: indexPath) as? RepositoryCell else { return UITableViewCell() }
-        indexPath.row == 0 ? cell.fillRepositories() : cell.fillStarred()
+        guard let cell = profileTableView.dequeueReusableCell(withIdentifier: String(describing: RepositoryCell.self), for: indexPath) as? RepositoryCell,
+              let user = user else {
+            return UITableViewCell()
+        }
+        indexPath.row == 0 ? cell.fillRepositories(with: user.publicReposCount) : cell.fillStarred()
         return cell
     }
 }
