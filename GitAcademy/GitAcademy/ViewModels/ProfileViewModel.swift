@@ -76,7 +76,7 @@ private extension ProfileViewModel {
                 print("🟡 1st Repo Owner's Username:")
                 print("🟢🟢 1st Repo Name: \(String(describing: repos[0].name))")
                 print("🟢🟢 1st Repo Description: \(String(describing: repos[0].description))")
-                print("🟡 1st Repo Stars:")
+                print("🟢🟢 1st Repo Stars: \(repos[0].stargazersCount)")
                 print("🟡 1st Repo Contributors:")
                 
                 Core.accountManager.profile?.repositories = repos
