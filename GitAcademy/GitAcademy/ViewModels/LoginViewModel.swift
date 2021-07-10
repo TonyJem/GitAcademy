@@ -61,6 +61,7 @@ private extension LoginViewModel {
                     self.profile.user = networkResponse.object
                     Core.accountManager.profile = self.profile
                     SceneDelegate.shared.rootViewController.navigateToMainScreenAnimated()
+                    
                 }
             case .failure(let error):
                 print("🔴 Failed to get user, or there is no valid/active session: \(error.localizedDescription)")

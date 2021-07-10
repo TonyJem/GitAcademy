@@ -1,15 +1,17 @@
-// TODO: Remove "selection" while clicking on cells in Profile Table View
+// TODO: Remove "cell selection" while clicking on cells in Profile Table View
 import UIKit
 
 class ProfileViewController: UIViewController {
-    
     @IBOutlet private weak var profileTableView: UITableView!
     
-    private let viewModel = ProfileViewModel()
+    // TODO: May possible to set User via init while creating ProfileViewController ?
+    var user: User?
+    
     private let numberOfSections = 2
     private let numberOfRowsInSectionProfile = 1
     private let numberOfRowsInSectionRepositories = 2
     private let repositoriesViewController = RepositoriesViewController(nibName: "RepositoriesViewController", bundle: nil)
+    private let viewModel = ProfileViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,8 +41,11 @@ class ProfileViewController: UIViewController {
 
 private extension ProfileViewController {
     func profileCell(for indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = profileTableView.dequeueReusableCell(withIdentifier: String(describing: ProfileCell.self), for: indexPath) as? ProfileCell else { return UITableViewCell() }
-        cell.fillContent()
+        guard let cell = profileTableView.dequeueReusableCell(withIdentifier: String(describing: ProfileCell.self), for: indexPath) as? ProfileCell,
+              let user = user else {
+            return UITableViewCell()
+        }
+        cell.fillContent(for: user)
         return cell
     }
     

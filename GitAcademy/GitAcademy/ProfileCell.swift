@@ -41,10 +41,7 @@ class ProfileCell: UITableViewCell {
     }
     
     //    MARK: - Methods
-    func fillContent() {
-//        TODO: Unwrapp prifile in TableviewController and then provide to cells only for them neccessary stuff
-        guard let profile = Core.accountManager.profile else { return }
-        let user = profile.user
+    func fillContent(for user: User) {
         avatarImageView.downloaded(from: user.avatar)
         nameLabel.isHidden = user.name == nil
         nameLabel.text = user.name
