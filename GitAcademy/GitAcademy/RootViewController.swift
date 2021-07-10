@@ -40,12 +40,10 @@ class RootViewController: UIViewController {
         current = new
     }
     
-    func navigateToMainScreenAnimated() {
-        
-        profileViewController.user = Core.accountManager.profile?.user
+    func navigateToMainScreenAnimated(with user: User) {
+        profileViewController.user = user
         let mainScreen = UINavigationController(rootViewController: profileViewController)
         Core.accountManager.registerLogIn()
-        
         animateFadeTransition(to: mainScreen)
     }
     

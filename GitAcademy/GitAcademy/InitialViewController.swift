@@ -8,6 +8,10 @@ class InitialViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if let user = Core.accountManager.profile?.user {
+            profileVC.user = user
+        }
+        
         Core.accountManager.userIsLoggedIn ? show(profileVC) : show(loginVC)
     }
     

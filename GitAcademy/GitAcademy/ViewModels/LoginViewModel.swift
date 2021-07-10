@@ -60,8 +60,7 @@ private extension LoginViewModel {
                     print("🟢 Username PublicRepos count: \(networkResponse.object.publicReposCount)")
                     self.profile.user = networkResponse.object
                     Core.accountManager.profile = self.profile
-                    SceneDelegate.shared.rootViewController.navigateToMainScreenAnimated()
-                    
+                    SceneDelegate.shared.rootViewController.navigateToMainScreenAnimated(with: networkResponse.object)
                 }
             case .failure(let error):
                 print("🔴 Failed to get user, or there is no valid/active session: \(error.localizedDescription)")
