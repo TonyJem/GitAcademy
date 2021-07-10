@@ -71,7 +71,8 @@ private extension ProfileViewModel {
             switch result {
             case .success(let repos):
                 print("🟢🟢 Fetch Repositories success !")
-                print("🟢🟢 Starred count: \(repos.count)")
+                print("🟢🟢 Repositories count: \(repos.count)")
+                print("🟢🟢 1st Repo description: \(repos[0].description)")
                 Core.accountManager.profile?.repositories = repos
                 self.fetchStarred()
             case .failure(let error):
@@ -88,6 +89,7 @@ private extension ProfileViewModel {
             case .success(let starred):
                 print("🟢🟢🟢 Fetch Starred success !")
                 print("🟢🟢🟢 Starred count: \(starred.count)")
+                print("🟢🟢🟢 1st Starred description: \(starred[0].description)")
                 Core.accountManager.profile?.starredRepositories = starred
                 SceneDelegate.shared.rootViewController.navigateToMainScreenAnimated()
             case .failure(let error):
