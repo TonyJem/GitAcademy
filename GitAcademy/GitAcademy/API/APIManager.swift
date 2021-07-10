@@ -36,7 +36,7 @@ extension APIManager {
     }
     
     func fetchRepositories(_ completion: @escaping (Result<[Repository], APIError>) -> ()) {
-        guard let url = APIEndpoint.starred.url else {
+        guard let url = APIEndpoint.repositories.url else {
             completion(.failure(.failedURLCreation))
             return
         }
