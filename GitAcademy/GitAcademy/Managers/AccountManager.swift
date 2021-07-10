@@ -63,10 +63,12 @@ struct AccountManager {
     }
     
     func registerLogIn() {
+        print("🟩 LogIn did register")
         userDefaults.set(true, forKey: UserDefaultsKey.loggedInState)
     }
     
     func registerLogOut() {
+        print("🟥 LogOut did register")
         userDefaults.set(false, forKey: UserDefaultsKey.loggedInState)
         cleanCredentials()
     }
