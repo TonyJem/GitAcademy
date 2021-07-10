@@ -25,11 +25,10 @@ class RepositoryCell: UITableViewCell {
         countLabel.text = String(count)
     }
     
-    func fillStarred() {
+    func fillStarred(with count: Int) {
         iconContainerView.backgroundColor = .systemYellow
         iconImageView.image = #imageLiteral(resourceName: "starred")
         titleLabel.text = "Starred"
-        guard let profile = Core.accountManager.profile else { return }
-        countLabel.text = String(profile.starredRepositories.count)
+        countLabel.text = String(count)
     }
 }

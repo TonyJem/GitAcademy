@@ -2,7 +2,7 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
-    @IBOutlet private weak var profileTableView: UITableView!
+    @IBOutlet weak var profileTableView: UITableView!
     
     // TODO: May possible to set User via init while creating ProfileViewController ?
     var user: User?
@@ -13,14 +13,20 @@ class ProfileViewController: UIViewController {
     private let repositoriesViewController = RepositoriesViewController(nibName: "RepositoriesViewController", bundle: nil)
     private let viewModel = ProfileViewModel()
     
-    private var starredCountIsLoaded = false {
+    var starredCountIsLoaded = false {
         didSet {
             if starredCountIsLoaded {
-                print("🟢🟢🟢 starredCountIsLoaded: \(starredCount)")
+                print("🟢🟢🟢🟢 starredCountIsLoaded: \(starredCount)")
             }
         }
     }
-    private var starredCount = 0
+    var starredCount = 0
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        viewModel.fetchStarred()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,8 +47,6 @@ class ProfileViewController: UIViewController {
             title: "Log Out", style: .plain,
             target: self, action: #selector(logout))
         navigationItem.setLeftBarButton(logoutButton, animated: true)
-        
-        viewModel.fetchStarred()
     }
     
     @objc private func logout() {
@@ -65,7 +69,7 @@ private extension ProfileViewController {
               let user = user else {
             return UITableViewCell()
         }
-        indexPath.row == 0 ? cell.fillRepositories(with: user.publicReposCount) : cell.fillStarred()
+        indexPath.row == 0 ? cell.fillRepositories(with: user.publicReposCount) : cell.fillStarred(with: starredCount)
         return cell
     }
 }

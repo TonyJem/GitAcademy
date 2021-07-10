@@ -34,6 +34,7 @@
 		3AC7F9452678D63300561DBB /* GitAcademyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC7F9442678D63300561DBB /* GitAcademyUITests.swift */; };
 		3ACFF42C2699D5A3004F5B5E /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACFF42B2699D5A3004F5B5E /* ProfileViewModel.swift */; };
 		3ACFF4312699F2D2004F5B5E /* RepositoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACFF4302699F2D2004F5B5E /* RepositoriesViewModel.swift */; };
+		3ACFF436269A00CB004F5B5E /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACFF435269A00CB004F5B5E /* UIApplication.swift */; };
 		3ADA3769269180860009D500 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADA3768269180860009D500 /* NetworkRequest.swift */; };
 		3ADA3773269180AD0009D500 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADA3772269180AD0009D500 /* Repository.swift */; };
 		3ADA3778269180BD0009D500 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADA3777269180BD0009D500 /* User.swift */; };
@@ -99,6 +100,7 @@
 		3AC7F9462678D63300561DBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3ACFF42B2699D5A3004F5B5E /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		3ACFF4302699F2D2004F5B5E /* RepositoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesViewModel.swift; sourceTree = "<group>"; };
+		3ACFF435269A00CB004F5B5E /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 		3ADA3768269180860009D500 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		3ADA3772269180AD0009D500 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		3ADA3777269180BD0009D500 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -345,6 +347,7 @@
 			children = (
 				3A3C83262692FC57004E87D0 /* UIImageView.swift */,
 				3A3C832B26930992004E87D0 /* UIView.swift */,
+				3ACFF435269A00CB004F5B5E /* UIApplication.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -487,6 +490,7 @@
 				3A1D356A2698859B0037D46D /* APIManager.swift in Sources */,
 				3ADB57CE2691E69200354A8F /* ProfileCell.swift in Sources */,
 				3ADB57D32691E6B800354A8F /* RepositoryCell.swift in Sources */,
+				3ACFF436269A00CB004F5B5E /* UIApplication.swift in Sources */,
 				3A3C834D26943824004E87D0 /* RootViewController.swift in Sources */,
 				3ADA3773269180AD0009D500 /* Repository.swift in Sources */,
 				3ADA4E63269637A20021DD62 /* RepositoriesViewController.swift in Sources */,
