@@ -50,20 +50,52 @@ class ProfileViewModel: NSObject {
 private extension ProfileViewModel {
     func fetchUser() {
         NetworkRequest.RequestType.getUser.networkRequest()?.start(responseType: User.self) { [weak self] result in
-                guard let self = self else { return }
-                switch result {
-                case .success(let networkResponse):
-                    DispatchQueue.main.async {
-                        print("🟢 Fetch User success !")
-                        print("🟢 Username: \(networkResponse.object.username)")
-                        self.profile.user = networkResponse.object
-                        Core.accountManager.profile = self.profile
-//                        SceneDelegate.shared.rootViewController.navigateToMainScreenAnimated()
-                    }
-                case .failure(let error):
-                    print("🔴 Failed to get user, or there is no valid/active session: \(error.localizedDescription)")
+            guard let self = self else { return }
+            switch result {
+            case .success(let networkResponse):
+                DispatchQueue.main.async {
+                    print("🟢 Fetch User success !")
+                    print("🟢 Username: \(networkResponse.object.username)")
+                    self.profile.user = networkResponse.object
+                    Core.accountManager.profile = self.profile
+                    self.fetchRepositories()
                 }
+            case .failure(let error):
+                print("🔴 Failed to get user, or there is no valid/active session: \(error.localizedDescription)")
             }
+        }
+    }
+    
+    func fetchRepositories() {
+        // self.turnActivityIndicatorON()
+        Core.apiManager.fetchRepositories { result in
+            switch result {
+            case .success(let repos):
+                print("🟢🟢 Fetch Repositories success !")
+                print("🟢🟢 Starred count: \(repos.count)")
+                Core.accountManager.profile?.repositories = repos
+                self.fetchStarred()
+            case .failure(let error):
+                print("🔴 \(error)")
+            }
+            // self.turnActivityIndicatorOFF()
+        }
+    }
+    
+    func fetchStarred() {
+        // self.turnActivityIndicatorON()
+        Core.apiManager.fetchStarred { result in
+            switch result {
+            case .success(let starred):
+                print("🟢🟢🟢 Fetch Starred success !")
+                print("🟢🟢🟢 Starred count: \(starred.count)")
+                Core.accountManager.profile?.starredRepositories = starred
+                SceneDelegate.shared.rootViewController.navigateToMainScreenAnimated()
+            case .failure(let error):
+                print("🔴 \(error)")
+            }
+            // self.turnActivityIndicatorOFF()
+        }
     }
 }
 

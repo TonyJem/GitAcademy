@@ -48,38 +48,6 @@ private extension ProfileViewController {
         indexPath.row == 0 ? cell.fillRepositories() : cell.fillStarred()
         return cell
     }
-    
-    func fetchRepositories() {
-        // self.turnActivityIndicatorON()
-        Core.apiManager.fetchRepositories { result in
-            switch result {
-            case .success(let repos):
-                print("🟢🟢 Fetch Repositories success !")
-                print("🟢🟢 Starred count: \(repos.count)")
-                Core.accountManager.profile?.repositories = repos
-                self.fetchStarred()
-            case .failure(let error):
-                print("🔴 \(error)")
-            }
-            // self.turnActivityIndicatorOFF()
-        }
-    }
-    
-    func fetchStarred() {
-        // self.turnActivityIndicatorON()
-        Core.apiManager.fetchStarred { result in
-            switch result {
-            case .success(let starred):
-                print("🟢🟢🟢 Fetch Starred success !")
-                print("🟢🟢🟢 Starred count: \(starred.count)")
-                Core.accountManager.profile?.starredRepositories = starred
-                SceneDelegate.shared.rootViewController.navigateToMainScreenAnimated()
-            case .failure(let error):
-                print("🔴 \(error)")
-            }
-            // self.turnActivityIndicatorOFF()
-        }
-    }
 }
 
 extension ProfileViewController: UITableViewDataSource {
@@ -120,7 +88,6 @@ extension ProfileViewController: UITableViewDelegate {
             navigationController?.pushViewController(repositoriesViewController, animated: true)
         case 1:
             print("🟢 Did select Starred row")
-            fetchRepositories()
         default:
             break
         }
