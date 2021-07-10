@@ -66,7 +66,6 @@ private extension ProfileViewModel {
     }
     
     func fetchRepositories() {
-        // self.turnActivityIndicatorON()
         Core.apiManager.fetchRepositories { result in
             switch result {
             case .success(let repos):
@@ -86,12 +85,10 @@ private extension ProfileViewModel {
             case .failure(let error):
                 print("🔴 \(error)")
             }
-            // self.turnActivityIndicatorOFF()
         }
     }
     
     func fetchStarred() {
-        // self.turnActivityIndicatorON()
         Core.apiManager.fetchStarred { result in
             switch result {
             case .success(let starred):
@@ -103,7 +100,6 @@ private extension ProfileViewModel {
             case .failure(let error):
                 print("🔴 \(error)")
             }
-            // self.turnActivityIndicatorOFF()
         }
     }
 }
