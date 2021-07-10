@@ -49,45 +49,19 @@ class ProfileViewModel: NSObject {
 //MARK: - Private
 private extension ProfileViewModel {
     func fetchUser() {
-        NetworkRequest
-            .RequestType
-            .getUser
-            .networkRequest()?
-            .start(responseType: User.self) { [weak self] result in
+        NetworkRequest.RequestType.getUser.networkRequest()?.start(responseType: User.self) { [weak self] result in
                 guard let self = self else { return }
                 switch result {
                 case .success(let networkResponse):
                     DispatchQueue.main.async {
-                        print("🟢 fetchUser success!")
+                        print("🟢 Fetch User success !")
+                        print("🟢 Username: \(networkResponse.object.username)")
                         self.profile.user = networkResponse.object
-                        
-                        // TODO: Remove getting repositories list to independent thread
-                        self.fetchRepositories()
+                        Core.accountManager.profile = self.profile
+//                        SceneDelegate.shared.rootViewController.navigateToMainScreenAnimated()
                     }
                 case .failure(let error):
                     print("🔴 Failed to get user, or there is no valid/active session: \(error.localizedDescription)")
-                }
-            }
-    }
-    
-    func fetchRepositories() {
-        NetworkRequest
-            .RequestType
-            .getRepos
-            .networkRequest()?
-            .start(responseType: [Repository].self) { [weak self] result in
-                guard let self = self else { return }
-                switch result {
-                case .success(let networkResponse):
-                    DispatchQueue.main.async {
-                        print("🟢🟢 fetchRepositories success !")
-                        self.profile.repositories = networkResponse.object
-//                        self.profile.starredRepositories = networkResponse.object.filter { $0.stargazersCount > 0 }
-                        Core.accountManager.profile = self.profile
-                        SceneDelegate.shared.rootViewController.navigateToMainScreenAnimated()
-                    }
-                case .failure(let error):
-                    print("🔴 Failed to get the user's repositories: \(error)")
                 }
             }
     }

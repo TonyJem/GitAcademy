@@ -4,18 +4,15 @@
 import Foundation
 
 enum APIEndpoint {
-    case user
     case repositories
     case starred
     
     var url: URL? {
+        guard let username = Core.accountManager.username else { return nil }
         switch self {
-        case .user:
-          return makeURL(endpoint: "_")
         case .repositories:
-          return makeURL(endpoint: "_")
+          return makeURL(endpoint: "users/\(username)/repos")
         case .starred:
-            guard let username = Core.accountManager.username else { return nil }
             return makeURL(endpoint: "users/\(username)/starred")
         }
     }
