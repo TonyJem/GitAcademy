@@ -30,12 +30,9 @@ private extension RepositoriesViewController {
             switch result {
             case .success(let repositories):
                 print("🟢🟢 Fetch Repositories success !")
-                print("🟢🟢 Repositories count: \(repositories.count)")
                 
                 print("🟢🟢 1st Repo Owner's Username: \(repositories[0].owner.username)")
                 print("🟢🟢 1st Repo Owner's AvatarURL: \(repositories[0].owner.avatarURL)")
-                print("🟢🟢 1st Repo Name: \(String(describing: repositories[0].name))")
-                print("🟢🟢 1st Repo Description: \(String(describing: repositories[0].description))")
                 print("🟢🟢 1st Repo Stars: \(repositories[0].stargazersCount)")
                 print("🟢🟢 1st Repo Language: \(String(describing: repositories[0].language))")
                 
