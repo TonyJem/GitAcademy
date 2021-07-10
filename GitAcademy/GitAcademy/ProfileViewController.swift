@@ -20,12 +20,14 @@ class ProfileViewController: UIViewController {
             }
         }
     }
+    
     var starredCount = 0
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
-        viewModel.fetchStarred()
+//        viewModel.fetchStarred()
+        starredCount = viewModel.getStarredCount(for: self)
     }
     
     override func viewDidLoad() {

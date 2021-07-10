@@ -4,8 +4,17 @@ class ProfileViewModel: NSObject {
     
     private var starredCount: Int?
     
-    func getStarredCount() -> Int {
-        return 0
+    private var destinationVC = UIViewController()
+    
+    func getStarredCount(for currentVC: UIViewController) -> Int {
+        destinationVC = currentVC
+        print("📣  !")
+        
+        if let destVC = destinationVC as? ProfileViewController {
+            destVC.starredCount = 88
+            destVC.starredCountIsLoaded = true
+        }
+        return 88
     }
     
     func fetchStarred() {
@@ -16,11 +25,6 @@ class ProfileViewModel: NSObject {
                 print("🟢🟢🟢 Starred count: \(starred.count)")
                 print("🟢🟢🟢 1st Starred description: \(starred[0].description)")
                 Core.accountManager.profile?.starredRepositories = starred
-                
-                if let vc = UIApplication.shared.topMostViewController() as? ProfileViewController {
-                    vc.starredCount = starred.count
-                    vc.starredCountIsLoaded = true
-                }
                 
             case .failure(let error):
                 print("🔴 \(error)")
