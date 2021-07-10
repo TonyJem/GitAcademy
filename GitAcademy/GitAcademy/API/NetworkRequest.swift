@@ -8,7 +8,6 @@ struct NetworkRequest {
     
     enum RequestType: Equatable {
         case codeExchange(code: String)
-        case getRepos
         case getUser
         case signIn
         
@@ -23,8 +22,6 @@ struct NetworkRequest {
             switch self {
             case .codeExchange:
                 return .post
-            case .getRepos:
-                return .get
             case .getUser:
                 return .get
             case .signIn:
@@ -41,19 +38,6 @@ struct NetworkRequest {
                     URLQueryItem(name: "code", value: code)
                 ]
                 return urlComponents(host: "github.com", path: "/login/oauth/access_token", queryItems: queryItems).url
-            case .getRepos:
-                guard
-                    let username = Core.accountManager.username,
-                    !username.isEmpty
-                else {
-                    return nil
-                }
-                // TODO: Implement Logic to go throught all pages and count all repositories
-                let queryItems = [
-                    URLQueryItem(name: "page", value: "1"),
-                    URLQueryItem(name: "per_page", value: "100")
-                ]
-                return urlComponents(path: "/users/\(username)/repos", queryItems: queryItems).url
             case .getUser:
                 return urlComponents(path: "/user", queryItems: nil).url
             case .signIn:
