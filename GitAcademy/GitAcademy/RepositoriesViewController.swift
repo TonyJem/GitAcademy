@@ -31,11 +31,6 @@ private extension RepositoriesViewController {
             case .success(let repositories):
                 print("🟢🟢 Fetch Repositories success !")
                 
-                print("🟢🟢 1st Repo Owner's Username: \(repositories[0].owner.username)")
-                print("🟢🟢 1st Repo Owner's AvatarURL: \(repositories[0].owner.avatarURL)")
-                print("🟢🟢 1st Repo Stars: \(repositories[0].stargazersCount)")
-                print("🟢🟢 1st Repo Language: \(String(describing: repositories[0].language))")
-                
                 Core.accountManager.profile?.repositories = repositories
                 self.repositories = repositories
                 self.repositoriesTableView.reloadData()
