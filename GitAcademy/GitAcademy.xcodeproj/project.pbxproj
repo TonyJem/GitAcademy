@@ -48,6 +48,7 @@
 		3ADB57DD2691E75500354A8F /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3ADB57DB2691E75500354A8F /* ProfileViewController.xib */; };
 		3AE413EC269A3B3800027031 /* colorsJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 3AE413EB269A3B3800027031 /* colorsJSON.json */; };
 		3AE413F9269ABE8F00027031 /* GetterOfJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE413F8269ABE8F00027031 /* GetterOfJSON.swift */; };
+		3AE413FE269AD0B000027031 /* ColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE413FD269AD0B000027031 /* ColorManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +116,7 @@
 		3ADB57DB2691E75500354A8F /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		3AE413EB269A3B3800027031 /* colorsJSON.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = colorsJSON.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
 		3AE413F8269ABE8F00027031 /* GetterOfJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetterOfJSON.swift; sourceTree = "<group>"; };
+		3AE413FD269AD0B000027031 /* ColorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				3A3C83892694895F004E87D0 /* AccountManager.swift */,
+				3AE413FD269AD0B000027031 /* ColorManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -503,6 +506,7 @@
 				3A4292252697784C0092A2A8 /* Starred.swift in Sources */,
 				3A3C838A2694895F004E87D0 /* AccountManager.swift in Sources */,
 				3AC7F9242678D63100561DBB /* LoginViewController.swift in Sources */,
+				3AE413FE269AD0B000027031 /* ColorManager.swift in Sources */,
 				3A1D3575269886A40037D46D /* APIEndPoint.swift in Sources */,
 				3AC7F9202678D63100561DBB /* AppDelegate.swift in Sources */,
 				3AAEEE75269978C1007FEA6C /* Owner.swift in Sources */,
