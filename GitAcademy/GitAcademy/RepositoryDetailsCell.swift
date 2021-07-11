@@ -36,7 +36,13 @@ class RepositoryDetailsCell: UITableViewCell {
         usernameLabel.text = repository.owner.username
         avatarImageView.downloaded(from: repository.owner.avatarURL)
         repositoryNameLabel.text = repository.name
-        repositoryDescriptionLabel.text = repository.description
+        
+        if let repositoryDescription = repository.description {
+            repositoryDescriptionLabel.text = repositoryDescription
+        } else {
+            repositoryDescriptionLabel.isHidden = true
+        }
+        
         let starsButtonTitle = String(repository.stargazersCount)
         starsButton.setTitle(starsButtonTitle, for: .normal)
         
