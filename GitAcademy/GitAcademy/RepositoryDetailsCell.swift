@@ -1,6 +1,6 @@
 import UIKit
 
-class RepositoryDetailsCell: MainTableViewCellOld {
+class RepositoryDetailsCell: MainTableViewCell {
     @IBOutlet private weak var containerView: UIView!
     @IBOutlet private weak var usernameLabel: UILabel!
     @IBOutlet private weak var avatarContainerView: UIView!
