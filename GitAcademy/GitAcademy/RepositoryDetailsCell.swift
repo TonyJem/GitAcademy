@@ -40,13 +40,12 @@ class RepositoryDetailsCell: UITableViewCell {
         let starsButtonTitle = String(repository.stargazersCount)
         starsButton.setTitle(starsButtonTitle, for: .normal)
         
-        // TODO: Set color accodingly to language
-        if let language = repository.language {
-            languageIconView.backgroundColor = Core.colorManager.selectColor(language: language, repoName: repository.name)
-            languageLabel.text = language
-        } else {
+        guard let language = repository.language else {
             languageIconView.isHidden = true
             languageLabel.text = nil
+            return
         }
+        languageIconView.backgroundColor = Core.colorManager.selectColor(language: language, repoName: repository.name)
+        languageLabel.text = language
     }
 }
