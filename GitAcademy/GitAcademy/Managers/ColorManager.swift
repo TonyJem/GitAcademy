@@ -3,31 +3,33 @@ import UIKit
 struct ColorManager {
     private let colorsFile = "colors"
     
-    lazy var colors: [String: AnyObject]? = {
+    lazy var colors: [String: String]? = {
         
-        
-        return loadColorsDictionary(filename: colorsFile)
+        var dictionary = loadColorsDictionary(filename: colorsFile)
+        print("🟩 Colors dictionary lazyVar: \(String(describing: dictionary))")
+        print("🟩 Swift color from lazyVar: \(String(dictionary!["Swift"]!))")
+        return dictionary
     }()
     
-    mutating func color(for language: String) -> UIColor {
+    mutating func selectColor(for language: String) -> UIColor {
         
         guard let colors = colors,
-              let color = colors[language] as? String else {
-            return .white
+              let color = colors[language] else {
+            return hexStringToUIColor(hex: "#ffac45")
         }
-        
-        return hexStringToUIColor(hex: color)
+        print("🔶 Selected language's color String is: \(color)" )
+        return hexStringToUIColor(hex: "#ffac45")
     }
 }
 
 // MARK: - Private methods
 private extension ColorManager {
-    func loadColorsDictionary(filename fileName: String) -> [String: AnyObject]? {
+    func loadColorsDictionary(filename fileName: String) -> [String: String]? {
         if let url = Bundle.main.url(forResource: fileName, withExtension: "json") {
             do {
                 let data = try Data(contentsOf: url)
                 let object = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
-                if let dictionary = object as? [String: AnyObject] {
+                if let dictionary = object as? [String: String] {
                     return dictionary
                 }
             } catch {

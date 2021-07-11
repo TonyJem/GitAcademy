@@ -45,7 +45,7 @@ class RepositoryDetailsCell: UITableViewCell {
             
 //            languageIconView.backgroundColor = hexStringToUIColor(hex: "#ffac45")
             
-            languageIconView.backgroundColor = Core.colorManager.color(for: language)
+            languageIconView.backgroundColor = Core.colorManager.selectColor(for: language)
             languageLabel.text = language
         } else {
             languageIconView.isHidden = true
