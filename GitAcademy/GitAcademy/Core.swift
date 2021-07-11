@@ -8,5 +8,6 @@ import Foundation
 
 struct Core {
     static var apiManager = APIManager()
+    static var colorManager = ColorManager()
     static var accountManager = AccountManager()
 }

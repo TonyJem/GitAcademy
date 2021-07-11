@@ -49,6 +49,7 @@
 		3AE413EC269A3B3800027031 /* colorsJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 3AE413EB269A3B3800027031 /* colorsJSON.json */; };
 		3AE413F9269ABE8F00027031 /* GetterOfJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE413F8269ABE8F00027031 /* GetterOfJSON.swift */; };
 		3AE413FE269AD0B000027031 /* ColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE413FD269AD0B000027031 /* ColorManager.swift */; };
+		3AE41403269AD1F300027031 /* colors.json in Resources */ = {isa = PBXBuildFile; fileRef = 3AE41402269AD1F300027031 /* colors.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +118,7 @@
 		3AE413EB269A3B3800027031 /* colorsJSON.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = colorsJSON.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
 		3AE413F8269ABE8F00027031 /* GetterOfJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetterOfJSON.swift; sourceTree = "<group>"; };
 		3AE413FD269AD0B000027031 /* ColorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorManager.swift; sourceTree = "<group>"; };
+		3AE41402269AD1F300027031 /* colors.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = colors.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,6 +231,7 @@
 				3A3C8380269485DF004E87D0 /* SwiftKeychain.swift */,
 				3AE413F8269ABE8F00027031 /* GetterOfJSON.swift */,
 				3AE413EB269A3B3800027031 /* colorsJSON.json */,
+				3AE41402269AD1F300027031 /* colors.json */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -461,6 +464,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AE41403269AD1F300027031 /* colors.json in Resources */,
 				3AE413EC269A3B3800027031 /* colorsJSON.json in Resources */,
 				3ADA4E6F2696421F0021DD62 /* RepositoryDetailsCell.xib in Resources */,
 				3ADB57DD2691E75500354A8F /* ProfileViewController.xib in Resources */,
