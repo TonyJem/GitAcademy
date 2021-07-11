@@ -8,7 +8,7 @@ struct ColorManager {
         return loadColorsDictionary(filename: colorsFile)
     }()
     
-    mutating func selectColor(language: String, repoName: String) -> UIColor {
+    mutating func selectColor(language: String) -> UIColor {
         
         guard let colors = colors,
               let colorInHex = colors[language] else {
