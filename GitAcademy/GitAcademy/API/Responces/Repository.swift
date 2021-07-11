@@ -7,6 +7,7 @@ struct Repository: Codable, Identifiable {
     var stargazersCount: Int
     var owner: Owner
     var language: String?
+    var isStarredByUser: Bool?
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -15,5 +16,6 @@ struct Repository: Codable, Identifiable {
         case stargazersCount = "stargazers_count"
         case owner
         case language
+        case isStarredByUser
     }
 }
