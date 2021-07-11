@@ -56,11 +56,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fbe-pe-qyE">
-                                <rect key="frame" x="15" y="132" width="45.5" height="30"/>
+                                <rect key="frame" x="15" y="132" width="47" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Vy3-8e-mXN"/>
                                 </constraints>
-                                <state key="normal" title="88" image="book.fill" catalog="system">
+                                <state key="normal" title="88" image="star">
                                     <color key="titleColor" systemColor="labelColor"/>
                                 </state>
                                 <connections>
@@ -68,7 +68,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A0u-KR-OfK">
-                                <rect key="frame" x="75.5" y="132" width="30" height="30"/>
+                                <rect key="frame" x="77" y="132" width="30" height="30"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vds-Kd-Lq2">
                                         <rect key="frame" x="8.5" y="8.5" width="13" height="13"/>
@@ -88,13 +88,13 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Language" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kjc-yF-Acu">
-                                <rect key="frame" x="105.5" y="136.5" width="75.5" height="21"/>
+                                <rect key="frame" x="107" y="136.5" width="75.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lKo-SD-djs">
-                                <rect key="frame" x="196" y="132" width="100" height="30"/>
+                                <rect key="frame" x="197.5" y="132" width="100" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="whu-jp-7xl"/>
                                 </constraints>
@@ -155,8 +155,8 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="book.fill" catalog="system" width="128" height="102"/>
         <image name="person" width="25" height="25"/>
+        <image name="star" width="24" height="24"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
