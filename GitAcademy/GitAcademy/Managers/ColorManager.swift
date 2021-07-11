@@ -9,7 +9,6 @@ struct ColorManager {
     }()
     
     mutating func selectColor(language: String) -> UIColor {
-        
         guard let colors = colors,
               let colorInHex = colors[language] else {
             return defaultColor
