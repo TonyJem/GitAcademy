@@ -3,4 +3,5 @@ import UIKit
 
 struct Colors {
     static let defaultLanguageColor: UIColor = .white
+    static let cellBackground: UIColor = .systemGray5
 }
