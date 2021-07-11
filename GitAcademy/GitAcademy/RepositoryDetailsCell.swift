@@ -43,6 +43,12 @@ class RepositoryDetailsCell: UITableViewCell {
             repositoryDescriptionLabel.isHidden = true
         }
         
+        if Core.accountManager.profile?.starredRepositories.first(where: {$0.id == repository.id}) != nil {
+            starsButton.setImage(#imageLiteral(resourceName: "star_filled"), for: .normal)
+        } else {
+            starsButton.setImage(#imageLiteral(resourceName: "star"), for: .normal)
+        }
+        
         let starsButtonTitle = String(repository.stargazersCount)
         starsButton.setTitle(starsButtonTitle, for: .normal)
         

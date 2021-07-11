@@ -87,16 +87,11 @@ private extension ProfileViewController {
                 
                 let index = IndexPath(row: 1, section: 1)
                 self.profileTableView.reloadRows(at: [index], with: .automatic)
-                self.updateRepositoriesWithStarred()
                 
             case .failure(let error):
                 print("🔴 \(error)")
             }
         }
-    }
-    
-    func updateRepositoriesWithStarred() {
-        
     }
 }
 
