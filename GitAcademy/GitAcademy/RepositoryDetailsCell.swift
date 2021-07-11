@@ -45,8 +45,8 @@ class RepositoryDetailsCell: UITableViewCell {
             languageIconView.backgroundColor = Core.colorManager.selectColor(language: language, repoName: repository.name)
             languageLabel.text = language
         } else {
-            languageIconView.backgroundColor = .cyan
-            languageLabel.text = "unknown"
+            languageIconView.isHidden = true
+            languageLabel.text = nil
         }
     }
 }
