@@ -5,6 +5,8 @@ class RepositoriesViewController: UIViewController {
     
     var repositories: [Repository] = []
     
+    private var jsonConverter = getJSON()
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
@@ -13,6 +15,11 @@ class RepositoriesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let colors = jsonConverter.loadJson(filename: "colorsJSON") {
+            print("🔶 Colors json: \(String(describing: colors))")
+            print("🔶🔶 Swift color is: \(String(describing: colors["Swift"]))")
+        }
         
         title = "Repositories"
         repositoriesTableView.register(UINib(nibName: String(describing: RepositoryDetailsCell.self), bundle: Bundle.main), forCellReuseIdentifier: String(describing: RepositoryDetailsCell.self))

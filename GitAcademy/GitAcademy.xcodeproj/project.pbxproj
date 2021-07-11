@@ -47,6 +47,7 @@
 		3ADB57DC2691E75500354A8F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADB57DA2691E75500354A8F /* ProfileViewController.swift */; };
 		3ADB57DD2691E75500354A8F /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3ADB57DB2691E75500354A8F /* ProfileViewController.xib */; };
 		3AE413EC269A3B3800027031 /* colorsJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 3AE413EB269A3B3800027031 /* colorsJSON.json */; };
+		3AE413F9269ABE8F00027031 /* GetterOfJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE413F8269ABE8F00027031 /* GetterOfJSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +114,7 @@
 		3ADB57DA2691E75500354A8F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		3ADB57DB2691E75500354A8F /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		3AE413EB269A3B3800027031 /* colorsJSON.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = colorsJSON.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
+		3AE413F8269ABE8F00027031 /* GetterOfJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetterOfJSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				3A3C8380269485DF004E87D0 /* SwiftKeychain.swift */,
+				3AE413F8269ABE8F00027031 /* GetterOfJSON.swift */,
 				3AE413EB269A3B3800027031 /* colorsJSON.json */,
 			);
 			path = Helpers;
@@ -513,6 +516,7 @@
 				3A3C835326943D2A004E87D0 /* InitialViewController.swift in Sources */,
 				3A3C8381269485DF004E87D0 /* SwiftKeychain.swift in Sources */,
 				3ADA4E6E2696421F0021DD62 /* RepositoryDetailsCell.swift in Sources */,
+				3AE413F9269ABE8F00027031 /* GetterOfJSON.swift in Sources */,
 				3A3C832C26930993004E87D0 /* UIView.swift in Sources */,
 				3ADB57DC2691E75500354A8F /* ProfileViewController.swift in Sources */,
 				3AC7F92A2678D63100561DBB /* GitAcademy.xcdatamodeld in Sources */,
