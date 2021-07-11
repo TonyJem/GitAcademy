@@ -1,6 +1,6 @@
 import UIKit
 // TODO: Create Parent cell for ProfileCell and RepositoryCell and iherit common stuff from there
-class ProfileCell: MainTableViewCell {
+class ProfileCell: MainTableViewCellOld {
     @IBOutlet private weak var containerView: UIView!
     @IBOutlet private weak var avatarContainerView: UIView!
     @IBOutlet private weak var avatarImageView: UIImageView!
