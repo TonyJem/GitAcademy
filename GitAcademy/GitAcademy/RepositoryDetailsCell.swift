@@ -1,6 +1,6 @@
 import UIKit
 
-class RepositoryDetailsCell: MainTableViewCell {
+class RepositoryDetailsCell: UITableViewCell {
     @IBOutlet private weak var containerView: UIView!
     @IBOutlet private weak var usernameLabel: UILabel!
     @IBOutlet private weak var avatarContainerView: UIView!
@@ -11,6 +11,8 @@ class RepositoryDetailsCell: MainTableViewCell {
     @IBOutlet private weak var languageIconView: UIView!
     @IBOutlet private weak var languageLabel: UILabel!
     @IBOutlet private weak var contributorsButton: UIButton!
+    
+    private let cornerRadius: CGFloat = 10
     
     override func awakeFromNib() {
         super.awakeFromNib()

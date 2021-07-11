@@ -1,14 +1,14 @@
 import UIKit
 
 // TODO: Create Parent cell for ProfileCell and RepositoryCell and iherit common stuff from there
-class RepositoryCell: MainTableViewCell {
+class RepositoryCell: UITableViewCell {
     @IBOutlet private weak var containerView: UIView!
     @IBOutlet private weak var iconContainerView: UIView!
     @IBOutlet private weak var iconImageView: UIImageView!
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var countLabel: UILabel!
     
-//    private let cornerRadius: CGFloat = 10
+    private let cornerRadius: CGFloat = 10
     
     override func awakeFromNib() {
         super.awakeFromNib()
