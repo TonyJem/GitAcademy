@@ -2,6 +2,7 @@ import UIKit
 
 struct ColorManager {
     private let colorsFile = "colors"
+    private let defaultColor: UIColor = .red
     
     lazy var colors: [String: String]? = {
         
@@ -11,14 +12,14 @@ struct ColorManager {
         return dictionary
     }()
     
-    mutating func selectColor(for language: String) -> UIColor {
+    mutating func selectColor(language: String, repoName: String) -> UIColor {
         
         guard let colors = colors,
-              let color = colors[language] else {
-            return hexStringToUIColor(hex: "#ffac45")
+              let colorInHex = colors[language] else {
+            return defaultColor
         }
-        print("🔶 Selected language's color String is: \(color)" )
-        return hexStringToUIColor(hex: "#ffac45")
+        print("🔶 Color for repo \(repoName) is: \(colorInHex)" )
+        return hexStringToUIColor(hex: colorInHex)
     }
 }
 
@@ -46,8 +47,8 @@ private extension ColorManager {
             cString.remove(at: cString.startIndex)
         }
         
-        guard cString.count != 6 else {
-            return UIColor.gray
+        guard cString.count == 6 else {
+            return defaultColor
         }
         
         var rgbValue: UInt64 = 0

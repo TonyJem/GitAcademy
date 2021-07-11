@@ -45,11 +45,10 @@ class RepositoryDetailsCell: UITableViewCell {
             
 //            languageIconView.backgroundColor = hexStringToUIColor(hex: "#ffac45")
             
-            languageIconView.backgroundColor = Core.colorManager.selectColor(for: language)
+            languageIconView.backgroundColor = Core.colorManager.selectColor(language: language, repoName: repository.name)
             languageLabel.text = language
         } else {
-            languageIconView.isHidden = true
-            languageLabel.isHidden = true
+            languageIconView.backgroundColor = .cyan
         }
     }
 }
@@ -63,7 +62,7 @@ private extension RepositoryDetailsCell {
             cString.remove(at: cString.startIndex)
         }
         
-        guard cString.count != 6 else {
+        guard cString.count == 6 else {
             return UIColor.gray
         }
         
