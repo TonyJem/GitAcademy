@@ -2,7 +2,7 @@ import UIKit
 
 struct ColorManager {
     private let colorsFile = "colors"
-    private let defaultColor: UIColor = .red
+    private let defaultColor = Colors.defaultLanguageColor
     
     lazy var colors: [String: String]? = {
         return loadColorsDictionary(filename: colorsFile)

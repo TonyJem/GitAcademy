@@ -11,6 +11,7 @@
 		3A1D35612698841D0037D46D /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1D35602698841D0037D46D /* APIError.swift */; };
 		3A1D356A2698859B0037D46D /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1D35692698859B0037D46D /* APIManager.swift */; };
 		3A1D3575269886A40037D46D /* APIEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1D3574269886A40037D46D /* APIEndPoint.swift */; };
+		3A242AD8269B071100DD5431 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A242AD7269B071100DD5431 /* Colors.swift */; };
 		3A3C831A2692E68D004E87D0 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3C83192692E68D004E87D0 /* Profile.swift */; };
 		3A3C831F2692EFB7004E87D0 /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3C831E2692EFB7004E87D0 /* Core.swift */; };
 		3A3C83272692FC57004E87D0 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3C83262692FC57004E87D0 /* UIImageView.swift */; };
@@ -71,6 +72,7 @@
 		3A1D35602698841D0037D46D /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		3A1D35692698859B0037D46D /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		3A1D3574269886A40037D46D /* APIEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndPoint.swift; sourceTree = "<group>"; };
+		3A242AD7269B071100DD5431 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		3A3C83192692E68D004E87D0 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		3A3C831E2692EFB7004E87D0 /* Core.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core.swift; sourceTree = "<group>"; };
 		3A3C83262692FC57004E87D0 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				3A3C8380269485DF004E87D0 /* SwiftKeychain.swift */,
+				3A242AD7269B071100DD5431 /* Colors.swift */,
 				3AE41402269AD1F300027031 /* colors.json */,
 			);
 			path = Helpers;
@@ -489,6 +492,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A1D356A2698859B0037D46D /* APIManager.swift in Sources */,
+				3A242AD8269B071100DD5431 /* Colors.swift in Sources */,
 				3ADB57CE2691E69200354A8F /* ProfileCell.swift in Sources */,
 				3ADB57D32691E6B800354A8F /* RepositoryCell.swift in Sources */,
 				3A3C834D26943824004E87D0 /* RootViewController.swift in Sources */,
