@@ -1,6 +1,6 @@
 import UIKit
 // TODO: Create Parent cell for ProfileCell and RepositoryCell and iherit common stuff from there
-class ProfileCell: UITableViewCell {
+class ProfileCell: MainTableViewCell {
     @IBOutlet private weak var containerView: UIView!
     @IBOutlet private weak var avatarContainerView: UIView!
     @IBOutlet private weak var avatarImageView: UIImageView!
@@ -13,7 +13,6 @@ class ProfileCell: UITableViewCell {
     private let shadowOffset = CGSize(width: 10, height: 10)
     private let shadowOpacity: Float = 0.4
     private let shadowRadius: CGFloat = 8
-    private let cornerRadius: CGFloat = 10
     
     override func awakeFromNib() {
         super.awakeFromNib()
