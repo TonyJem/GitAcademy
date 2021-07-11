@@ -45,7 +45,6 @@
 		3ADB57D32691E6B800354A8F /* RepositoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADB57D22691E6B800354A8F /* RepositoryCell.swift */; };
 		3ADB57DC2691E75500354A8F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADB57DA2691E75500354A8F /* ProfileViewController.swift */; };
 		3ADB57DD2691E75500354A8F /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3ADB57DB2691E75500354A8F /* ProfileViewController.xib */; };
-		3AE413EC269A3B3800027031 /* colorsJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 3AE413EB269A3B3800027031 /* colorsJSON.json */; };
 		3AE413F9269ABE8F00027031 /* GetterOfJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE413F8269ABE8F00027031 /* GetterOfJSON.swift */; };
 		3AE413FE269AD0B000027031 /* ColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE413FD269AD0B000027031 /* ColorManager.swift */; };
 		3AE41403269AD1F300027031 /* colors.json in Resources */ = {isa = PBXBuildFile; fileRef = 3AE41402269AD1F300027031 /* colors.json */; };
@@ -113,7 +112,6 @@
 		3ADB57D22691E6B800354A8F /* RepositoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCell.swift; sourceTree = "<group>"; };
 		3ADB57DA2691E75500354A8F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		3ADB57DB2691E75500354A8F /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
-		3AE413EB269A3B3800027031 /* colorsJSON.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = colorsJSON.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
 		3AE413F8269ABE8F00027031 /* GetterOfJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetterOfJSON.swift; sourceTree = "<group>"; };
 		3AE413FD269AD0B000027031 /* ColorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorManager.swift; sourceTree = "<group>"; };
 		3AE41402269AD1F300027031 /* colors.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = colors.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
@@ -228,7 +226,6 @@
 			children = (
 				3A3C8380269485DF004E87D0 /* SwiftKeychain.swift */,
 				3AE413F8269ABE8F00027031 /* GetterOfJSON.swift */,
-				3AE413EB269A3B3800027031 /* colorsJSON.json */,
 				3AE41402269AD1F300027031 /* colors.json */,
 			);
 			path = Helpers;
@@ -462,7 +459,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AE41403269AD1F300027031 /* colors.json in Resources */,
-				3AE413EC269A3B3800027031 /* colorsJSON.json in Resources */,
 				3ADA4E6F2696421F0021DD62 /* RepositoryDetailsCell.xib in Resources */,
 				3ADB57DD2691E75500354A8F /* ProfileViewController.xib in Resources */,
 				3AC7F92F2678D63300561DBB /* LaunchScreen.storyboard in Resources */,
